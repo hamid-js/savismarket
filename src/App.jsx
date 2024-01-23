@@ -11,9 +11,10 @@ function App() {
   return (
     <div>
       <Header />
-      <main>
-      <Silder />
-      <MobileMenu />
+      <main className="pb-80">
+        <Silder />
+        <MobileMenu />
+        <ProductsSection />
       </main>
     </div>
   );
@@ -94,18 +95,55 @@ function MobileMenu() {
         </li>
 
         <li>
-        <a href="#ff">
-          <RiUserLine className={iconStyle} />
-
-        my account</a>
+          <a href="#ff">
+            <RiUserLine className={iconStyle} />
+            my account
+          </a>
         </li>
 
         <li>
-        <a href="#ff">
-          <RiBarChartBoxLine className={iconStyle} />
-         compare</a>
+          <a href="#ff">
+            <RiBarChartBoxLine className={iconStyle} />
+            compare
+          </a>
         </li>
       </ul>
     </div>
+  );
+}
+
+function ProductCard() {
+  return (
+    <div className="w-[47%] text-white m-1 ">
+      <div className="flex  h-40 w-full  flex-col justify-between bg-[url(/images/digital/Image_48.jpg)] bg-cover bg-center  ">
+        <div className="mr-2 mt-1 h-8 w-8 self-end  rounded-full bg-black p-2">
+          <RiHeartLine className=" " />
+        </div>
+        <div className="text- h-7 w-7 bg-blue-500 rounded-sm">
+          <RiShoppingCartLine className="-scale-x-100  pr-1  pt-2 text-2xl  " />
+        </div>
+      </div>
+      <div className="flex flex-col items-center text-xs">
+        <p className="font-semibold">dasdasasda</p>
+        <p className="text-gray-300">sdsdas</p>
+        <p className="text-blue-500">$65.46</p>
+      </div>
+    </div>
+  );
+}
+
+function ProductsSection() {
+  return (
+    <section  className='flex w-full justify-around flex-wrap '>
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+    </section>
   );
 }
