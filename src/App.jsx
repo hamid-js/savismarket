@@ -18,6 +18,7 @@ function App() {
         <ProductCarousel />
         <PricingBox />
         <Articles />
+        <Gallery />
       </main>
     </div>
   );
@@ -168,16 +169,12 @@ function ProductCarousel() {
 function PricingBox() {
   return (
     <div>
-      <div className=" flex flex-col items-center  justify-center gap-4 p-5 text-center  capitalize text-gray-300 ">
-        <p className="text-2xl ">play like the pros</p>
-        <h3 className="text-3xl font-bold uppercase text-white">
-          ready pc builds
-        </h3>
-        <p className="text-sm">
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected.{' '}
-        </p>
-      </div>
+      <Titles
+        title1="play like the pros"
+        title2="ready pc builds"
+        title3=" There are many variations of passages of Lorem Ipsum available, but
+          the majority have suffered alteration in some form, by injected."
+      />
       <div>
         <PricingTable />
         <PricingTable />
@@ -216,7 +213,7 @@ function PricingTable() {
 
 function Articles() {
   return (
-    <div className="bg-gradient-to-t  my-32 from-zinc-900 via-[#3f48788d]  via-50% to-zinc-900 flex ">
+    <div className="my-32  flex flex-col bg-gradient-to-t  from-zinc-900 via-[#3f48788d] via-50% to-zinc-900  ">
       <ProductArticle />
       <ProductArticle />
     </div>
@@ -225,7 +222,7 @@ function Articles() {
 
 function ProductArticle() {
   return (
-    <div className=" my-10 flex h-dvh w-full flex-col items-center justify-center ">
+    <div className="  flex  w-full flex-col items-center justify-center ">
       <div className=" w-full">
         <img src="/images/digital/Image_03.png" alt="" />
       </div>
@@ -286,5 +283,53 @@ function Button({ children }) {
     <button className=" my-6 bg-indigo-600 px-5 py-3 uppercase">
       {children}
     </button>
+  );
+}
+
+function Titles({ title1 = '', title2 = '', title3 = '' }) {
+  return (
+    <div className=" flex flex-col items-center  justify-center gap-4 p-5 text-center  capitalize text-gray-300 ">
+      <p className="text-2xl ">{title1}</p>
+      <h3 className="text-3xl font-bold uppercase text-white">{title2}</h3>
+      <p className="text-sm">{title3}</p>
+    </div>
+  );
+}
+
+function Gallery() {
+  return (
+    <div className="">
+      <Titles
+        title1="play like the pros"
+        title2="ready pc builds"
+        title3=" There are many variations of passages of Lorem Ipsum available, but
+          the majority have suffered alteration in some form, by injected."
+      />
+
+      <div className="grid h-full w-full  grid-cols-2 grid-rows-4 bg-gray-900  ">
+        <div className=" bg-[url(/images/digital/gallery-1.jpg)] over bg h-40 m-1  bg-cover bg-center-center "></div>
+        <div className=" bg-[url(/images/digital/gallery-2.jpg)]  w-full h-40 m-1  bg-cover bg-center ">
+          
+        </div>
+        <div className=" bg-[url(/images/digital/gallery-3.jpg)]  w-full h-40 m-1  bg-cover bg-center ">
+        
+        </div>
+        <div className=" bg-[url(/images/digital/gallery-4.jpg)]  w-full h-40 m-1  bg-cover bg-center ">
+          
+        </div>
+        <div className=" bg-[url(/images/digital/gallery-10.jpg)]  w-full h-40 m-1  bg-cover bg-center ">
+        
+        </div>
+        <div className=" bg-[url(/images/digital/gallery-11.jpg)]  w-full h-40 m-1  bg-cover bg-center ">
+        
+        </div>
+        <div className=" bg-[url(/images/digital/gallery-12.jpg)]  w-full h-40 m-1  bg-cover bg-center ">
+     
+        </div>
+        <div className=" bg-[url(/images/digital/gallery-13.jpg)]  w-full h-40 m-1  bg-cover bg-center ">
+  
+        </div>
+      </div>
+    </div>
   );
 }
