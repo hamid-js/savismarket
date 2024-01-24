@@ -17,6 +17,7 @@ function App() {
         <ProductsSection />
         <ProductCarousel />
         <PricingBox />
+        <Articles />
       </main>
     </div>
   );
@@ -167,12 +168,12 @@ function ProductCarousel() {
 function PricingBox() {
   return (
     <div>
-      <div className=" p-5 gap-4 text-center  flex flex-col items-center justify-center  capitalize text-gray-300 ">
+      <div className=" flex flex-col items-center  justify-center gap-4 p-5 text-center  capitalize text-gray-300 ">
         <p className="text-2xl ">play like the pros</p>
         <h3 className="text-3xl font-bold uppercase text-white">
           ready pc builds
         </h3>
-        <p className='text-sm'>
+        <p className="text-sm">
           There are many variations of passages of Lorem Ipsum available, but
           the majority have suffered alteration in some form, by injected.{' '}
         </p>
@@ -205,12 +206,85 @@ function PricingTable() {
           </ul>
           <div className=" border-t">
             {' '}
-            <button className=" my-6 bg-indigo-600 px-5 py-3 uppercase">
-              buy now
-            </button>
+            <Button>buy now</Button>
           </div>
         </div>
       </div>
     </div>
+  );
+}
+
+function Articles() {
+  return (
+    <div className="bg-gradient-to-t  my-32 from-zinc-900 via-[#3f48788d]  via-50% to-zinc-900 flex ">
+      <ProductArticle />
+      <ProductArticle />
+    </div>
+  );
+}
+
+function ProductArticle() {
+  return (
+    <div className=" my-10 flex h-dvh w-full flex-col items-center justify-center ">
+      <div className=" w-full">
+        <img src="/images/digital/Image_03.png" alt="" />
+      </div>
+      <div className="w-full p-4">
+        <h3 className="my-4 text-2xl font-semibold capitalize">
+          skyTech Omega
+        </h3>
+        <ul className="text-gray-300">
+          <li>
+            <img
+              className="my-2 mr-3 inline  h-6 w-6"
+              src="/images/digital/tik.svg"
+              alt=""
+            />
+            <span>geforce GTX1060 </span>
+          </li>
+          <li>
+            <img
+              className="my-2 mr-3 inline  h-6 w-6"
+              src="/images/digital/tik.svg"
+              alt=""
+            />
+            <span>Intel Corei5 7500</span>
+          </li>
+          <li>
+            <img
+              className="my-2 mr-3 inline  h-6 w-6"
+              src="/images/digital/tik.svg"
+              alt=""
+            />
+            <span>16GB DDR4</span>
+          </li>
+          <li>
+            <img
+              className="my-2 mr-3 inline  h-6 w-6"
+              src="/images/digital/tik.svg"
+              alt=""
+            />
+            <span>512GB SSD</span>
+          </li>
+          <li>
+            <img
+              className="my-2 mr-3 inline  h-6 w-6"
+              src="/images/digital/tik.svg"
+              alt=""
+            />
+            <span>Windows 12!</span>
+          </li>
+        </ul>
+        <Button>Read me</Button>
+      </div>
+    </div>
+  );
+}
+
+function Button({ children }) {
+  return (
+    <button className=" my-6 bg-indigo-600 px-5 py-3 uppercase">
+      {children}
+    </button>
   );
 }
