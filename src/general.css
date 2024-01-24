@@ -4,8 +4,8 @@
 
 
 body{
-    background-color: #000000da;
+    background-color: #000000ca;
 
-    background-color: black;
+ overflow-x: hidden;
     color: #fff;
 }

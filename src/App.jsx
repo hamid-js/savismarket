@@ -307,28 +307,14 @@ function Gallery() {
       />
 
       <div className="grid h-full w-full  grid-cols-2 grid-rows-4 bg-gray-900  ">
-        <div className=" bg-[url(/images/digital/gallery-1.jpg)] over bg h-40 m-1  bg-cover bg-center-center "></div>
-        <div className=" bg-[url(/images/digital/gallery-2.jpg)]  w-full h-40 m-1  bg-cover bg-center ">
-          
-        </div>
-        <div className=" bg-[url(/images/digital/gallery-3.jpg)]  w-full h-40 m-1  bg-cover bg-center ">
-        
-        </div>
-        <div className=" bg-[url(/images/digital/gallery-4.jpg)]  w-full h-40 m-1  bg-cover bg-center ">
-          
-        </div>
-        <div className=" bg-[url(/images/digital/gallery-10.jpg)]  w-full h-40 m-1  bg-cover bg-center ">
-        
-        </div>
-        <div className=" bg-[url(/images/digital/gallery-11.jpg)]  w-full h-40 m-1  bg-cover bg-center ">
-        
-        </div>
-        <div className=" bg-[url(/images/digital/gallery-12.jpg)]  w-full h-40 m-1  bg-cover bg-center ">
-     
-        </div>
-        <div className=" bg-[url(/images/digital/gallery-13.jpg)]  w-full h-40 m-1  bg-cover bg-center ">
-  
-        </div>
+        <div className=" over bg bg-center-center m-1 h-40  bg-[url(/images/digital/gallery-1.jpg)] bg-cover "></div>
+        <div className=" p-1  h-40 w-full bg-[url(/images/digital/gallery-2.jpg)]  bg-cover bg-center "></div>
+        <div className=" p-1  h-40 w-full bg-[url(/images/digital/gallery-3.jpg)]  bg-cover bg-center "></div>
+        <div className=" p-1  h-40 w-full bg-[url(/images/digital/gallery-4.jpg)]  bg-cover bg-center "></div>
+        <div className=" p-1  h-40 w-full bg-[url(/images/digital/gallery-10.jpg)]  bg-cover bg-center "></div>
+        <div className=" p-1  h-40 w-full bg-[url(/images/digital/gallery-11.jpg)]  bg-cover bg-center "></div>
+        <div className=" p-1  h-40 w-full bg-[url(/images/digital/gallery-12.jpg)]  bg-cover bg-center "></div>
+        <div className=" p-1  h-40 w-full bg-[url(/images/digital/gallery-13.jpg)]  bg-cover bg-center "></div>
       </div>
     </div>
   );
