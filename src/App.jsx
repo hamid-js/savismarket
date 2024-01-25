@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <Header />
-      <main className="pb-80">
+      <main className="pb-10">
         <Silder />
         <MobileMenu />
         <ProductsSection />
@@ -20,6 +20,7 @@ function App() {
         <Articles />
         <Gallery />
       </main>
+      <Footer />
     </div>
   );
 }
@@ -84,7 +85,6 @@ function MobileMenu() {
     <div className="fixed bottom-0 h-14 w-full bg-white pt-2  text-sm text-black ">
       <ul className="flex  items-center justify-evenly ">
         <li>
-          {' '}
           <a href="#ff">
             <RiStore3Line className={iconStyle} />
             shop
@@ -119,7 +119,7 @@ function MobileMenu() {
 function ProductCard() {
   return (
     <div className="m-1 w-[47%] text-white ">
-      <div className="flex  h-40 w-full  flex-col justify-between bg-[url(/images/digital/Image_48.jpg)] bg-cover bg-center  ">
+      <div className="flex  h-40 w-full  flex-col justify-between bg-[url(/images/digital/gallery-27.jpg)] bg-cover bg-center  ">
         <div className="mr-2 mt-1 h-8 w-8 self-end  rounded-full bg-black p-2">
           <RiHeartLine className=" " />
         </div>
@@ -138,7 +138,7 @@ function ProductCard() {
 
 function ProductsSection() {
   return (
-    <section className="flex w-full flex-wrap justify-around ">
+    <section className="flex w-full flex-wrap justify-around bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950 ">
       <ProductCard />
       <ProductCard />
       <ProductCard />
@@ -154,7 +154,7 @@ function ProductsSection() {
 
 function ProductCarousel() {
   return (
-    <div className=" flex h-dvh w-full flex-col items-center justify-center bg-gradient-to-t  from-[#3f48788d] via-zinc-900  via-50% to-black pb-20 ">
+    <div className=" flex h-dvh w-full flex-col items-center justify-center bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950">
       <div className=" w-full">
         <img src="/images/digital/Image_03.png" alt="" />
       </div>
@@ -168,7 +168,7 @@ function ProductCarousel() {
 // background-image:-webkit-linear-gradient(bottom , rgb(16, 16, 16) , rgba(0, 0, 0, 0) 51%);background-image:linear-gradient(to top , rgb(16, 16, 16) , rgba(0, 0, 0, 0) 51%)
 function PricingBox() {
   return (
-    <div>
+    <div className='bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950 py-10'>
       <Titles
         title1="play like the pros"
         title2="ready pc builds"
@@ -202,7 +202,6 @@ function PricingTable() {
             <li className="w-full border-t  py-3">rayzen</li>
           </ul>
           <div className=" border-t">
-            {' '}
             <Button>buy now</Button>
           </div>
         </div>
@@ -213,7 +212,8 @@ function PricingTable() {
 
 function Articles() {
   return (
-    <div className="my-32  flex flex-col bg-gradient-to-t  from-zinc-900 via-[#3f48788d] via-50% to-zinc-900  ">
+    <div className=" flex flex-col bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950  ">
+      <Titles />
       <ProductArticle />
       <ProductArticle />
     </div>
@@ -286,7 +286,11 @@ function Button({ children }) {
   );
 }
 
-function Titles({ title1 = '', title2 = '', title3 = '' }) {
+function Titles({
+  title1 = 'play like the pros',
+  title2 = 'ready pc builds',
+  title3 = ' There are many variations of passages of Lorem Ipsum available, butthe majority have suffered alteration in some form, by injected.',
+}) {
   return (
     <div className=" flex flex-col items-center  justify-center gap-4 p-5 text-center  capitalize text-gray-300 ">
       <p className="text-2xl ">{title1}</p>
@@ -298,7 +302,7 @@ function Titles({ title1 = '', title2 = '', title3 = '' }) {
 
 function Gallery() {
   return (
-    <div className="">
+    <div className="bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950">
       <Titles
         title1="play like the pros"
         title2="ready pc builds"
@@ -308,14 +312,67 @@ function Gallery() {
 
       <div className="grid h-full w-full  grid-cols-2 grid-rows-4 bg-gray-900  ">
         <div className=" over bg bg-center-center m-1 h-40  bg-[url(/images/digital/gallery-1.jpg)] bg-cover "></div>
-        <div className=" p-1  h-40 w-full bg-[url(/images/digital/gallery-2.jpg)]  bg-cover bg-center "></div>
-        <div className=" p-1  h-40 w-full bg-[url(/images/digital/gallery-3.jpg)]  bg-cover bg-center "></div>
-        <div className=" p-1  h-40 w-full bg-[url(/images/digital/gallery-4.jpg)]  bg-cover bg-center "></div>
-        <div className=" p-1  h-40 w-full bg-[url(/images/digital/gallery-10.jpg)]  bg-cover bg-center "></div>
-        <div className=" p-1  h-40 w-full bg-[url(/images/digital/gallery-11.jpg)]  bg-cover bg-center "></div>
-        <div className=" p-1  h-40 w-full bg-[url(/images/digital/gallery-12.jpg)]  bg-cover bg-center "></div>
-        <div className=" p-1  h-40 w-full bg-[url(/images/digital/gallery-13.jpg)]  bg-cover bg-center "></div>
+        <div className=" h-40  w-full bg-[url(/images/digital/gallery-2.jpg)] bg-cover  bg-center p-1 "></div>
+        <div className=" h-40  w-full bg-[url(/images/digital/gallery-3.jpg)] bg-cover  bg-center p-1 "></div>
+        <div className=" h-40  w-full bg-[url(/images/digital/gallery-4.jpg)] bg-cover  bg-center p-1 "></div>
+        <div className=" h-40  w-full bg-[url(/images/digital/gallery-10.jpg)] bg-cover  bg-center p-1 "></div>
+        <div className=" h-40  w-full bg-[url(/images/digital/gallery-11.jpg)] bg-cover  bg-center p-1 "></div>
+        <div className=" h-40  w-full bg-[url(/images/digital/gallery-12.jpg)] bg-cover  bg-center p-1 "></div>
+        <div className=" h-40  w-full bg-[url(/images/digital/gallery-13.jpg)] bg-cover  bg-center p-1 "></div>
       </div>
     </div>
+  );
+}
+
+function Footer() {
+  return (
+    <>
+      <div className=" mb-7 w-full bg-black py-7">
+        <div className="mb-7 p-3 text-xl">
+          <h4 className=" font-semibold uppercase ">foote menu</h4>
+          <ul className="capitalize text-gray-300 *:mt-3">
+            <li>
+              <a href="#d">instagram</a>
+            </li>
+            <li>
+              <a href="#d">instagram</a>
+            </li>
+            <li>
+              <a href="#d">instagram</a>
+            </li>
+            <li>
+              <a href="#d">instagram</a>
+            </li>
+            <li>
+              <a href="#d">instagram</a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="p-3  text-xl">
+          <h4 className=" font-semibold uppercase ">foote menu</h4>
+          <ul className="pb-5 capitalize text-gray-300 *:mt-3">
+            <li>
+              <a href="#d">instagram</a>
+            </li>
+            <li>
+              <a href="#d">instagram</a>
+            </li>
+            <li>
+              <a href="#d">instagram</a>
+            </li>
+            <li>
+              <a href="#d">instagram</a>
+            </li>
+            <li>
+              <a href="#d">instagram</a>
+            </li>
+          </ul>
+        </div>
+        <div className="w-full bg-indigo-950 py-3 text-center text-lg capitalize text-indigo-200  ">
+          ❤️ created by hamid mohamadi ❤️
+        </div>
+      </div>
+    </>
   );
 }
