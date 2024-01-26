@@ -1,10 +1,17 @@
+/* eslint-disable no-unused-vars */
+import { useState } from 'react';
 import {
   RiBarChartBoxLine,
+  RiCustomerService2Fill,
+  RiHeadphoneLine,
   RiHeartLine,
   RiMenuFill,
+  RiRoadMapLine,
+  RiRocketFill,
   RiShoppingCartLine,
   RiStore3Line,
   RiUserLine,
+  RiVerifiedBadgeFill,
 } from 'react-icons/ri';
 
 function App() {
@@ -14,7 +21,10 @@ function App() {
       <main className="pb-10">
         <Silder />
         <MobileMenu />
+        <Services />
+        <Auctions />
         <ProductsSection />
+        <LaptopsSection />
         <ProductCarousel />
         <PricingBox />
         <Articles />
@@ -116,9 +126,11 @@ function MobileMenu() {
   );
 }
 
-function ProductCard() {
+function ProductCard({ isInAuctions }) {
   return (
-    <div className="m-1 w-[47%] text-white ">
+    <div
+      className={`m-1 w-[47%] p-2 text-white ${isInAuctions ? 'border border-gray-600' : ''}`}
+    >
       <div className="flex  h-40 w-full  flex-col justify-between bg-[url(/images/digital/gallery-27.jpg)] bg-cover bg-center  ">
         <div className="mr-2 mt-1 h-8 w-8 self-end  rounded-full bg-black p-2">
           <RiHeartLine className=" " />
@@ -127,11 +139,37 @@ function ProductCard() {
           <RiShoppingCartLine className="-scale-x-100  pr-1  pt-2 text-2xl  " />
         </div>
       </div>
-      <div className="flex flex-col items-center text-xs">
-        <p className="font-semibold">dasdasasda</p>
-        <p className="text-gray-300">sdsdas</p>
-        <p className="text-blue-500">$65.46</p>
-      </div>
+      {isInAuctions ? (
+        <div className="flex flex-col items-center justify-between gap-y-2 text-center capitalize">
+          <p>Time left</p>
+
+          <div className="flex w-full items-center justify-evenly border-b border-gray-700 pb-1">
+            <div>
+              175 <div className="text-[10px]  text-gray-400">days</div>
+            </div>
+            <div>
+              13<div className="text-[10px]  text-gray-400">hours</div>
+            </div>
+            <div>
+              44<div className="text-[10px]  text-gray-400">minutes</div>
+            </div>
+            <div>
+              55<div className="text-[10px]  text-gray-400">seconds</div>
+            </div>
+          </div>
+
+          <p className="font-semibold">duel sim Smartphone</p>
+          <p className="text-sm font-light *:text-lg *:font-semibold">
+            current bid: <span>$411.00</span>
+          </p>
+        </div>
+      ) : (
+        <div className="flex flex-col items-center text-xs">
+          <p className="font-semibold">Smartphone</p>
+          <p className="text-gray-300">duel sim</p>
+          <p className="text-blue-500">$65.46</p>
+        </div>
+      )}
     </div>
   );
 }
@@ -168,7 +206,7 @@ function ProductCarousel() {
 // background-image:-webkit-linear-gradient(bottom , rgb(16, 16, 16) , rgba(0, 0, 0, 0) 51%);background-image:linear-gradient(to top , rgb(16, 16, 16) , rgba(0, 0, 0, 0) 51%)
 function PricingBox() {
   return (
-    <div className='bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950 py-10'>
+    <div className="bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950 py-10">
       <Titles
         title1="play like the pros"
         title2="ready pc builds"
@@ -369,6 +407,7 @@ function Footer() {
             </li>
           </ul>
         </div>
+        <Subscribe />
         <div className="w-full bg-indigo-950 py-3 text-center text-lg capitalize text-indigo-200  ">
           ❤️ created by hamid mohamadi ❤️
         </div>
@@ -376,3 +415,76 @@ function Footer() {
     </>
   );
 }
+
+function LaptopsSection() {
+  return (
+    <div className="bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950">
+      {/* pro box */}
+      <ProductCard />
+    </div>
+  );
+}
+function Subscribe() {
+  return (
+    <div className=" bg-inherit pb-10">
+      <form className="p-2">
+        <p className="px-2  py-5 text-xl font-bold capitalize text-gray-200 ">
+          subscribe to our Newsletter
+        </p>
+        <input
+          className="rounded-l-full  py-[7px] pl-8 pr-24 outline-none shadow-sm shadow-gray-50"
+          placeholder="enter your email"
+          type="text"
+        />
+
+        <button className="-m-10 rounded-full  bg-gray-600 px-7 py-[9px] pt-[8px] ">
+          Submit
+        </button>
+      </form>
+    </div>
+  );
+}
+function Services() {
+  return (
+    <div className="bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950">
+      <div className="py-10 text-xl capitalize  text-gray-200  *:my-8 ">
+        <div>
+          <RiCustomerService2Fill className="mr-2 inline text-6xl text-indigo-500 " />
+          <span> call center</span>
+        </div>
+
+        <div>
+          <RiRoadMapLine className="mr-2 inline text-6xl text-indigo-500 " />
+          <span> order tracking</span>
+        </div>
+        <div>
+          <RiRocketFill className="mr-2 inline text-6xl text-indigo-500 " />
+          <span> fast delivery</span>
+        </div>
+        <div>
+          <RiVerifiedBadgeFill className="mr-2 inline text-6xl text-indigo-500 " />
+          <span> instant buying</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+function Auctions() {
+  return (
+    <div className="bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950 py-10">
+      <div></div>
+      <h4 className="m-auto my-5 w-2/3 border-b py-5 text-center text-xl uppercase">
+        Latest auctions
+      </h4>
+      <div className="flex w-full flex-wrap justify-around">
+        <ProductCard isInAuctions />
+        <ProductCard isInAuctions />
+      </div>
+    </div>
+  );
+}
+
+// create LaptopsSection & 
+// sort images
+// create datas
+// handel menu js
