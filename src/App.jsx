@@ -54,7 +54,7 @@ function Header() {
 
 function Silder() {
   return (
-    <section className='  h-dvh w-full bg-[url("/images/bg_dark1.jpg")] bg-cover bg-center bg-no-repeat '>
+    <section className='  h-auto pb-14 w-full bg-[url("/images/bg_dark1.jpg")] bg-cover bg-center bg-no-repeat '>
       <div className="relative">
         <div>
           <button className="absolute left-0 top-56 cursor-pointer border-none bg-none text-6xl  font-extralight ">
@@ -65,7 +65,7 @@ function Silder() {
           </button>
         </div>
         <div className="flex flex-col gap-1 px-5 pt-5  ">
-          <img src="/images/digital/Image_09.png" alt="" />
+          <img src="/images/digital/case21.png" alt="" />
           {/* <div className="text-2xl font-bold capitalize tracking-wide">
             The Bike is <span className="text-orange-400">based</span> on the
             project concept.
@@ -192,7 +192,7 @@ function ProductCarousel() {
   return (
     <div className=" flex h-dvh w-full flex-col items-center justify-center bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950">
       <div className=" w-full">
-        <img src="/images/digital/Image_03.png" alt="" />
+        <img src="/images/digital/case18.png" alt="" />
       </div>
       <div className="w-1/4 bg-black text-center text-5xl font-extralight">
         <button className="mb-2 pr-4"> &#8249;</button>
@@ -226,8 +226,8 @@ function PricingTable() {
         premium build
       </p>
       <div className="mx-5 border-2 border-indigo-600  bg-gray-900">
-        <div className=" bg-[url(/images/digital/Image_074.jpg)]  bg-cover bg-center py-4 font-bold">
-          <div className="text-4xl">$2500</div>
+        <div className=" bg-[url(/images/digital/gallery-9.jpg)]  brightness-90 bg-cover bg-center py-4 font-bold">
+          <div className="text-5xl    ">$2500</div>
           <div className="text-gray-300 ">per month</div>
         </div>
         <div>
@@ -260,7 +260,7 @@ function ProductArticle() {
   return (
     <div className="  flex  w-full flex-col items-center justify-center ">
       <div className=" w-full">
-        <img src="/images/digital/Image_03.png" alt="" />
+        <img src="/images/digital/case2.png" alt="" />
       </div>
       <div className="w-full p-4">
         <h3 className="my-4 text-2xl font-semibold capitalize">
@@ -443,7 +443,7 @@ function Subscribe() {
           subscribe to our Newsletter
         </p>
         <input
-          className="rounded-l-full  py-[7px] pl-8 pr-24 shadow-sm shadow-gray-50 outline-none"
+          className="rounded-l-full  py-[7px] pl-8 w-4/5 shadow-sm shadow-gray-50 outline-none"
           placeholder="enter your email"
           type="text"
         />
@@ -458,7 +458,7 @@ function Subscribe() {
 function Services() {
   return (
     <div className="bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950">
-      <div className="py-10 text-xl capitalize  text-gray-200  *:my-8 ">
+      <div className="py-10 px-3 text-xl capitalize  text-gray-200  *:my-8 ">
         <div>
           <RiCustomerService2Fill className="mr-2 inline text-6xl text-indigo-500 " />
           <span> call center</span>
@@ -543,8 +543,9 @@ function AllCategories() {
     </div>
   );
 }
-
-// category box image images
-// create search tab
+// complate all catgory box
+// edit product box
 // create datas
+// handel maps on data 
+// create search tab
 // handel menu js
