@@ -1,9 +1,7 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react';
 import {
   RiBarChartBoxLine,
   RiCustomerService2Fill,
-  RiHeadphoneLine,
   RiHeartLine,
   RiMenuFill,
   RiRoadMapLine,
@@ -23,7 +21,7 @@ function App() {
         <MobileMenu />
         <Services />
         <Auctions />
-        <ProductsSection />
+        <AllCategories />
         <LaptopsSection />
         <ProductCarousel />
         <PricingBox />
@@ -174,21 +172,21 @@ function ProductCard({ isInAuctions }) {
   );
 }
 
-function ProductsSection() {
-  return (
-    <section className="flex w-full flex-wrap justify-around bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950 ">
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-    </section>
-  );
-}
+// function ProductsSection() {
+//   return (
+//     <section className="flex w-full flex-wrap justify-around bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950 ">
+//       <ProductCard />
+//       <ProductCard />
+//       <ProductCard />
+//       <ProductCard />
+//       <ProductCard />
+//       <ProductCard />
+//       <ProductCard />
+//       <ProductCard />
+//       <ProductCard />
+//     </section>
+//   );
+// }
 
 function ProductCarousel() {
   return (
@@ -418,9 +416,22 @@ function Footer() {
 
 function LaptopsSection() {
   return (
-    <div className="bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950">
-      {/* pro box */}
-      <ProductCard />
+    <div className="bg-gradient-to-t from-zinc-950  via-zinc-800 via-50% to-zinc-950 p-5">
+      <div className="flex h-48 w-full flex-col items-center justify-center  gap-y-5 bg-gradient-to-tr from-blue-700 via-blue-500 to-blue-700  uppercase">
+        <h2 className="font-bold ">phones</h2>
+        <div>
+          <span>12 </span>Products
+        </div>
+        <a className="rounded-full bg-cyan-400 px-4 py-1" href="#ds">
+          view all items
+        </a>
+      </div>
+      <div className="flex w-full flex-wrap justify-around bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950 ">
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
     </div>
   );
 }
@@ -432,7 +443,7 @@ function Subscribe() {
           subscribe to our Newsletter
         </p>
         <input
-          className="rounded-l-full  py-[7px] pl-8 pr-24 outline-none shadow-sm shadow-gray-50"
+          className="rounded-l-full  py-[7px] pl-8 pr-24 shadow-sm shadow-gray-50 outline-none"
           placeholder="enter your email"
           type="text"
         />
@@ -484,7 +495,56 @@ function Auctions() {
   );
 }
 
-// create LaptopsSection & 
-// sort images
+function CategoryBox({  title = '', count = 0, color = '' ,url = '' }) {
+  const boxStyle = {
+    backgroundImage: `url(${url})`,
+    backgroundColor: `${color}`
+  }
+  return (
+    <div>
+      <div style={boxStyle}
+        className={`my-3 flex h-48 w-full flex-col items-start justify-center gap-y-5  bg-[url(/images/digital/headphone-1.png)] bg-blue-500 bg-contain bg-right bg-no-repeat uppercase`}
+      >
+        <h2 className="font-bold ml-10 ">{title}</h2>
+        <div className='ml-10'>
+          <span className="font-bold">{count} </span>Products
+        </div>
+        <a style={{backgroundColor: `${color}`}} className="rounded-full border-2   px-4 ml-4 py-1" href="#ds">
+          view all items
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function AllCategories() {
+  return (
+    <div className="p-4">
+      <CategoryBox
+        title="headphones"
+        count={10}
+        url="/images/digital/headphone-1.png"
+        color="blue"
+      />
+      <CategoryBox
+        title="laptops"
+        count={10}
+        url="/images/digital/laptop-1.png"
+
+        color="red"
+      />
+      <CategoryBox
+        title="laptops"
+        count={10}
+        url="/images/digital/laptop-1.png"
+
+        color="green"
+      />
+    </div>
+  );
+}
+
+// category box image images
+// create search tab
 // create datas
 // handel menu js
