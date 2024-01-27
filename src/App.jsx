@@ -54,7 +54,7 @@ function Header() {
 
 function Silder() {
   return (
-    <section className='  h-auto pb-14 w-full bg-[url("/images/bg_dark1.jpg")] bg-cover bg-center bg-no-repeat '>
+    <section className='  h-auto w-full bg-[url("/images/bg_dark1.jpg")] bg-cover bg-center bg-no-repeat pb-14 '>
       <div className="relative">
         <div>
           <button className="absolute left-0 top-56 cursor-pointer border-none bg-none text-6xl  font-extralight ">
@@ -90,7 +90,7 @@ function Silder() {
 function MobileMenu() {
   const iconStyle = 'text-2xl text-center m-auto';
   return (
-    <div className="fixed z-40 bottom-0 h-14 w-full bg-white pt-2  text-sm text-black ">
+    <div className="fixed bottom-0 z-40 h-14 w-full bg-white pt-2  text-sm text-black ">
       <ul className="flex  items-center justify-evenly ">
         <li>
           <a href="#ff">
@@ -226,7 +226,7 @@ function PricingTable() {
         premium build
       </p>
       <div className="mx-5 border-2 border-indigo-600  bg-gray-900">
-        <div className=" bg-[url(/images/digital/gallery-9.jpg)] -z-10 brightness-90 bg-cover bg-center py-4 font-bold">
+        <div className=" -z-10 bg-[url(/images/digital/gallery-9.jpg)] bg-cover bg-center py-4 font-bold brightness-90">
           <div className="text-5xl    ">$2500</div>
           <div className="text-gray-300 ">per month</div>
         </div>
@@ -363,7 +363,10 @@ function Gallery() {
 function Footer() {
   return (
     <>
-      <div className=" mb-7 w-full bg-black py-7">
+      <div className=" mb-14 w-full bg-black py-1">
+        <div className="bg-indigo-900  rounded-sm mx-1 ">
+          <Inputbox button="Search" title="" placeholder="Search products.." />
+        </div>
         <div className="mb-7 p-3 text-xl">
           <h4 className=" font-semibold uppercase ">foote menu</h4>
           <ul className="capitalize text-gray-300 *:mt-3">
@@ -405,7 +408,11 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <Subscribe />
+        <Inputbox
+          button="Submit"
+          title="subscribe to our Newsletter"
+          placeholder='"enter your email"'
+        />
         <div className="w-full bg-indigo-950 py-3 text-center text-lg capitalize text-indigo-200  ">
           ❤️ created by hamid mohamadi ❤️
         </div>
@@ -435,21 +442,25 @@ function LaptopsSection() {
     </div>
   );
 }
-function Subscribe() {
+function Inputbox({ title = '', button = '', placeholder = '' }) {
   return (
-    <div className=" bg-inherit pb-10">
+    <div className=" py-4">
       <form className="p-2">
-        <p className="px-2  py-5 text-xl font-bold capitalize text-gray-200 ">
-          subscribe to our Newsletter
-        </p>
+        {title ? (
+          <p className="px-2  py-5 text-xl font-bold capitalize text-gray-200 ">
+            {title}
+          </p>
+        ) : (
+          ''
+        )}
         <input
-          className="rounded-l-full  py-[7px] pl-8 w-4/5 shadow-sm shadow-gray-50 outline-none"
-          placeholder="enter your email"
+          className="w-4/5  rounded-l-full py-[7px] pl-8 shadow-sm shadow-gray-50 outline-none"
+          placeholder={placeholder}
           type="text"
         />
 
-        <button className="-m-10 rounded-full  bg-gray-600 px-7 py-[9px] pt-[8px] ">
-          Submit
+        <button className="-m-10 rounded-full  bg-indigo-600 px-7 py-[9px] pt-[8px] ">
+          {button}
         </button>
       </form>
     </div>
@@ -458,7 +469,7 @@ function Subscribe() {
 function Services() {
   return (
     <div className="bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950">
-      <div className="py-10 px-3 text-xl capitalize  text-gray-200  *:my-8 ">
+      <div className="px-3 py-10 text-xl capitalize  text-gray-200  *:my-8 ">
         <div>
           <RiCustomerService2Fill className="mr-2 inline text-6xl text-indigo-500 " />
           <span> call center</span>
@@ -495,21 +506,26 @@ function Auctions() {
   );
 }
 
-function CategoryBox({  title = '', count = 0, color = '' ,url = '' }) {
+function CategoryBox({ title = '', count = 0, color = '', url = '' }) {
   const boxStyle = {
     backgroundImage: `url(${url})`,
-    backgroundColor: `${color}`
-  }
+    backgroundColor: `${color}`,
+  };
   return (
     <div>
-      <div style={boxStyle}
-        className={`my-3 flex h-48 w-full flex-col items-start justify-center gap-y-5  bg-[url(/images/digital/headphone-1.png)] bg-blue-500 bg-contain bg-right bg-no-repeat uppercase`}
+      <div
+        style={boxStyle}
+        className={`my-3 flex h-48 w-full flex-col items-start justify-center gap-y-5  bg-blue-500 bg-[url(/images/digital/headphone-1.png)] bg-contain bg-right bg-no-repeat uppercase`}
       >
-        <h2 className="font-bold ml-10 ">{title}</h2>
-        <div className='ml-10'>
+        <h2 className="ml-10 font-bold ">{title}</h2>
+        <div className="ml-10">
           <span className="font-bold">{count} </span>Products
         </div>
-        <a style={{backgroundColor: `${color}`}} className="rounded-full border-2   px-4 ml-4 py-1" href="#ds">
+        <a
+          style={{ backgroundColor: `${color}` }}
+          className="ml-4 rounded-full   border-2 px-4 py-1"
+          href="#ds"
+        >
           view all items
         </a>
       </div>
@@ -530,37 +546,32 @@ function AllCategories() {
         title="laptops"
         count={23}
         url="/images/digital/laptop-1.png"
-
         color="red"
       />
       <CategoryBox
         title="phones"
         count={15}
         url="/images/digital/phone5.png"
-
         color="gold"
       />
-    
+
       <CategoryBox
         title="Computers"
         count={7}
         url="/images/digital/case19.png"
-
         color="green"
       />
-        <CategoryBox
+      <CategoryBox
         title="watches"
         count={33}
         url="/images/digital/watch-3.png"
-
         color="purple"
       />
     </div>
   );
 }
-// complate all catgory box
-// edit product box
-// create datas
-// handel maps on data 
 // create search tab
+// create datas
+// handel maps on data
+// edit product box
 // handel menu js
