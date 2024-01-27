@@ -1,4 +1,6 @@
-export default function Silder() {
+export default function HiroSilder() {
+
+  // todo create 3 slide for this carosel slider
   return (
     <section className='  h-auto w-full bg-[url("/images/bg_dark1.jpg")] bg-cover bg-center bg-no-repeat pb-14 '>
       <div className="relative">
