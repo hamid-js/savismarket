@@ -37,7 +37,7 @@ export default App;
 
 function Header() {
   return (
-    <header className="fixed z-10  flex  w-full items-center  justify-between p-3 text-2xl  text-white ">
+    <header className="fixed z-20  flex  w-full items-center  justify-between p-3 text-2xl  text-white ">
       <div>
         <RiMenuFill />
       </div>
@@ -90,7 +90,7 @@ function Silder() {
 function MobileMenu() {
   const iconStyle = 'text-2xl text-center m-auto';
   return (
-    <div className="fixed bottom-0 h-14 w-full bg-white pt-2  text-sm text-black ">
+    <div className="fixed z-40 bottom-0 h-14 w-full bg-white pt-2  text-sm text-black ">
       <ul className="flex  items-center justify-evenly ">
         <li>
           <a href="#ff">
@@ -226,7 +226,7 @@ function PricingTable() {
         premium build
       </p>
       <div className="mx-5 border-2 border-indigo-600  bg-gray-900">
-        <div className=" bg-[url(/images/digital/gallery-9.jpg)]  brightness-90 bg-cover bg-center py-4 font-bold">
+        <div className=" bg-[url(/images/digital/gallery-9.jpg)] -z-10 brightness-90 bg-cover bg-center py-4 font-bold">
           <div className="text-5xl    ">$2500</div>
           <div className="text-gray-300 ">per month</div>
         </div>
@@ -528,17 +528,32 @@ function AllCategories() {
       />
       <CategoryBox
         title="laptops"
-        count={10}
+        count={23}
         url="/images/digital/laptop-1.png"
 
         color="red"
       />
       <CategoryBox
-        title="laptops"
-        count={10}
-        url="/images/digital/laptop-1.png"
+        title="phones"
+        count={15}
+        url="/images/digital/phone5.png"
+
+        color="gold"
+      />
+    
+      <CategoryBox
+        title="Computers"
+        count={7}
+        url="/images/digital/case19.png"
 
         color="green"
+      />
+        <CategoryBox
+        title="watches"
+        count={33}
+        url="/images/digital/watch-3.png"
+
+        color="purple"
       />
     </div>
   );
