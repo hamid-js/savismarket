@@ -3,9 +3,11 @@ import {
   RiBarChartBoxLine,
   RiCustomerService2Fill,
   RiHeartLine,
+  RiListCheck3,
   RiMenuFill,
   RiRoadMapLine,
   RiRocketFill,
+  RiSearchLine,
   RiShoppingCartLine,
   RiStore3Line,
   RiUserLine,
@@ -127,18 +129,26 @@ function MobileMenu() {
 function ProductCard({ isInAuctions }) {
   return (
     <div
-      className={`m-1 w-[47%] p-2 text-white ${isInAuctions ? 'border border-gray-600' : ''}`}
+      className={`  mb-3 w-auto  min-w-64 text-white ${isInAuctions ? 'border border-gray-600' : 'border border-gray-600'}`}
     >
-      <div className="flex  h-40 w-full  flex-col justify-between bg-[url(/images/digital/gallery-27.jpg)] bg-cover bg-center  ">
-        <div className="mr-2 mt-1 h-8 w-8 self-end  rounded-full bg-black p-2">
-          <RiHeartLine className=" " />
+      <div className="flex   h-44 w-full  flex-col justify-between items-end  bg-[url(/images/digital/gallery-27.jpg)] bg-cover bg-center  ">
+        <div className="mr-2 mt-1 h-7 w-7  rounded-full bg-black flex items-center justify-center ">
+          <RiHeartLine />
         </div>
-        <div className="text- h-7 w-7 rounded-sm bg-blue-500">
+        <div className="mr-2 mt-1 h-8 w-8  rounded-full bg-black flex items-center justify-center">
+        <RiSearchLine />
+
+        </div>
+        <div className="mr-2 mt-1 h-8 w-8  rounded-full bg-black flex items-center justify-center">
+          <RiListCheck3  />
+        </div>
+        <div className="text- h-8 w-8 self-start rounded-sm bg-blue-500">
           <RiShoppingCartLine className="-scale-x-100  pr-1  pt-2 text-2xl  " />
         </div>
       </div>
+      <div className='bg-zinc-800 mt-2'>
       {isInAuctions ? (
-        <div className="flex flex-col items-center justify-between gap-y-2 text-center capitalize">
+        <div className="flex  flex-col items-center justify-between gap-y-2 text-center capitalize">
           <p>Time left</p>
 
           <div className="flex w-full items-center justify-evenly border-b border-gray-700 pb-1">
@@ -162,12 +172,13 @@ function ProductCard({ isInAuctions }) {
           </p>
         </div>
       ) : (
-        <div className="flex flex-col items-center text-xs">
-          <p className="font-semibold">Smartphone</p>
-          <p className="text-gray-300">duel sim</p>
-          <p className="text-blue-500">$65.46</p>
+        <div className="flex flex-col items-center  ">
+          <p className="font-semibold text-lg mt-1">Smartphone</p>
+          <p className="text-gray-300 text-sm">duel sim</p>
+          <p className="text-blue-500 font-bold text-xl tracking-widest">$65.46</p>
         </div>
       )}
+      </div>
     </div>
   );
 }
@@ -364,7 +375,7 @@ function Footer() {
   return (
     <>
       <div className=" mb-14 w-full bg-black py-1">
-        <div className="bg-indigo-900  rounded-sm mx-1 ">
+        <div className="mx-1  rounded-sm bg-indigo-900 ">
           <Inputbox button="Search" title="" placeholder="Search products.." />
         </div>
         <div className="mb-7 p-3 text-xl">
@@ -424,7 +435,7 @@ function Footer() {
 function LaptopsSection() {
   return (
     <div className="bg-gradient-to-t from-zinc-950  via-zinc-800 via-50% to-zinc-950 p-5">
-      <div className="flex h-48 w-full flex-col items-center justify-center  gap-y-5 bg-gradient-to-tr from-blue-700 via-blue-500 to-blue-700  uppercase">
+      <div className="flex mb-2 h-48 w-full flex-col items-center justify-center  gap-y-5 bg-gradient-to-tr from-blue-700 via-blue-500 to-blue-700  uppercase">
         <h2 className="font-bold ">phones</h2>
         <div>
           <span>12 </span>Products
@@ -501,6 +512,7 @@ function Auctions() {
       <div className="flex w-full flex-wrap justify-around">
         <ProductCard isInAuctions />
         <ProductCard isInAuctions />
+        <ProductCard isInAuctions />
       </div>
     </div>
   );
@@ -570,8 +582,6 @@ function AllCategories() {
     </div>
   );
 }
-// create search tab
-// create datas
+// create datas for{}
 // handel maps on data
-// edit product box
 // handel menu js
