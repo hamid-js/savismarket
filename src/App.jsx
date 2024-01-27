@@ -127,15 +127,16 @@ function MobileMenu() {
 }
 
 function ProductCard({ isInAuctions }) {
-  const hoverStyle = 'hover:scale-125  hover:bg-indigo-700 hover:text-green-500';
+  const hoverStyle =
+    'hover:scale-125  hover:bg-indigo-700 hover:text-green-500';
   return (
     <div
       className={` mb-3  w-64 text-white ${isInAuctions ? 'border border-gray-600' : 'border border-gray-600'}`}
     >
       <div className="h-52 cursor-pointer bg-[url(/images/digital/gallery-27.jpg)] bg-cover  bg-center bg-no-repeat  duration-500 hover:bg-[url(/images/digital/gallery-26.jpg)]">
         <div
-          className="flex h-5/6  w-full  flex-col items-end justify-center gap-4 
-         *:mr-2  *:flex *:h-8  *:w-8 *:items-center *:justify-center *:rounded-full *:bg-black *:duration-300  "
+          className="flex h-5/6  w-full  flex-col items-end justify-center gap-5 
+         text-lg  *:mr-2 *:flex  *:h-9 *:w-9 *:items-center *:justify-center *:rounded-full *:bg-black *:duration-300 "
         >
           <div className={hoverStyle}>
             <RiHeartLine />
@@ -148,7 +149,9 @@ function ProductCard({ isInAuctions }) {
           </div>
         </div>
         <div className="h-1/6">
-          <div className={`h-full mt-1  w-9 rounded-sm bg-blue-500 duration-300 ${hoverStyle}`}>
+          <div
+            className={`mt-1 h-full  w-9 rounded-sm bg-blue-500 duration-300 ${hoverStyle}`}
+          >
             <RiShoppingCartLine className="-scale-x-100  pr-1  pt-2 text-3xl  " />
           </div>
         </div>
@@ -231,7 +234,7 @@ function PricingBox() {
         title3=" There are many variations of passages of Lorem Ipsum available, but
           the majority have suffered alteration in some form, by injected."
       />
-      <div>
+      <div className="flex  flex-wrap items-center justify-center">
         <PricingTable />
         <PricingTable />
         <PricingTable />
@@ -241,7 +244,7 @@ function PricingBox() {
 }
 function PricingTable() {
   return (
-    <div className="item-center mb-14 flex  w-full flex-col justify-center gap-2 text-center ">
+    <div className="item-center mb-14 flex  w-80 flex-col  justify-center gap-2 text-center ">
       <p className="py-2 text-xl font-semibold uppercase tracking-widest">
         premium build
       </p>
