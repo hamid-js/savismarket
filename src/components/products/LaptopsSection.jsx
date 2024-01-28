@@ -1,22 +1,40 @@
-import  ProductCard  from './ProductCard';
+import ProductCard from './ProductCard';
+
+import { laptops } from '../../data';
+import CategoryBox from '../category/CategoryBox';
 
 export default function LaptopsSection() {
+  const category = laptops.length > 0 ? laptops[0].category : ' ';
+  const count = laptops.length;
   return (
     <div className="bg-gradient-to-t from-zinc-950  via-zinc-800 via-50% to-zinc-950 p-5">
-      <div className="mb-2 flex h-48 w-full flex-col items-center justify-center  gap-y-5 bg-gradient-to-tr from-blue-700 via-blue-500 to-blue-700  uppercase">
-        <h2 className="font-bold ">phones</h2>
+    <CategoryBox
+        title={category}
+        count={count}
+        url="/images/digital/laptop-1.png"
+        color="indigo"
+        btnColor=''
+      />
+      {/* <div className="mb-2 flex h-48 w-full flex-col items-center justify-center  gap-y-5 bg-gradient-to-tr from-blue-700 via-blue-500 to-blue-700  uppercase">
+        <h2 className="font-bold ">{category}</h2>
         <div>
-          <span>12 </span>Products
+          <span> {count} </span>Products
         </div>
         <a className="rounded-full bg-cyan-400 px-4 py-1" href="#ds">
           view all items
         </a>
-      </div>
+      </div> */}
       <div className="flex w-full flex-wrap justify-around bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950 ">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {laptops.map((laptop) => (
+          <ProductCard
+            key={laptop.id}
+            name={laptop.name}
+            price={laptop.price}
+            firstImage={laptop.firstImage}
+            hoverImage={laptop.hoverImage}
+            details={laptop.details}
+          />
+        ))}
       </div>
     </div>
   );

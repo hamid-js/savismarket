@@ -5,14 +5,14 @@ import {
   RiShoppingCartLine,
 } from 'react-icons/ri';
 
-export default function ProductCard({ isInAuctions }) {
+export default function ProductCard({ isInAuctions ,name, price ,firstImage,hoverImage, details , count }) {
   const hoverStyle =
     'hover:scale-125  hover:bg-indigo-700 hover:text-green-500';
   return (
     <div
       className={` mb-3  w-64 text-white ${isInAuctions ? 'border border-gray-600' : 'border border-gray-600'}`}
     >
-      <div className="h-52 cursor-pointer bg-[url(/images/digital/gallery-27.jpg)] bg-cover  bg-center bg-no-repeat  duration-500 hover:bg-[url(/images/digital/gallery-26.jpg)]">
+      <div className={`h-52 cursor-pointer bg-[url(${firstImage})] bg-cover  bg-center bg-no-repeat  duration-500 hover:bg-[url(${hoverImage})]`}>
         <div
           className="flex h-5/6  w-full  flex-col items-end justify-center gap-5 
          text-lg  *:mr-2 *:flex  *:h-9 *:w-9 *:items-center *:justify-center *:rounded-full *:bg-black *:duration-300 "
@@ -55,17 +55,17 @@ export default function ProductCard({ isInAuctions }) {
               </div>
             </div>
 
-            <p className="font-semibold">duel sim Smartphone</p>
+            <p className="font-semibold">{name}</p>
             <p className="text-sm font-light *:text-lg *:font-semibold">
-              current bid: <span>$411.00</span>
+              current bid: <span>${price}</span>
             </p>
           </div>
         ) : (
           <div className="flex flex-col items-center  ">
-            <p className="mt-1 text-lg font-semibold">Smartphone</p>
-            <p className="text-sm text-gray-300">duel sim</p>
+            <p className="mt-1 text-lg font-semibold">{name}</p>
+            <p className="text-sm text-gray-300">{details}</p>
             <p className="text-xl font-bold tracking-widest text-blue-500">
-              $65.46
+              ${price}
             </p>
           </div>
         )}

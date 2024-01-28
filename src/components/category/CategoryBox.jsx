@@ -3,6 +3,7 @@ export default function CategoryBox({
   count = 0,
   color = '',
   url = '',
+  btnColor =""
 }) {
   const boxStyle = {
     backgroundImage: `url(${url})`,
@@ -19,12 +20,13 @@ export default function CategoryBox({
           <span className="font-bold">{count} </span>Products
         </div>
         <a
-          style={{ backgroundColor: `${color}` }}
+          style={{ backgroundColor: `${btnColor}` }}
           className="ml-4 rounded-full   border-2 px-4 py-1"
           href="#ds"
         >
           view all items
         </a>
+      
       </div>
     </div>
   );
