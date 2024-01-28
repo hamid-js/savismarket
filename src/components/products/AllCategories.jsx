@@ -1,4 +1,4 @@
-import  CategoryBox  from './CategoryBox';
+import CategoryBox from '../products/CategoryBox';
 
 export default function AllCategories() {
   return (
