@@ -7,7 +7,6 @@ import PricingBox from './components/pricing/PricingBox';
 import ArticlesCards from './components/articlesCards/ArticlesCards';
 import Gallery from './components/gallery/Gallery';
 import Footer from './components/footer/Footer';
-import AllSections from './components/products/allSections';
 import Services from './components/services/Services';
 import Auctions from './components/products/Auctions';
 import AllCategories from './components/products/AllCategories';
@@ -20,10 +19,9 @@ function App() {
         <HiroSilder /> {/* TODO-1 logic */}
         <MobileMenu />
         <Services />
-        <Auctions /> {/* TODO-2 data map */}
+        <Auctions /> 
         <AllCategories />
-        <AllSections /> {/* TODO-3 create 3 sections*/}{' '}
-        {/*TODO-4 create dataM */}
+       
         <ProductSlider /> {/* TODO-5 */}
         <PricingBox /> {/* TODO-6  dataM */}
         <ArticlesCards /> {/* TODO-7 */}

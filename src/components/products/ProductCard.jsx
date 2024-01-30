@@ -23,14 +23,13 @@ export default function ProductCard({
 
   return (
     <div
-      className={` mb-3  w-56 bg-white text-white ${isInAuctions ? 'border border-gray-600' : 'border border-gray-600'}`}
+      className={` mb-3  w-56  text-white ${isInAuctions ? 'border border-gray-600' : 'border border-gray-600'}`}
     >
       <div
         style={{
           backgroundImage: `url(${isHovered ? hoverImage : firstImage})`,
-        
         }}
-        className={`relative h-52 cursor-pointer bg-opacity-25  bg-center bg-no-repeat duration-700 bg-[length:200px_200px] `}
+        className={`relative h-52 cursor-pointer bg-white   bg-[length:200px_200px] bg-center bg-no-repeat duration-1000 `}
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
       >
@@ -40,8 +39,8 @@ export default function ProductCard({
           className={`absolute h-full w-full duration-500 transition-all  `}  
         /> */}
         <div
-          className="h-6/6 z-10  flex w-full  flex-col items-end justify-center gap-5
-         text-lg *:mr-2 *:flex  *:h-9 *:w-9 *:items-center *:justify-center *:rounded-full *:bg-black *:duration-300  "
+          className="h-6/6 z-10  flex w-full  flex-col items-end justify-center gap-3
+         text-lg *:mr-2 *:mt-2 *:flex  *:h-9 *:w-9 *:items-center *:justify-center *:rounded-full *:bg-black *:duration-300  "
         >
           <div className={hoverStyle}>
             <RiHeartLine />
@@ -68,7 +67,7 @@ export default function ProductCard({
           <div></div>
         </div>
       </div>
-      <div className="mt-1 bg-zinc-800">
+      <div className="mt-1">
         {isInAuctions === true ? (
           <div className="flex  flex-col items-center justify-between gap-y-2 text-center capitalize">
             <p>Time left</p>
@@ -94,10 +93,14 @@ export default function ProductCard({
             </p>
           </div>
         ) : (
-          <div className="flex flex-col items-center  ">
-            <p className="mt-1 text-lg font-semibold">{name}</p>
-            <p className="text-sm text-gray-300">{details}</p>
-            <p className="text-xl font-bold tracking-widest text-blue-500">
+          <div className="flex flex-col items-center gap-1 pb-2  ">
+            <p className="mt-1 text-lg font-semibold  duration-300 z-10 hover:scale-125 ">
+              {name}
+            </p>
+            <p className="text-sm text-gray-300 duration-300 hover:scale-125">
+              {details}
+            </p>
+            <p className="text-xl font-bold tracking-widest text-blue-500 duration-300 hover:scale-125">
               ${price}
             </p>
           </div>
