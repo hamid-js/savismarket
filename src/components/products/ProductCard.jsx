@@ -69,7 +69,7 @@ export default function ProductCard({
       </div>
       <div className="mt-1">
         {isInAuctions === true ? (
-          <div className="flex  flex-col items-center justify-between gap-y-2 text-center capitalize">
+          <div className="flex pb-2  flex-col items-center justify-between gap-y-2 text-center capitalize">
             <p>Time left</p>
 
             <div className="flex w-full items-center justify-evenly border-b border-gray-700 pb-1">
@@ -87,20 +87,20 @@ export default function ProductCard({
               </div>
             </div>
 
-            <p className="font-semibold">{name}</p>
-            <p className="text-sm font-light *:text-lg *:font-semibold">
-              current bid: <span>${price}</span>
+            <p className="duration-700 hover:scale-125 cursor-pointer font-semibold">{name}</p>
+            <p className="text-sm duration-700 hover:scale-125 font-light *:text-lg *:font-semibold">
+              current bid: <span className='text-blue-500'>${price}</span>
             </p>
           </div>
         ) : (
           <div className="flex flex-col items-center gap-1 pb-2  ">
-            <p className="mt-1 text-lg font-semibold  duration-300 z-10 hover:scale-125 ">
+            <p className="mt-1 text-lg font-semibold  duration-500 z-10 hover:scale-125 ">
               {name}
             </p>
-            <p className="text-sm text-gray-300 duration-300 hover:scale-125">
+            <p className="text-sm text-gray-300 duration-500 hover:scale-125">
               {details}
             </p>
-            <p className="text-xl font-bold tracking-widest text-blue-500 duration-300 hover:scale-125">
+            <p className="text-xl font-bold tracking-widest text-blue-500 duration-500 hover:scale-125">
               ${price}
             </p>
           </div>
