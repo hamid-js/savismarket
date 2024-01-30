@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   RiHeartLine,
   RiListCheck3,
@@ -5,17 +6,42 @@ import {
   RiShoppingCartLine,
 } from 'react-icons/ri';
 
-export default function ProductCard({ isInAuctions ,name, price ,firstImage,hoverImage, details , count }) {
+export default function ProductCard({
+  isInAuctions,
+  name,
+  price,
+  firstImage,
+  hoverImage,
+  details,
+  count,
+}) {
+  const [isHovered, setIsHovered] = useState(false);
+  console.log('isHovered:', isHovered);
+
   const hoverStyle =
-    'hover:scale-125  hover:bg-indigo-700 hover:text-green-500';
+    'hover:scale-125 z-10 hover:bg-indigo-700 hover:text-green-500';
+
   return (
     <div
-      className={` mb-3  w-64 text-white ${isInAuctions ? 'border border-gray-600' : 'border border-gray-600'}`}
+      className={` mb-3  w-56 bg-white text-white ${isInAuctions ? 'border border-gray-600' : 'border border-gray-600'}`}
     >
-      <div className={`h-52 cursor-pointer bg-[url(${firstImage})] bg-cover  bg-center bg-no-repeat  duration-500 hover:bg-[url(${hoverImage})]`}>
+      <div
+        style={{
+          backgroundImage: `url(${isHovered ? hoverImage : firstImage})`,
+        
+        }}
+        className={`relative h-52 cursor-pointer bg-opacity-25  bg-center bg-no-repeat duration-700 bg-[length:200px_200px] `}
+        onMouseOver={() => setIsHovered(true)}
+        onMouseOut={() => setIsHovered(false)}
+      >
+        {/* <img
+          src={isHovered ? hoverImage : firstImage}
+          alt=""
+          className={`absolute h-full w-full duration-500 transition-all  `}  
+        /> */}
         <div
-          className="flex h-5/6  w-full  flex-col items-end justify-center gap-5 
-         text-lg  *:mr-2 *:flex  *:h-9 *:w-9 *:items-center *:justify-center *:rounded-full *:bg-black *:duration-300 "
+          className="h-6/6 z-10  flex w-full  flex-col items-end justify-center gap-5
+         text-lg *:mr-2 *:flex  *:h-9 *:w-9 *:items-center *:justify-center *:rounded-full *:bg-black *:duration-300  "
         >
           <div className={hoverStyle}>
             <RiHeartLine />
@@ -26,17 +52,24 @@ export default function ProductCard({ isInAuctions ,name, price ,firstImage,hove
           <div className={hoverStyle}>
             <RiListCheck3 />
           </div>
+          <div
+            style={{
+              backgroundColor: 'rgb(79 70 229 / var(--tw-bg-opacity))',
+              borderRadius: '1px',
+              width: '2.1rem',
+              height: '2.3rem',
+            }}
+            className={` mt-2 self-start  bg-indigo-600 pb-1 ${hoverStyle}`}
+          >
+            <RiShoppingCartLine className="-scale-x-100 pt-2 text-3xl  " />
+          </div>
         </div>
         <div className="h-1/6">
-          <div
-            className={`mt-1 h-full  w-9 rounded-sm bg-blue-500 duration-300 ${hoverStyle}`}
-          >
-            <RiShoppingCartLine className="-scale-x-100  pr-1  pt-2 text-3xl  " />
-          </div>
+          <div></div>
         </div>
       </div>
       <div className="mt-1 bg-zinc-800">
-        {isInAuctions ? (
+        {isInAuctions === true ? (
           <div className="flex  flex-col items-center justify-between gap-y-2 text-center capitalize">
             <p>Time left</p>
 

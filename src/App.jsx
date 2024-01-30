@@ -7,7 +7,7 @@ import PricingBox from './components/pricing/PricingBox';
 import ArticlesCards from './components/articlesCards/ArticlesCards';
 import Gallery from './components/gallery/Gallery';
 import Footer from './components/footer/Footer';
-import LaptopsSection from './components/products/LaptopsSection';
+import AllSections from './components/products/allSections';
 import Services from './components/services/Services';
 import Auctions from './components/products/Auctions';
 import AllCategories from './components/products/AllCategories';
@@ -22,7 +22,7 @@ function App() {
         <Services />
         <Auctions /> {/* TODO-2 data map */}
         <AllCategories />
-        <LaptopsSection /> {/* TODO-3 create 3 sections*/}{' '}
+        <AllSections /> {/* TODO-3 create 3 sections*/}{' '}
         {/*TODO-4 create dataM */}
         <ProductSlider /> {/* TODO-5 */}
         <PricingBox /> {/* TODO-6  dataM */}
