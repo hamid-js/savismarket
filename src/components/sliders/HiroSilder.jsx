@@ -13,7 +13,7 @@ export default function HiroSilder() {
           </button>
         </div>
         <div className="flex flex-col gap-1 px-5 pt-5  ">
-          <img src="/images/digital/case21.png" alt="" />
+          <img src="/images/computer/case19.png" alt="" />
           {/* <div className="text-2xl font-bold capitalize tracking-wide">
               The Bike is <span className="text-orange-400">based</span> on the
               project concept.

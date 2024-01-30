@@ -12,9 +12,10 @@ export default function PricingBox() {
           the majority have suffered alteration in some form, by injected."
       />
       <div className="flex  flex-wrap items-center justify-center">
-        <PricingTable />
-        <PricingTable />
-        <PricingTable />
+        <PricingTable url={"/images/digital/gallery-4.jpg"} price={120} text1={"online game"} text2={"12 GB"} text3={"Learning"} text4={"18 GB ram"} />
+        <PricingTable url={"/images/digital/gallery-10.jpg"} price={120} text1={"online game"} text2={"12 GB"} text3={"Learning"} text4={"18 GB ram"} />
+        <PricingTable url={"/images/digital/gallery-17.jpg"} price={120} text1={"online game"} text2={"12 GB"} text3={"Learning"} text4={"18 GB ram"} />
+       
       </div>
     </div>
   );
