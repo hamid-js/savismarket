@@ -23,7 +23,7 @@ export default function ProductCard({
 
   return (
     <div
-      className={` mb-3  w-64  text-white ${isInAuctions ? 'border border-gray-600' : 'border border-gray-600'}`}
+      className={` mb-8  w-64  text-white ${isInAuctions ? 'border border-gray-600' : 'border border-gray-600'}`}
     >
       <div
         style={{
