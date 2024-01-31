@@ -14,7 +14,8 @@ import AllCategories from './components/products/AllCategories';
 function App() {
   return (
     <div>
-      <Header />
+
+      <Header  />
       <main className="pb-10">
         <HiroSilder /> {/* TODO-1 logic */}
         <MobileMenu />

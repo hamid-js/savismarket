@@ -2,7 +2,7 @@ import { RiMenuFill, RiShoppingCartLine } from 'react-icons/ri';
 
 export default function Header() {
   return (
-    <header className="fixed z-20  flex  w-full items-center  justify-between p-3 text-2xl  text-white ">
+    <header className="fixed z-20  flex  w-full items-center  justify-between p-3 text-2xl text-white ">
       <div>
         <RiMenuFill />
       </div>
