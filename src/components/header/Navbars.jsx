@@ -10,7 +10,7 @@ function Navbars() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
 
-      const threshold = 500;
+      const threshold = 1000;
 
       setNavVisibility(scrollPosition > threshold);
     };
