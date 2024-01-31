@@ -3,16 +3,16 @@ import MobileMenu from './MobileMenu';
 
 import { useEffect, useState } from 'react';
 
-function Navbars() {
+function AllNavs() {
   const [isVisible, setNavVisibility] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
 
-      const threshold = 1000;
+      const threshold = 700;
 
-      setNavVisibility(scrollPosition > threshold);
+      setNavVisibility(scrollPosition < threshold);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -21,7 +21,7 @@ function Navbars() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  return <>{isVisible ? <MobileMenu /> :<Header /> }</>;
+  return <> <Header isVisible={isVisible} />  {!isVisible && <MobileMenu />}</>;
 }
 
-export default Navbars;
+export default AllNavs;
