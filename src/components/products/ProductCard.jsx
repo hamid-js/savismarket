@@ -56,9 +56,9 @@ export default function ProductCard({
               backgroundColor: 'rgb(79 70 229 / var(--tw-bg-opacity))',
               borderRadius: '1px',
               width: '2.1rem',
-              height: '2.3rem',
+              height: '2.1rem',
             }}
-            className={` mt-2 self-start  bg-indigo-600 pb-1 ${hoverStyle}`}
+            className={` mt-2 self-start  bg-indigo-600 pb-2 ${hoverStyle}`}
           >
             <RiShoppingCartLine className="-scale-x-100 pt-2 text-3xl  " />
           </div>
