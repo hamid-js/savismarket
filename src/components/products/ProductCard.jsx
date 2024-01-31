@@ -16,7 +16,6 @@ export default function ProductCard({
   count,
 }) {
   const [isHovered, setIsHovered] = useState(false);
-  console.log('isHovered:', isHovered);
 
   const hoverStyle =
     'hover:scale-125 z-10 hover:bg-indigo-700 hover:text-green-500';

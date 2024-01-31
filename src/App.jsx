@@ -1,7 +1,5 @@
 /* eslint-disable no-unused-vars */
-import Header from './components/header/Header';
 import HiroSilder from './components/sliders/HiroSilder';
-import MobileMenu from './components/header/MobileMenu';
 import ProductSlider from './components/sliders/ProductSlider';
 import PricingBox from './components/pricing/PricingBox';
 import ArticlesCards from './components/articlesCards/ArticlesCards';
@@ -10,19 +8,20 @@ import Footer from './components/footer/Footer';
 import Services from './components/services/Services';
 import Auctions from './components/products/Auctions';
 import AllCategories from './components/products/AllCategories';
+import Navbars from './components/header/Navbars';
+
 
 function App() {
+
   return (
     <div>
-
-      <Header  />
+      <Navbars />
       <main className="pb-10">
         <HiroSilder /> {/* TODO-1 logic */}
-        <MobileMenu />
+        
         <Services />
-        <Auctions /> 
+        <Auctions />
         <AllCategories />
-       
         <ProductSlider /> {/* TODO-5 */}
         <PricingBox /> {/* TODO-6  dataM */}
         <ArticlesCards /> {/* TODO-7 */}
