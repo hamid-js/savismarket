@@ -1,53 +1,19 @@
 import  Inputbox  from '../ui/Inputbox';
+import FooterItem from './FooterItem';
 
 export default function Footer() {
   return (
     <>
-      <div className=" mb-14 w-full bg-black py-1">
+      <div className=" my-14 w-full bg-black py-1">
         <div className="mx-1  rounded-sm bg-indigo-900 ">
           <Inputbox button="Search" title="" placeholder="Search products.." />
         </div>
-        <div className="mb-7 p-3 text-xl">
-          <h4 className=" font-semibold uppercase ">foote menu</h4>
-          <ul className="capitalize text-gray-300 *:mt-3">
-            <li>
-              <a href="#d">instagram</a>
-            </li>
-            <li>
-              <a href="#d">instagram</a>
-            </li>
-            <li>
-              <a href="#d">instagram</a>
-            </li>
-            <li>
-              <a href="#d">instagram</a>
-            </li>
-            <li>
-              <a href="#d">instagram</a>
-            </li>
-          </ul>
-        </div>
+      <div className='flex justify-around'>
+      <FooterItem />
+        <FooterItem />
 
-        <div className="p-3  text-xl">
-          <h4 className=" font-semibold uppercase ">foote menu</h4>
-          <ul className="pb-5 capitalize text-gray-300 *:mt-3">
-            <li>
-              <a href="#d">instagram</a>
-            </li>
-            <li>
-              <a href="#d">instagram</a>
-            </li>
-            <li>
-              <a href="#d">instagram</a>
-            </li>
-            <li>
-              <a href="#d">instagram</a>
-            </li>
-            <li>
-              <a href="#d">instagram</a>
-            </li>
-          </ul>
-        </div>
+      </div>
+        
         <Inputbox
           button="Submit"
           title="subscribe to our Newsletter"

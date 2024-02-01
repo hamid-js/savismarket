@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function TopMenu({ isOpen }) {
   return (
     <div
@@ -16,29 +18,29 @@ function TopMenu({ isOpen }) {
       </div>
       <ul className="text-lg capitalize *:border-b *:border-zinc-700 *:p-3 last:*:border-none ">
         <li>
-          <a href="#dsdsacc"> Home</a>
+          <Link to="/"> Home</Link>
         </li>
         <li>
-          <a href="#dsdsacc"> Shopping</a>
+          <Link to="/shopping"> Shopping</Link>
         </li>
         <li>
-          <a href="#dsdsacc"> WishList</a>
+          <Link to="/wishlist"> WishList</Link>
         </li>
         <li>
-          <a href="#dsdsacc"> Compare</a>
+          <Link to="/compare"> Compare</Link>
         </li>
         <li>
-          <a href="#dsdsacc"> Account</a>
+          <Link to="/login"> Account</Link>
         </li>
         <li>
-          <a href="#dsdsacc">Products </a>
+          <Link to="/login">Login/Sign Up </Link>
         </li>
         <li>
-          <a href="#dsdsacc"> Blog</a>
+          <Link to="/blog"> Blog</Link>
         </li>
 
         <li>
-          <a href="#dsdsacc"> Contact</a>
+          <Link to="/contact"> Contact</Link>
         </li>
       </ul>
     </div>

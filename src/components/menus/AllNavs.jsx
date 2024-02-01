@@ -1,27 +1,35 @@
 import Header from './Header';
 import MobileMenu from './MobileMenu';
 
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 function AllNavs() {
-  const [isVisible, setNavVisibility] = useState(true);
+  // const [isVisible, setNavVisibility] = useState(true);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollPosition = window.scrollY;
 
-      const threshold = 700;
+  //     const threshold = 700;
 
-      setNavVisibility(scrollPosition < threshold);
-    };
+  //     setNavVisibility(scrollPosition < threshold);
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-  return <> <Header isVisible={isVisible} />  {!isVisible && <MobileMenu />}</>;
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
+
+
+  return (
+    <>
+     
+      <Header />
+       <MobileMenu />
+    </>
+  );
 }
 
 export default AllNavs;

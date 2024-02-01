@@ -1,43 +1,15 @@
-/* eslint-disable no-unused-vars */
-import HiroSilder from './components/sliders/HiroSilder';
-import ProductSlider from './components/sliders/ProductSlider';
-import PricingBox from './components/pricing/PricingBox';
-import ArticlesCards from './components/articlesCards/ArticlesCards';
-import Gallery from './components/gallery/Gallery';
-import Footer from './components/footer/Footer';
-import Services from './components/services/Services';
-import Auctions from './components/products/Auctions';
-import AllCategories from './components/products/AllCategories';
+import { useRoutes } from 'react-router-dom';
+import routeData from './router';
 import AllNavs from './components/menus/AllNavs';
-
-
+import Footer from './components/footer/Footer';
 function App() {
-
+  const router = useRoutes(routeData);
   return (
-    <div>
+    <>
       <AllNavs />
-      <main className="pb-10">
-        <HiroSilder />
-        <Services />
-        <Auctions />
-        <AllCategories />
-        <ProductSlider /> 
-        <PricingBox /> 
-        <ArticlesCards /> 
-        <Gallery />
-      </main>
+      {router}
       <Footer />
-    </div>
-
-    //  color: select a palet and change all colors
-    //  menu:  menu page 
-    //TODO  Learn: learn {use context api} for a store (gpt + jonas + sabs + youtube)
-    //TODO  popup: products preview popup
-    //TODO  time: products auction times logic
-    //TODO  cart: adding product to cart logic + toast(by third-parti)
-
-    //TODO  routes: install react router dom + create all pages that need
-    //TODO  pages: product detalis,compare,wishlist,products,blog,article,login
+    </>
   );
 }
 
