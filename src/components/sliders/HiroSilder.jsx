@@ -9,10 +9,10 @@ const [sliderIndex, setSliderIndex] = useState(1)
     <section className='  h-auto w-full bg-[url("/images/bg_dark1.jpg")] bg-cover bg-center bg-no-repeat pb-14 '>
       <div className="relative">
         <div>
-          <button onClick={() =>setSliderIndex((pre) => pre > 0 ? pre - 1 : 2 )} className="absolute left-0 top-56 cursor-pointer  border-none bg-none text-6xl  font-extralight ">
+          <button onClick={() =>setSliderIndex((pre) => pre > 0 ? pre - 1 : 2 )} className="absolute left-5 top-56 cursor-pointer  border-none bg-none text-7xl  py-2 ">
             &#8249;
           </button>
-          <button onClick={() =>setSliderIndex((next) => next < 2 ? next + 1 : 0 )}  className="absolute right-0 top-56 cursor-pointer border-none bg-none text-6xl   font-extralight ">
+          <button onClick={() =>setSliderIndex((next) => next < 2 ? next + 1 : 0 )}  className="absolute right-5 top-56 cursor-pointer border-none bg-none text-7xl  py-2  ">
             &#8250;
           </button>
         </div>
