@@ -22,7 +22,7 @@ function App() {
         <Auctions />
         <AllCategories />
         <ProductSlider /> 
-        <PricingBox /> {/* TODO-6  dataM */}
+        <PricingBox /> 
         <ArticlesCards /> 
         <Gallery />
       </main>
@@ -30,15 +30,15 @@ function App() {
     </div>
 
     //  color: select a palet and change all colors
-    //TODO  menu:  menu page 
+    //  menu:  menu page 
+    //TODO  Learn: learn {use context api} for a store (gpt + jonas + sabs + youtube)
     //TODO  popup: products preview popup
     //TODO  time: products auction times logic
-    //TODO  Learn: learn {use context api} for a store (gpt + jonas + sabs + youtube)
     //TODO  cart: adding product to cart logic + toast(by third-parti)
 
-    //TODO  pages: product detalis , compare , wishlist , products, blog ,article,login
-  );
     //TODO  routes: install react router dom + create all pages that need
+    //TODO  pages: product detalis,compare,wishlist,products,blog,article,login
+  );
 }
 
 export default App;
