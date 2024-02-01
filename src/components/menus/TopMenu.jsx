@@ -1,12 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-function TopMenu({ isOpen }) {
+function TopMenu({ isOpen, setIsOpen }) {
+  const handleCloseMenu = (e) => {
+    if (e.target.tagName.toLowerCase() === 'a') {
+      setIsOpen(false);
+    }
+  };
   return (
     <div
       style={{
         transform: `${isOpen ? 'translateX(0rem)' : 'translateX(-24rem)'}`,
       }}
-      className="fixed z-50 h-svh w-72 pb-7 overflow-y-scroll bg-zinc-900 duration-700"
+      className="fixed z-50 h-svh w-72 overflow-y-scroll bg-zinc-900 pb-7 duration-700"
     >
       <div className="flex  justify-between px-3 py-7 text-lg capitalize text-gray-400 ">
         <input
@@ -16,9 +21,12 @@ function TopMenu({ isOpen }) {
         />{' '}
         <span>🔍</span>
       </div>
-      <ul className="text-lg capitalize *:border-b *:border-zinc-700 *:p-3 last:*:border-none ">
+      <ul
+        onClick={handleCloseMenu}
+        className="text-lg capitalize *:border-b *:border-zinc-700 *:p-3 last:*:border-none "
+      >
         <li>
-          <Link to="/"> Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
           <Link to="/shopping"> Shopping</Link>

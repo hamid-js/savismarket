@@ -1,6 +1,7 @@
 import { RiMenuFill, RiShoppingCartLine } from 'react-icons/ri';
 import TopMenu from './TopMenu';
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -30,7 +31,7 @@ export default function Header() {
         <div onClick={handleMenuClick} >
           <RiMenuFill />
         </div>
-        <h1 className="font-bold  ">Savismarket</h1>
+        <h1 className="font-bold  "><Link to="/" >Savismarket</Link> </h1>
         <div className="relative p-2">
           <span className="absolute right-0 top-0 w-4 rounded-full bg-orange-500 text-center text-xs   opacity-85">
             1
@@ -39,7 +40,7 @@ export default function Header() {
         </div>
       </header>
       <div   ref={menuRef}>
-        <TopMenu isOpen={isOpenMenu}  />
+        <TopMenu isOpen={isOpenMenu} setIsOpen={setIsOpenMenu}  />
       </div>
     </>
   );

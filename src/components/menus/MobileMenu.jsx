@@ -4,6 +4,7 @@ import {
   RiStore3Line,
   RiUserLine,
 } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 export default function MobileMenu() {
   const iconStyle = 'text-2xl text-center m-auto';
@@ -11,31 +12,31 @@ export default function MobileMenu() {
     <div className="fixed bottom-0 z-40 h-14 w-full bg-white pt-2  text-sm text-black ">
       <ul className="flex  items-center justify-evenly ">
         <li>
-          <a href="#ff">
+          <Link to="/shopping">
             <RiStore3Line className={iconStyle} />
             shop
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a href="#ff">
+          <Link to="/wishlist">
             <RiHeartLine className={iconStyle} />
             wishlist
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a href="#ff">
+          <Link to="/login">
             <RiUserLine className={iconStyle} />
             my account
-          </a>
+          </Link>
         </li>
 
         <li>
-          <a href="#ff">
+          <Link to="/compare">
             <RiBarChartBoxLine className={iconStyle} />
             compare
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
