@@ -4,11 +4,9 @@ import ProductSlider from '../components/sliders/ProductSlider';
 import PricingBox from '../components/pricing/PricingBox';
 import ArticlesCards from '../components/articlesCards/ArticlesCards';
 import Gallery from '../components/gallery/Gallery';
-import Footer from '../components/footer/Footer';
 import Services from '../components/services/Services';
 import Auctions from '../components/products/Auctions';
 import AllCategories from '../components/products/AllCategories';
-import AllNavs from '../components/menus/AllNavs';
 
 
 
@@ -34,10 +32,12 @@ function HomePage() {
 export default HomePage
 //  color: select a palet and change all colors
     //  menu:  menu page 
+    // install react router dom  create all pages that need
     //TODO  Learn: learn {use context api} for a store (gpt + jonas + sabs + youtube)
+    
     //TODO  popup: products preview popup
     //TODO  time: products auction times logic
     //TODO  cart: adding product to cart logic + toast(by third-parti)
 
-    //TODO  routes: install react router dom + create all pages that need
+    //TODO  routes:  complate all pages that need
     //TODO  pages: product detalis,compare,wishlist,products,blog,article,login
