@@ -10,7 +10,7 @@ export default function HiroSilder() {
   const [sliderIndex, setSliderIndex] = useState(1);
 
   return (
-    <section className=' pt-5 h-auto w-full bg-[url("/images/bg_dark1.jpg")] bg-cover bg-center bg-no-repeat pb-14 '>
+    <section id='slider' className=' pt-5 h-auto w-full bg-[url("/images/bg_dark1.jpg")] bg-cover bg-center bg-no-repeat pb-14 '>
       <div className="relative">
         <div>
           <button
