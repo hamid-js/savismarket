@@ -33,7 +33,7 @@ export default function Header() {
         </div>
         <h1 className="font-bold capitalize  tracking-[.05rem] "><Link to="/" >SavisMarket</Link> </h1>
         <div className="relative p-2">
-          <span className="absolute right-0 top-0 w-4 rounded-full bg-orange-500 text-center text-xs   opacity-85">
+          <span className="absolute right-0 top-0 w-4 rounded-full bg-indigo-500 text-center text-xs   opacity-85">
             1
           </span>
           <RiShoppingCartLine className="text-2xl font-bold" />

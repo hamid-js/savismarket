@@ -9,7 +9,7 @@ export default function AllCategories() {
   return (
     <div>
       {allCategoriesData.map((category, index) => {
-        const { title, imageUrl, color } = category.categoryInfo;
+        const {  imageUrl, color } = category.categoryInfo;
         const count = category.products.length;
 
         return (

@@ -7,15 +7,17 @@ import Gallery from '../components/gallery/Gallery';
 import Services from '../components/services/Services';
 import Auctions from '../components/products/Auctions';
 import AllCategories from '../components/products/AllCategories';
+import { Outlet } from 'react-router-dom';
 
 
 
 function HomePage() {
     return (
         <div>
-           
+           <Outlet />
       <main className="pb-10">
         <HiroSilder />
+        
         <Services />
         <Auctions />
         <AllCategories />
@@ -34,7 +36,7 @@ export default HomePage
     //  menu:  menu page 
     // install react router dom  create all pages that need
     //TODO  Learn: learn {use context api} for a store (gpt + jonas + sabs + youtube)
-    
+
     //TODO  popup: products preview popup
     //TODO  time: products auction times logic
     //TODO  cart: adding product to cart logic + toast(by third-parti)

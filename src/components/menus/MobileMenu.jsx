@@ -7,6 +7,13 @@ import {
 import { Link } from 'react-router-dom';
 
 export default function MobileMenu() {
+
+
+  const handleLoginClick = (event) => {
+    event.stopPropagation(); // Stop the event propagation to prevent it from reaching the document click listener
+    
+  };
+
   const iconStyle = 'text-2xl text-center m-auto';
   return (
     <div className="fixed bottom-0 z-40 h-14 w-full bg-white pt-2  text-sm text-black ">
@@ -26,7 +33,7 @@ export default function MobileMenu() {
         </li>
 
         <li>
-          <Link to="/login">
+          <Link onClick={handleLoginClick} to="/login">
             <RiUserLine className={iconStyle} />
             my account
           </Link>

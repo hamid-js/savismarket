@@ -9,8 +9,12 @@ import ShoppingPage from './pages/ShoppingPage';
 import WishlistPage from './pages/WishlistPage';
 
 const routeData = [
-  { path: '/', element: <HomePage /> },
-  { path: '/login', element: <LoginPage /> },
+  {
+    path: '/',
+    element: <HomePage />,
+    children: [{ path: 'login', element: <LoginPage /> }],
+  },
+
   { path: '/shopping', element: <ShoppingPage /> },
   { path: '/wishlist', element: <WishlistPage /> },
   { path: '/compare', element: <ComparePage /> },
