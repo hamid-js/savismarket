@@ -1,73 +1,61 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Form, Link, useNavigate } from 'react-router-dom';
+import LoginForm from '../components/ui/LoginForm';
 
 function LoginPage() {
-    const navigate= useNavigate()
+  const navigate = useNavigate();
 
-    const loginRef = useRef(null);
-    useEffect(() => {
-    
-      const handleClickOutside = (event) => {
-        if (loginRef.current && !loginRef.current.contains(event.target)) {
-         navigate("/")
-        }
-      };
-      document.addEventListener('click', handleClickOutside);
-  
-      return () => {
-        document.removeEventListener('click', handleClickOutside);
-      }; 
-    }, [navigate]);
-  
+  const loginRef = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (loginRef.current && !loginRef.current.contains(event.target)) {
+        navigate('/');
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [navigate]);
+
   const handleCloseMenu = (e) => {
     if (e.target.tagName.toLowerCase() === 'a') {
-        navigate("/")
-
+      navigate('/');
     }
   };
   return (
-    <div ref={loginRef}
-      
-      className="fixed z-50 right-[10%] top-10  h-[28rem] mx-auto w-4/5 overflow-y-scroll bg-zinc-900 pb-7 duration-700"
+    <div
+      ref={loginRef}
+      className="fixed right-[5%] top-20 z-40  mx-auto h-[22rem] w-11/12 overflow-y-scroll rounded-lg bg-zinc-300 pb-7 duration-700"
     >
-      <div className="flex  justify-between px-3 py-7 text-lg capitalize text-gray-400 ">
-        <input
-          className="bg-inherit outline-none"
-          type="text"
-          placeholder="search products "
-        />{' '}
-        <span>🔍</span>
+      <div className="flex h-28 flex-wrap items-center justify-center bg-zinc-700 text-center text-xl  uppercase text-gray-100 ">
+        <div
+          onClick={() => navigate(-1)}
+          className=" absolute right-0 top-0 m-1 border border-zinc-600 px-3 text-4xl "
+        >
+          x
+        </div>
+        <p className="w-1/2 font-bold"> Access your account</p>
       </div>
-      <ul
-        onClick={handleCloseMenu}
-        className="text-lg capitalize *:border-b *:border-zinc-700 *:p-3 last:*:border-none "
-      >
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/shopping"> Shopping</Link>
-        </li>
-        <li>
-          <Link to="/wishlist"> WishList</Link>
-        </li>
-        <li>
-          <Link to="/compare"> Compare</Link>
-        </li>
-        <li>
-          <Link to="/login"> Account</Link>
-        </li>
-        <li>
-          <Link to="/login">Login/Sign Up </Link>
-        </li>
-        <li>
-          <Link to="/blog"> Blog</Link>
-        </li>
-
-        <li>
-          <Link to="/contact"> Contact</Link>
-        </li>
-      </ul>
+      <div>
+        <LoginForm
+          firstInput="Username or email address"
+          secondInput="Password"
+          btnText="log in"
+          title="Login"
+          addText="Lost your password?"
+          remember
+        />
+        <LoginForm
+          title="Register"
+          firstInput="Username "
+          secondInput="email address"
+          thirdInput="Password"
+          btnText="Register"
+        />
+      </div>
     </div>
   );
 }

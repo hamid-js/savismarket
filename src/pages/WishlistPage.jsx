@@ -1,6 +1,6 @@
 function WishlistPage() {
     return (
-        <div>
+        <div className="p-40">
             WishlistPage
         </div>
     )

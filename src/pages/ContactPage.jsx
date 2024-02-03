@@ -1,7 +1,7 @@
 function ContactPage() {
     return (
-        <div>
-            
+        <div className="p-40">
+            ContactPage
         </div>
     )
 }

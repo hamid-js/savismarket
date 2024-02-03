@@ -1,6 +1,6 @@
 function ComparePage() {
     return (
-        <div>
+        <div className="p-40">
             ComparePage
         </div>
     )
