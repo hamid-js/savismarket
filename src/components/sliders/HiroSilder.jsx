@@ -28,9 +28,9 @@ export default function HiroSilder() {
         </div>
         <div className="flex flex-col gap-1 px-5 pt-5  ">
           <img src={sliderImages[sliderIndex]} alt="" />
-          <div className="text-2xl font-bold capitalize tracking-wide">
-            The Bike is <span className="text-indigo-500">based</span> on the
-            project concept.
+          <div className="text-2xl text-center font-bold capitalize tracking-wide">
+          Build Your
+ <span className="text-indigo-500 "> NEW</span> PC 
           </div>
 
           <div className='text-center'>
