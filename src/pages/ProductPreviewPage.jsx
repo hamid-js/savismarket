@@ -68,11 +68,13 @@ function ProductPreviewPage() {
         >
           &#8250;
         </button>
+        <div className='bg-white  w-2/3 m-auto'>
         <img
-          className="m-auto mt-3 h-44 w-auto bg-white"
+          className="m-auto mt-3 h-44 w-auto  "
           src={sliderImages[sliderIndex]}
           alt={product.name}
         />
+        </div>
         <div className=" mx-auto flex w-5/6 flex-col items-start justify-center gap-3 pt-5 text-lg capitalize *:flex *:w-full *:justify-between ">
           <p>
             <span> category :</span>
