@@ -35,11 +35,14 @@ export default HomePage
 //  color: select a palet and change all colors
     //  menu:  menu page 
     // install react router dom  create all pages that need
+    // popup: products preview popup
+    //  routes:  complate all pages that need
+        //  pages: product detalis,products,blog,login
+
     //TODO  Learn: learn {use context api} for a store (gpt + jonas + sabs + youtube)
 
-    //TODO  popup: products preview popup
     //TODO  time: products auction times logic
     //TODO  cart: adding product to cart logic + toast(by third-parti)
 
-    //TODO  routes:  complate all pages that need
-    //TODO  pages: product detalis,compare,wishlist,products,blog,article,login
+    
+    //TODO  pages: compare,wishlist,product after clicks page,checkout , contact

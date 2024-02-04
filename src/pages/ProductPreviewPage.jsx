@@ -69,7 +69,7 @@ function ProductPreviewPage() {
           &#8250;
         </button>
         <img
-          className="m-auto mt-3 h-44 w-4/6 bg-white"
+          className="m-auto mt-3 h-44 w-auto bg-white"
           src={sliderImages[sliderIndex]}
           alt={product.name}
         />

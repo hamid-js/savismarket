@@ -15,10 +15,6 @@ export default function ProductCard({
   details,
   id,
 }) {
-
-  
-
-  
   const handleStopPropagation = async (event) => {
     event.stopPropagation();
   };
@@ -44,14 +40,16 @@ export default function ProductCard({
          text-lg *:mr-2 *:mt-2 *:flex  *:h-9 *:w-9 *:items-center *:justify-center *:rounded-full *:bg-black *:duration-300  "
         >
           <div className={hoverStyle}>
-            <RiHeartLine />
-          </div>
-          {console.log(id)}
-          <div onClick={handleStopPropagation} className={hoverStyle}>
-          <Link to={`/product/${id}`}>  <RiSearchLine /></Link>
+            <RiListCheck3 />
           </div>
           <div className={hoverStyle}>
-            <RiListCheck3 />
+            <RiHeartLine />
+          </div>
+
+          <div onClick={handleStopPropagation} className={hoverStyle}>
+            <Link to={`/product/${id}`}>
+              <RiSearchLine />
+            </Link>
           </div>
           <div
             style={{
