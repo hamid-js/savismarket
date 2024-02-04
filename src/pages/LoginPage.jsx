@@ -28,7 +28,7 @@ function LoginPage() {
   return (
     <div
       ref={loginRef}
-      className="fixed right-[5%] top-[14dvh] z-40  mx-auto h-[70dvh] w-11/12 overflow-y-scroll rounded-lg bg-zinc-300 pb-7 duration-700"
+      className="fixed right-[5%] top-[13dvh] z-40  mx-auto h-[75dvh] w-11/12 overflow-y-scroll rounded-lg bg-zinc-300 pb-7 duration-700"
     >
       <div className="flex h-28 flex-wrap items-center justify-center bg-zinc-700 text-center text-xl  uppercase text-gray-100 ">
         <div
