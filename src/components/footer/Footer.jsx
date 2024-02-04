@@ -29,7 +29,7 @@ export default function Footer() {
               </Link>
             </div>
             <div>
-              <Link target="_blank" to="mailto:>Hamid.ReactJs@gmail.com">
+              <Link target="_blank" to="https://t.me/hamid_develop">
                 <RiMailCheckFill className="mx-1 inline" />
                 Hamid.ReactJs@gmail.com
               </Link>
