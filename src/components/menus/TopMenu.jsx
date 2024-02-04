@@ -35,7 +35,7 @@ function TopMenu({ isOpen, setIsOpen }) {
           <NavLink  to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/shopping"> Shopping</NavLink>
+          <NavLink to="/shop"> Shopping</NavLink>
         </li>
         <li>
           <NavLink to="/wishlist"> WishList</NavLink>
