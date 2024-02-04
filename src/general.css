@@ -2,15 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #000000ca;
 
-body{
-    background-color: #000000ca;
-
- overflow-x: hidden;
-    color: #fff;
+  overflow-x: hidden;
+  color: #fff;
 }
-.active{
-    color: rgb(99 102 241 / var(--tw-text-opacity));
-    font-weight: bold;
-    transition-duration: 300ms;
+.active {
+
+  font-weight: bold;
+  transition-duration: 300ms;
+  color: #6366f1;
 }

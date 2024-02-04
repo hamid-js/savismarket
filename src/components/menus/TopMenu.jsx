@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import {  NavLink } from 'react-router-dom';
 
 function TopMenu({ isOpen, setIsOpen }) {
   const handleCloseMenu = (e) => {
@@ -29,32 +29,32 @@ function TopMenu({ isOpen, setIsOpen }) {
       </div>
       <ul
         onClick={handleCloseMenu}
-        className="text-lg capitalize *:border-b *:border-zinc-700 *:p-3 last:*:border-none "
+        className="text-lg capitalize *:border-b *:border-zinc-700 *:p-3 last:*:border-none  "
       >
         <li>
-          <Link to="/">Home</Link>
+          <NavLink  to="/">Home</NavLink>
         </li>
         <li>
-          <Link to="/shopping"> Shopping</Link>
+          <NavLink to="/shopping"> Shopping</NavLink>
         </li>
         <li>
-          <Link to="/wishlist"> WishList</Link>
+          <NavLink to="/wishlist"> WishList</NavLink>
         </li>
         <li>
-          <Link to="/compare"> Compare</Link>
+          <NavLink to="/compare"> Compare</NavLink>
         </li>
         <li>
-          <Link onClick={handleStopPropagation} to="/login"> Account</Link>
+          <NavLink onClick={handleStopPropagation} to="/login"> Account</NavLink>
         </li>
         <li>
-          <Link  onClick={handleStopPropagation} to="/login">Login/Sign Up </Link>
+          <NavLink  onClick={handleStopPropagation} to="/login">Login/Sign Up </NavLink>
         </li>
         <li>
-          <Link to="/blog"> Blog</Link>
+          <NavLink to="/blog"> Blog</NavLink>
         </li>
 
         <li>
-          <Link to="/contact"> Contact</Link>
+          <NavLink to="/contact"> Contact</NavLink>
         </li>
       </ul>
     </div>
