@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function CategoryBox({
   title = '',
   count = 0,
@@ -19,13 +21,13 @@ export default function CategoryBox({
         <div className="ml-10 duration-300 hover:scale-125">
           <span className="font-bold">{count} </span>Products
         </div>
-        <a
+        <Link
           style={{ backgroundColor: `${btnColor}` }}
           className="ml-4 duration-300 hover:scale-125 rounded-full   border-2 px-4 py-1"
-          href="#ds"
+          to="/shop"
         >
           view all items
-        </a>
+        </Link>
       
       </div>
     </div>

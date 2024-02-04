@@ -15,7 +15,7 @@ const routeData = [
     children: [{ path: 'login', element: <LoginPage /> }],
   },
   { path: '/product/:id', element: <ProductPreviewPage /> },
-  { path: '/shopping', element: <ShoppingPage /> },
+  { path: '/shop', element: <ShoppingPage /> },
   { path: '/wishlist', element: <WishlistPage /> },
   { path: '/compare', element: <ComparePage /> },
   { path: '/blog', element: <BlogPage /> },

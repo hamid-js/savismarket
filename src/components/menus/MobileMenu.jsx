@@ -19,7 +19,7 @@ export default function MobileMenu() {
     <div className="fixed bottom-0 z-40 h-14 w-full bg-white pt-2  text-sm text-black ">
       <ul className="flex  items-center justify-evenly  ">
         <li>
-          <NavLink className="duration-1000" to="/shopping">
+          <NavLink className="duration-1000" to="/shop">
             <RiStore3Line className={iconStyle} />
             shop
           </NavLink>
