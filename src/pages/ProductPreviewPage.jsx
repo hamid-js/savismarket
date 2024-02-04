@@ -73,7 +73,7 @@ function ProductPreviewPage() {
           src={sliderImages[sliderIndex]}
           alt={product.name}
         />
-        <div className=" mx-auto flex w-3/5 flex-col items-start justify-center gap-3 pt-5 text-lg capitalize *:flex *:w-full *:justify-between ">
+        <div className=" mx-auto flex w-5/6 flex-col items-start justify-center gap-3 pt-5 text-lg capitalize *:flex *:w-full *:justify-between ">
           <p>
             <span> category :</span>
             <span className="text-red-600">{product.category}</span>
