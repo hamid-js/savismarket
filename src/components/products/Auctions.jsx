@@ -5,9 +5,9 @@ export default function Auctions() {
   return (
     <div className="bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950 py-10">
       <div></div>
-      <h4 className="m-auto my-5 w-2/3 border-b py-5 text-center font-bold text-xl uppercase">
+      <h3 className="m-auto my-5 w-2/3 border-b py-5 text-center font-bold text-xl uppercase">
         Latest auctions
-      </h4>
+      </h3>
       <div className="flex w-full flex-wrap justify-around">
       {auctions.products.map((product) => (
                 <ProductCard

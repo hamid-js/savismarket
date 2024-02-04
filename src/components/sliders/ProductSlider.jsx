@@ -6,7 +6,11 @@ export default function HiroSilder() {
   const sliderImages = ["/images/computer/case19.png","/images/computer/case18.png" ,"/images/computer/case9.png"]
 const [sliderIndex, setSliderIndex] = useState(1)
   return (
+    
     <div className=" flex h-dvh w-full flex-col items-center justify-center bg-gradient-to-t  from-zinc-950 via-zinc-800 via-50% to-zinc-950">
+     <h3 className="m-auto my-1 w-2/3 border-b py-5 text-center font-bold text-xl capitalize">
+        3d product view
+      </h3>
       <div className=" w-full">
         <img  className="m-auto w-4/6" src={sliderImages[sliderIndex]} alt="" />
       </div>

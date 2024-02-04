@@ -19,18 +19,19 @@ const auctions = {
       firstImage: '/images/computer/case2.png',
       hoverImage: '/images/computer/case1.png',
     },
-   { id: 2,
-    name: 'iphone 15 pro max',
-    price: 1525,
-    details: 'good iphone 14 pro max',
-    isInWishlist: false,
-    isInCart: false,
-    isInCompare: false,
-    isInAuctions: false,
-    count: 8,
-    firstImage: '/images/phone/phone7.jpg',
-    hoverImage: '/images/phone/phone1.jpg',
-},
+    {
+      id: 2,
+      name: 'iphone 15 pro max',
+      price: 1525,
+      details: 'good iphone 14 pro max',
+      isInWishlist: false,
+      isInCart: false,
+      isInCompare: false,
+      isInAuctions: false,
+      count: 8,
+      firstImage: '/images/phone/phone7.jpg',
+      hoverImage: '/images/phone/phone1.jpg',
+    },
 
     {
       id: 5,
@@ -56,7 +57,7 @@ const auctions = {
       isInAuctions: false,
       count: 7,
       firstImage: '/images/watch/watch3.png',
-      hoverImage:'/images/watch/watch2.png',
+      hoverImage: '/images/watch/watch2.png',
     },
     {
       id: 21,
@@ -85,6 +86,8 @@ const phones = {
   products: [
     {
       id: 1,
+      category: 'phones',
+
       name: 'iphone 16 pro max',
       price: 1929,
       details: 'perfect',
@@ -98,6 +101,7 @@ const phones = {
     },
     {
       id: 2,
+      category: 'phones',
       name: 'iphone 15 pro max',
       price: 1525,
       details: 'good iphone 14 pro max',
@@ -113,6 +117,7 @@ const phones = {
     {
       id: 3,
       name: 'iphone 14 pro max',
+      category: 'phones',
       price: 1268,
       details: 'good iphone 14 pro max',
       isInWishlist: false,
@@ -127,6 +132,7 @@ const phones = {
     {
       id: 4,
       name: 'iphone 13 pro max',
+      category: 'phones',
       price: 1019,
       details: 'good iphone 14 pro max',
       isInWishlist: false,
@@ -151,6 +157,7 @@ const laptops = {
     {
       id: 5,
       name: 'lenovo core i3',
+      category: 'laptops',
       price: 4343,
       details: 'gaming',
       isInWishlist: false,
@@ -164,6 +171,7 @@ const laptops = {
     {
       id: 6,
       name: 'lenovo cor i5',
+      category: 'laptops',
       price: 334,
       details: 'programming',
       isInWishlist: false,
@@ -177,6 +185,7 @@ const laptops = {
     {
       id: 7,
       name: 'lenovo cor i5',
+      category: 'laptops',
       price: 334,
       details: 'programming',
       isInWishlist: false,
@@ -190,6 +199,7 @@ const laptops = {
     {
       id: 8,
       name: 'lenovo cor i5',
+      category: 'laptops',
       price: 334,
       details: 'programming',
       isInWishlist: false,
@@ -215,6 +225,7 @@ const computers = {
     {
       id: 9,
       name: 'asus gaming',
+      category: 'computers',
       price: 4567,
       details: 'high-performance gaming.',
       isInWahslist: false,
@@ -228,6 +239,7 @@ const computers = {
     {
       id: 10,
       name: 'x power',
+      category: 'computers',
       price: 1567,
       details: ' best-performance ',
       isInWahslist: false,
@@ -241,6 +253,7 @@ const computers = {
     {
       id: 11,
       name: 'green gaming',
+      category: 'computers',
       price: 1500,
       details: 'powerfull',
       isInWahslist: false,
@@ -254,6 +267,7 @@ const computers = {
     {
       id: 12,
       name: 'apple',
+      category: 'computers',
       price: 2564,
       details: 'high-performance ',
       isInWahslist: false,
@@ -267,6 +281,7 @@ const computers = {
     {
       id: 13,
       name: 'asus',
+      category: 'computers',
       price: 3800,
       details: 'progaming',
       isInWahslist: false,
@@ -280,6 +295,7 @@ const computers = {
     {
       id: 14,
       name: 'gaming pro',
+      category: 'computers',
       price: 1554,
       details: ' high-quality',
       isInWahslist: false,
@@ -293,6 +309,7 @@ const computers = {
     {
       id: 15,
       name: 'best case',
+      category: 'computers',
       price: 1554,
       details: 'web development',
       isInWahslist: false,
@@ -306,6 +323,7 @@ const computers = {
     {
       id: 16,
       name: 'best case',
+      category: 'computers',
       price: 1554,
       details: 'for front-end devlopers',
       isInWahslist: false,
@@ -328,6 +346,7 @@ const watches = {
     {
       id: 17,
       name: 'apple watch',
+      category: 'watches',
       price: 1268,
       details: 'goood',
       isInWahslist: false,
@@ -336,11 +355,12 @@ const watches = {
       isInAuctions: false,
       count: 7,
       firstImage: '/images/watch/watch3.png',
-      hoverImage:'/images/watch/watch2.png',
+      hoverImage: '/images/watch/watch2.png',
     },
     {
       id: 18,
       name: 'apple watch pro',
+      category: 'watches',
       price: 1065,
       details: 'goood',
       isInWahslist: false,
@@ -349,11 +369,12 @@ const watches = {
       isInAuctions: false,
       count: 7,
       firstImage: '/images/watch/watch2.png',
-      hoverImage:'/images/watch/watch3.png',
+      hoverImage: '/images/watch/watch3.png',
     },
     {
       id: 19,
       name: 'watch pro max',
+      category: 'watches',
       price: 1921,
       details: 'goood',
       isInWahslist: false,
@@ -362,7 +383,7 @@ const watches = {
       isInAuctions: false,
       count: 7,
       firstImage: '/images/watch/watch1.png',
-      hoverImage:'/images/watch/watch2.png',
+      hoverImage: '/images/watch/watch2.png',
     },
   ],
 };
@@ -377,7 +398,7 @@ const accessories = {
   products: [
     {
       id: 20,
-      categoryName: 'headphones',
+      categore: 'headphones',
       name: 'headphone',
       price: 156,
       details: 'high-quality',
@@ -391,7 +412,7 @@ const accessories = {
     },
     {
       id: 21,
-      categoryName: 'accessories',
+      category: 'accessories',
       name: 'headphone',
       price: 569,
       details: 'high-quality',
@@ -405,7 +426,7 @@ const accessories = {
     },
     {
       id: 22,
-      categoryName: 'accessories',
+      category: 'accessories',
       name: 'zgh 244',
       price: 157,
       details: 'high-quality',
@@ -419,7 +440,7 @@ const accessories = {
     },
     {
       id: 23,
-      categoryName: 'accessories',
+      category: 'accessories',
       name: 'x 864',
       price: 356,
       details: 'high-quality',
@@ -433,7 +454,7 @@ const accessories = {
     },
     {
       id: 24,
-      categoryName: 'accessories',
+      category: 'accessories',
       name: 'headphone ax',
       price: 454,
       details: 'high-quality',
@@ -447,7 +468,7 @@ const accessories = {
     },
     {
       id: 25,
-      categoryName: 'accessories',
+      category: 'accessories',
       name: 'headphone 454',
       price: 454,
       details: 'high-quality',
@@ -462,13 +483,7 @@ const accessories = {
   ],
 };
 
-const allCategoriesData = [
-  phones,
-  laptops,
-  watches,
-  accessories,
-  computers,
-];
+const allCategoriesData = [phones, laptops, watches, accessories, computers];
 
 export {
   phones,
