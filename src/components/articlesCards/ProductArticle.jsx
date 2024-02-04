@@ -2,7 +2,7 @@ import  Button  from '../ui/Button';
 
 export default function ProductArticle() {
   return (
-    <div className="  flex  w-full flex-col items-center justify-center ">
+    <div className="  flex pl-10 w-72 mb-5 border border-zinc-700 flex-col  items-center justify-center ">
       <div className=" w-full">
         <img src="/images/digital/case2.png" alt="" />
       </div>

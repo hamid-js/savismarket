@@ -5,6 +5,12 @@ function TopMenu({ isOpen, setIsOpen }) {
     if (e.target.tagName.toLowerCase() === 'a') {
       setIsOpen(false);
     }
+  
+  };
+  const handleStopPropagation= (event) => {
+    event.stopPropagation(); 
+    setIsOpen(false);
+    
   };
   return (
     <div
@@ -38,10 +44,10 @@ function TopMenu({ isOpen, setIsOpen }) {
           <Link to="/compare"> Compare</Link>
         </li>
         <li>
-          <Link to="/login"> Account</Link>
+          <Link onClick={handleStopPropagation} to="/login"> Account</Link>
         </li>
         <li>
-          <Link to="/login">Login/Sign Up </Link>
+          <Link  onClick={handleStopPropagation} to="/login">Login/Sign Up </Link>
         </li>
         <li>
           <Link to="/blog"> Blog</Link>

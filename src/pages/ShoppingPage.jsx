@@ -4,7 +4,7 @@ import { allCategoriesData } from "../data";
 
 function ShoppingPage() {
     return (
-        <div className="py-16" >
+        <div className="pt-16" >
         {allCategoriesData.map((category, index) => {
           const {  imageUrl, color } = category.categoryInfo;
           const count = category.products.length;
