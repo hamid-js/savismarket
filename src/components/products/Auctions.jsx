@@ -9,9 +9,10 @@ export default function Auctions() {
         Latest auctions
       </h4>
       <div className="flex w-full flex-wrap justify-around">
-      {auctions.products.map((product, index) => (
+      {auctions.products.map((product) => (
                 <ProductCard
-                  key={index}
+                id={product.id}
+                  key={product.id}
                   isInAuctions
                   name={product.name}
                   price={product.price}

@@ -4,7 +4,7 @@ import {
   RiStore3Line,
   RiUserLine,
 } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+import {  NavLink } from 'react-router-dom';
 
 export default function MobileMenu() {
 
@@ -17,33 +17,33 @@ export default function MobileMenu() {
   const iconStyle = 'text-2xl text-center m-auto';
   return (
     <div className="fixed bottom-0 z-40 h-14 w-full bg-white pt-2  text-sm text-black ">
-      <ul className="flex  items-center justify-evenly ">
+      <ul className="flex  items-center justify-evenly  ">
         <li>
-          <Link to="/shopping">
+          <NavLink className="duration-1000" to="/shopping">
             <RiStore3Line className={iconStyle} />
             shop
-          </Link>
+          </NavLink>
         </li>
 
         <li>
-          <Link to="/wishlist">
+          <NavLink to="/wishlist">
             <RiHeartLine className={iconStyle} />
             wishlist
-          </Link>
+          </NavLink>
         </li>
 
         <li>
-          <Link onClick={handleLoginClick} to="/login">
+          <NavLink onClick={handleLoginClick} to="/login">
             <RiUserLine className={iconStyle} />
             my account
-          </Link>
+          </NavLink>
         </li>
 
         <li>
-          <Link to="/compare">
+          <NavLink to="/compare">
             <RiBarChartBoxLine className={iconStyle} />
             compare
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </div>

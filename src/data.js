@@ -446,7 +446,7 @@ const accessories = {
       hoverImage: '/images/headphone/headphone9.jpg',
     },
     {
-      id: 24,
+      id: 25,
       categoryName: 'accessories',
       name: 'headphone 454',
       price: 454,

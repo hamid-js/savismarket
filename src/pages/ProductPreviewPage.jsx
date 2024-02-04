@@ -1,15 +1,21 @@
-/* eslint-disable no-unused-vars */
+import { useNavigate, useParams } from 'react-router-dom';
+import { allCategoriesData } from '../data';
 import { useEffect, useRef } from 'react';
-import {  useNavigate } from 'react-router-dom';
-import LoginForm from '../components/ui/LoginForm';
+console.log('allCategoriesData:', allCategoriesData);
+function ProductPreviewPage() {
+  const { id } = useParams();
+  let product = null;
+  allCategoriesData.some((Category) => {
+    product = Category.products.find((item) => item.id === parseInt(id));
+    return product !== undefined;
+  });
 
-function LoginPage() {
   const navigate = useNavigate();
 
-  const loginRef = useRef(null);
+  const productRef = useRef(null);
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (loginRef.current && !loginRef.current.contains(event.target)) {
+      if (productRef.current && !productRef.current.contains(event.target)) {
         navigate('/');
       }
     };
@@ -20,14 +26,11 @@ function LoginPage() {
     };
   }, [navigate]);
 
-  const handleCloseMenu = (e) => {
-    if (e.target.tagName.toLowerCase() === 'a') {
-      navigate('/');
-    }
-  };
+  if (!product) return <div className="p-40"> product not find</div>;
+
   return (
     <div
-      ref={loginRef}
+      ref={productRef}
       className="fixed right-[5%] top-[13dvh] z-40  mx-auto h-[75dvh] w-11/12 overflow-y-scroll rounded-lg bg-zinc-300 pb-7 duration-700"
     >
       <div className="flex h-28 flex-wrap items-center justify-center bg-zinc-700 text-center text-xl  uppercase text-gray-100 ">
@@ -39,25 +42,9 @@ function LoginPage() {
         </div>
         <p className="w-1/2 font-bold"> Access your account</p>
       </div>
-      <div>
-        <LoginForm
-          firstInput="Username or email address"
-          secondInput="Password"
-          btnText="log in"
-          title="Login"
-          addText="Lost your password?"
-          remember
-        />
-        <LoginForm
-          title="Register"
-          firstInput="Username "
-          secondInput="email address"
-          thirdInput="Password"
-          btnText="Register"
-        />
-      </div>
+      <div></div>
     </div>
   );
 }
 
-export default LoginPage;
+export default ProductPreviewPage;

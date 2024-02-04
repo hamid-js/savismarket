@@ -5,7 +5,7 @@ import {
   RiSearchLine,
   RiShoppingCartLine,
 } from 'react-icons/ri';
-
+import { Link } from 'react-router-dom';
 export default function ProductCard({
   isInAuctions,
   name,
@@ -13,8 +13,15 @@ export default function ProductCard({
   firstImage,
   hoverImage,
   details,
-  count,
+  id,
 }) {
+
+  
+
+  
+  const handleStopPropagation = async (event) => {
+    event.stopPropagation();
+  };
   const [isHovered, setIsHovered] = useState(false);
 
   const hoverStyle =
@@ -32,11 +39,6 @@ export default function ProductCard({
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
       >
-        {/* <img
-          src={isHovered ? hoverImage : firstImage}
-          alt=""
-          className={`absolute h-full w-full duration-500 transition-all  `}  
-        /> */}
         <div
           className="h-6/6 z-10  flex w-full  flex-col items-end justify-center gap-3
          text-lg *:mr-2 *:mt-2 *:flex  *:h-9 *:w-9 *:items-center *:justify-center *:rounded-full *:bg-black *:duration-300  "
@@ -44,8 +46,9 @@ export default function ProductCard({
           <div className={hoverStyle}>
             <RiHeartLine />
           </div>
-          <div className={hoverStyle}>
-            <RiSearchLine />
+          {console.log(id)}
+          <div onClick={handleStopPropagation} className={hoverStyle}>
+          <Link to={`/product/${id}`}>  <RiSearchLine /></Link>
           </div>
           <div className={hoverStyle}>
             <RiListCheck3 />
@@ -68,9 +71,8 @@ export default function ProductCard({
       </div>
       <div className="mt-1">
         {isInAuctions === true ? (
-          <div className="flex pb-2  flex-col items-center justify-between gap-y-2 text-center capitalize">
+          <div className="flex flex-col  items-center justify-between gap-y-2 pb-2 text-center capitalize">
             <p>Time left</p>
-
             <div className="flex w-full items-center justify-evenly border-b border-gray-700 pb-1">
               <div>
                 175 <div className="text-[10px]  text-gray-400">days</div>
@@ -86,14 +88,16 @@ export default function ProductCard({
               </div>
             </div>
 
-            <p className="duration-700 hover:scale-125 cursor-pointer font-semibold">{name}</p>
-            <p className="text-sm duration-700 hover:scale-125 font-light *:text-lg *:font-semibold">
-              current bid: <span className='text-blue-500'>${price}</span>
+            <p className="cursor-pointer font-semibold duration-700 hover:scale-125">
+              {name}
+            </p>
+            <p className="text-sm font-light duration-700 *:text-lg *:font-semibold hover:scale-125">
+              current bid: <span className="text-blue-500">${price}</span>
             </p>
           </div>
         ) : (
           <div className="flex flex-col items-center gap-1 pb-2  ">
-            <p className="mt-1 text-lg font-semibold  duration-500 z-10 hover:scale-125 ">
+            <p className="z-10 mt-1 text-lg  font-semibold duration-500 hover:scale-125 ">
               {name}
             </p>
             <p className="text-sm text-gray-300 duration-500 hover:scale-125">
