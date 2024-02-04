@@ -11,7 +11,7 @@ export default function Footer() {
     <>
       <div className=" mb-14 w-full  bg-black py-1">
         <div className='py-10'>
-          <h3 className='font-bold text-indigo-300 text-[5.2vw] m-1 mb-3'>Hamid Mohamadi</h3>
+          <h3 className='font-bold text-indigo-300 text-[5.2vw] ml-5 mb-3'>Hamid Mohamadi</h3>
         
         <div className=" flex gap-1  items-center justify-between  pb-1">
           <div className="-ml-10 w-7/12 rounded-r-full border-t-2 border-indigo-600 bg-indigo-900 p-5 shadow-lg shadow-indigo-300">
@@ -48,7 +48,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <p className='font-bold text-indigo-300 text-[5.2vw] m-1 mt-5'>Front-End Developer</p>
+        <p className='font-bold text-indigo-300 text-[5.2vw] ml-5 mt-6'>Front-End Developer</p>
 </div>
         <div className="w-full bg-indigo-950 py-3 text-center text-lg capitalize text-indigo-200  ">
           ❤️ created by hamid mohamadi ❤️
