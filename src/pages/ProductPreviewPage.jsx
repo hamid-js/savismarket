@@ -97,7 +97,7 @@ function ProductPreviewPage() {
           </p>
         </div>
 
-        <div className="absolute left-0  top-10 mt-5 flex w-full  items-center justify-between gap-5 text-2xl text-white *:rounded-full *:bg-slate-400 *:p-2">
+        <div className="absolute left-0  top-[28.2rem] mt-5 flex w-full  items-center justify-around gap-28 text-2xl text-white *:rounded-full *:bg-indigo-600 *:p-2">
           <div className={`${hoverStyle} ml-2`}>
             <RiHeartLine />
           </div>
