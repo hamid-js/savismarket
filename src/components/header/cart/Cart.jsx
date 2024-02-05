@@ -24,7 +24,7 @@ function Cart() {
       style={{
         transform: `${isOpenCart ? 'translateX(0rem)' : 'translateX(24rem)'}`,
       }}
-      className="fixed right-0 z-50 h-svh w-80 overflow-y-hidden bg-indigo-950  text-slate-300 duration-300"
+      className="fixed right-0 z-50 h-dvh w-80 overflow-y-hidden bg-indigo-950  text-slate-300 duration-300"
     >
       <div className="flex justify-between border-b  border-zinc-700 px-3 py-1  text-xl font-semibold ">
         <p className=" py-3  capitalize ">Shopping Cart</p>
@@ -37,7 +37,7 @@ function Cart() {
         </div>
       </div>
       {!cart.length ? (
-        <div className="flex h-2/3 flex-col items-center justify-center gap-5 text-lg font-bold">
+        <div className="h-3/3 flex flex-col items-center justify-center gap-5 text-lg font-bold">
           <MdOutlineRemoveShoppingCart className="text-9xl text-zinc-900" />
 
           <p>No Products in the Cart.</p>
@@ -49,7 +49,7 @@ function Cart() {
         </div>
       ) : (
         <div>
-          <div className=" h-48 overflow-y-scroll border-b border-zinc-700">
+          <div className=" h-[40vh] overflow-y-scroll border-b border-zinc-700">
             {cart &&
               cart.map((product) => (
                 <CartItem
@@ -64,11 +64,11 @@ function Cart() {
                 />
               ))}
           </div>
-          <div className="flex h-16 items-center justify-between border-b border-zinc-700 p-2 text-xl font-semibold">
+          <div className="flex h-[16vh] items-center justify-between border-b border-zinc-700 p-2 text-xl font-semibold">
             <div>Subtotal:</div>
             <div className="text-indigo-600">${totalPrice}</div>
           </div>
-          <div className=" flex flex-col items-stretch justify-evenly p-2">
+          <div className=" flex h-[30vh] flex-col items-stretch justify-evenly p-2">
             {totalPrice > 10000 ? (
               <p>
                 Your order qualifies for
@@ -77,7 +77,10 @@ function Cart() {
             ) : (
               <p>
                 Add
-                <span className="text-indigo-400 ">${10000 - totalPrice}</span>
+                <span className="text-indigo-400 ">
+                  {' '}
+                  ${10000 - totalPrice}{' '}
+                </span>
                 to cart and get
                 <span className="font-bold">free shipping!</span>
               </p>

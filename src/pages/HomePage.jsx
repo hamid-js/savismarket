@@ -39,5 +39,8 @@ export default HomePage;
 // cart: adding product to cart logic +
 
 //TODO  time: products auction times logic
+//TODO  filter: filter products
 //TODO  toast(by third-parti)
 //TODO  pages: compare,wishlist,product after clicks page,checkout , contact
+//TODO  generate data for articles
+
