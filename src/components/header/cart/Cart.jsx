@@ -24,7 +24,7 @@ function Cart() {
       style={{
         transform: `${isOpenCart ? 'translateX(0rem)' : 'translateX(24rem)'}`,
       }}
-      className="fixed right-0 top z-30 h-[94dvh] rounded-sm w-[75vw] overflow-y-hidden bg-indigo-950  text-slate-300 duration-300"
+      className="fixed right-0 top z-20 h-[93dvh] rounded-sm w-[75vw] overflow-y-hidden bg-indigo-950  text-slate-300 duration-300"
     >
       <div className="flex justify-between border-b  border-zinc-700 px-3 py-1  text-xl font-semibold ">
         <p className=" py-3  capitalize ">Shopping Cart</p>
