@@ -1,18 +1,26 @@
+import { useContext } from 'react';
 import Button from '../../ui/Button';
 import CartItem from './CartItem';
+import { PostContext } from '../../../PostContext';
+// import { PostContext } from '../../../PostContext';
+// import { useContext } from 'react';
 
 function Cart({ isOpen, setIsOpen }) {
+  const { cart } = useContext(PostContext);
+  const {isOpenCart, setIsOpenCart }=useContext(PostContext)
+
+
   return (
     <section
       style={{
-        transform: `${isOpen ? 'translateX(0rem)' : 'translateX(24rem)'}`,
+        transform: `${isOpenCart ? 'translateX(0rem)' : 'translateX(24rem)'}`,
       }}
       className="fixed right-0 z-50 h-svh w-80 overflow-y-hidden bg-indigo-950  text-slate-300 duration-300"
     >
       <div className="flex justify-between border-b  border-zinc-700 px-3 py-1  text-xl font-semibold ">
         <p className=" py-3  capitalize ">Shopping Cart</p>
         <div
-          onClick={() => setIsOpen(false)}
+          onClick={() => setIsOpenCart(false)}
           className="flex w-16 items-center justify-between text-3xl font-light "
         >
           <span className="mb-1">&times; </span>
@@ -21,10 +29,18 @@ function Cart({ isOpen, setIsOpen }) {
       </div>
 
       <div className=" h-48 overflow-y-scroll border-b border-zinc-700">
-        <CartItem />
-        <CartItem />
-        <CartItem />
-        <CartItem />
+        {cart && cart.map((product) => (
+          <CartItem
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            firstImage={product.firstImage}
+            hoverImage={product.hoverImage}
+            price={product.price}
+            details={product.details}
+            orderCount={product.orderCount}
+          />
+        ))}
       </div>
       <div className="flex h-16 items-center justify-between border-b border-zinc-700 p-2 text-xl font-semibold">
         <div>Subtotal:</div>

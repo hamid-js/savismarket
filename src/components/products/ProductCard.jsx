@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {
   RiHeartLine,
   RiListCheck3,
@@ -6,6 +6,7 @@ import {
   RiShoppingCartLine,
 } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
+import { PostContext } from '../../PostContext';
 export default function ProductCard({
   isInAuctions,
   name,
@@ -14,7 +15,36 @@ export default function ProductCard({
   hoverImage,
   details,
   id,
+  count,
 }) {
+  const { cart, setCart, setIsOpenCart } = useContext(PostContext);
+
+  function addToCartHandler(event) {
+    event.stopPropagation()
+    setIsOpenCart(true)
+    const newProduct = {
+      id,
+      name,
+      firstImage,
+      hoverImage,
+      price,
+      details,
+      orderCount: 1,
+    };
+    const existingProductIndex = cart.findIndex(
+      (Product) => Product.id === newProduct.id,
+    );
+    if (existingProductIndex !== -1) {
+      setCart((prevCart) => {
+        const updateCart = [...prevCart];
+        updateCart[existingProductIndex].orderCount += 1;
+        return updateCart;
+      });
+    } else {
+      setCart((pre) => [...pre, newProduct]);
+    }
+ 
+  }
   const handleStopPropagation = async (event) => {
     event.stopPropagation();
   };
@@ -52,6 +82,7 @@ export default function ProductCard({
             </Link>
           </div>
           <div
+            onClick={addToCartHandler}
             style={{
               backgroundColor: 'rgb(79 70 229 / var(--tw-bg-opacity))',
               borderRadius: '1px',

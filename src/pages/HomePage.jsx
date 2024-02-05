@@ -45,4 +45,4 @@ export default HomePage
     //TODO  cart: adding product to cart logic + toast(by third-parti)
 
     
-    //TODO  pages: compare,wishlist,product after clicks page,checkout , contact
+    //TODO  pages: compare,wishlist,product after clicks page,checkout , contact 

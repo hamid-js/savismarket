@@ -1,31 +1,30 @@
 import { RiMenuFill, RiShoppingCartLine } from 'react-icons/ri';
-import {  useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import MobileMenu from './menus/MobileMenu';
 import HamburgerMenu from './menus/HamburgerMenu';
 import Cart from './cart/Cart';
 import useClickOutside from '../../hooks/useClickOutside';
+import { PostContext } from '../../PostContext';
 
 export default function Header() {
+  const { setIsOpenCart } = useContext(PostContext);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-  const [isOpenCart, setIsOpenCart] = useState(false);
 
   const menuRef = useRef(null);
   const cartRef = useRef(null);
-  useClickOutside(menuRef,() =>setIsOpenMenu(false)  )
-  useClickOutside(cartRef,() =>setIsOpenCart(false)  )
- 
+  useClickOutside(menuRef, () => setIsOpenMenu(false));
+  useClickOutside(cartRef, () => setIsOpenCart(false));
+
   const handleMenuClick = (event) => {
-    event.stopPropagation(); 
+    event.stopPropagation();
     setIsOpenMenu((prev) => !prev);
     setIsOpenCart(false);
-
   };
   const handleCartClick = (event) => {
-    event.stopPropagation(); 
+    event.stopPropagation();
     setIsOpenCart((prev) => !prev);
-    setIsOpenMenu( false);
-
+    setIsOpenMenu(false);
   };
   return (
     <header>
@@ -45,12 +44,12 @@ export default function Header() {
           <RiShoppingCartLine className="text-2xl font-bold" />
         </div>
       </div>
-      <div ref={menuRef}> 
+      <div ref={menuRef}>
         <HamburgerMenu isOpen={isOpenMenu} setIsOpen={setIsOpenMenu} />
       </div>
-      <MobileMenu /> 
+      <MobileMenu />
       <div ref={cartRef}>
-      <Cart isOpen={isOpenCart} setIsOpen={setIsOpenCart} />
+        <Cart />
       </div>
     </header>
   );
