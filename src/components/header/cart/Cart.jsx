@@ -49,7 +49,7 @@ function Cart() {
         </div>
       ) : (
         <div>
-          <div className=" h-[40vh] overflow-y-scroll border-b border-zinc-700">
+          <div className=" h-[45vh] overflow-y-scroll border-b border-zinc-700">
             {cart &&
               cart.map((product) => (
                 <CartItem
@@ -95,7 +95,7 @@ function Cart() {
                 className="h-full  bg-indigo-500"
               ></div>
             </div>
-            <div className='flex flex-col w-11/12 gap-1'>
+            <div  className='flex absolute bottom-2 flex-col w-11/12 gap-1'>
             <Button style={{ backgroundColor: 'black' }}> view cart</Button>
 
             <Button> checkout</Button>
