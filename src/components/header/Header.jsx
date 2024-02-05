@@ -8,13 +8,16 @@ import useClickOutside from '../../hooks/useClickOutside';
 import { PostContext } from '../../PostContext';
 
 export default function Header() {
-  const { setIsOpenCart } = useContext(PostContext);
+  const { cart ,setIsOpenCart } = useContext(PostContext);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-
   const menuRef = useRef(null);
   const cartRef = useRef(null);
   useClickOutside(menuRef, () => setIsOpenMenu(false));
   useClickOutside(cartRef, () => setIsOpenCart(false));
+
+  const totalCount = cart.length && cart.map((item) => {
+   return item.orderCount
+  }).reduce((a,b) => a+ b)
 
   const handleMenuClick = (event) => {
     event.stopPropagation();
@@ -39,7 +42,7 @@ export default function Header() {
         </NavLink>
         <div onClick={handleCartClick} className="relative p-2">
           <span className="absolute right-0 top-0 w-4 rounded-full bg-indigo-500 text-center text-xs   opacity-85">
-            1
+            {totalCount  ? totalCount : ""}
           </span>
           <RiShoppingCartLine className="text-2xl font-bold" />
         </div>

@@ -1,17 +1,14 @@
 import {
-  RiBarChartBoxLine,
   RiHeartLine,
+  RiShuffleFill,
   RiStore3Line,
   RiUserLine,
 } from 'react-icons/ri';
-import {  NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function MobileMenu() {
-
-
   const handleLoginClick = (event) => {
-    event.stopPropagation(); 
-    
+    event.stopPropagation();
   };
 
   const iconStyle = 'text-2xl text-center m-auto';
@@ -41,7 +38,7 @@ export default function MobileMenu() {
 
         <li>
           <NavLink to="/compare">
-            <RiBarChartBoxLine className={iconStyle} />
+            <RiShuffleFill className={iconStyle} />
             compare
           </NavLink>
         </li>

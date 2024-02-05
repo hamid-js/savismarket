@@ -11,6 +11,8 @@ function CartItem({
   orderCount,
 }) {
   const { setCart, cart } = useContext(PostContext);
+ 
+  
 
   function handleIncreaseOrder() {
     // Check if the product with the given id exists in the cart
@@ -25,7 +27,8 @@ function CartItem({
       );
     }
   }
-  function handleDecreaseOrder() {
+  function handleDecreaseOrder(event) {
+    event.stopPropagation();
     // Check if the product with the given id exists in the cart
     const productToUpdate = cart.find((item) => item.id === id);
 
@@ -45,6 +48,11 @@ function CartItem({
             .filter((item) => item.orderCount > 0), // Remove products with orderCount zero
       );
     }
+  }
+  function handleDeleteProduct(event) {
+    event.stopPropagation();
+    // Remove the product with the specified id from the cart
+    setCart((prev) => prev.filter((item) => item.id !== id));
   }
 
   return (
@@ -76,7 +84,12 @@ function CartItem({
           <span className="text-indigo-500"> ${price}</span>
         </div>
       </div>
-      <span className="w-1/5 self-start text-right text-2xl">&times;</span>
+      <span
+        onClick={handleDeleteProduct}
+        className="w-1/5 self-start text-right text-2xl"
+      >
+        &times;
+      </span>
     </div>
   );
 }

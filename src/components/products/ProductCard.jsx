@@ -18,10 +18,11 @@ export default function ProductCard({
   count,
 }) {
   const { cart, setCart, setIsOpenCart } = useContext(PostContext);
+ 
 
   function addToCartHandler(event) {
-    event.stopPropagation()
-    setIsOpenCart(true)
+    event.stopPropagation();
+    setIsOpenCart(true);
     const newProduct = {
       id,
       name,
@@ -31,19 +32,17 @@ export default function ProductCard({
       details,
       orderCount: 1,
     };
-    const existingProductIndex = cart.findIndex(
-      (Product) => Product.id === newProduct.id,
-    );
-    if (existingProductIndex !== -1) {
-      setCart((prevCart) => {
-        const updateCart = [...prevCart];
-        updateCart[existingProductIndex].orderCount += 1;
-        return updateCart;
-      });
+    const productToUpdate = cart.find((item) => item.id === id);
+
+    if (productToUpdate) {
+      setCart((prev) =>
+        prev.map((item) =>
+          item.id === id ? { ...item, orderCount: item.orderCount + 1 } : item,
+        ),
+      );
     } else {
       setCart((pre) => [...pre, newProduct]);
     }
- 
   }
   const handleStopPropagation = async (event) => {
     event.stopPropagation();

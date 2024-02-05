@@ -2,13 +2,22 @@ import { useContext } from 'react';
 import Button from '../../ui/Button';
 import CartItem from './CartItem';
 import { PostContext } from '../../../PostContext';
+import { MdOutlineRemoveShoppingCart } from 'react-icons/md';
+import { Link } from 'react-router-dom';
+
 // import { PostContext } from '../../../PostContext';
 // import { useContext } from 'react';
 
-function Cart({ isOpen, setIsOpen }) {
+function Cart() {
   const { cart } = useContext(PostContext);
-  const {isOpenCart, setIsOpenCart }=useContext(PostContext)
-
+  const { isOpenCart, setIsOpenCart } = useContext(PostContext);
+  const totalPrice =
+    cart.length &&
+    cart
+      .map((item) => item.price * item.orderCount)
+      .reduce((a, b) => {
+        return a + b;
+      });
 
   return (
     <section
@@ -27,37 +36,66 @@ function Cart({ isOpen, setIsOpen }) {
           <span className="text-lg font-semibold ">close</span>
         </div>
       </div>
+      {!cart.length ? (
+        <div className="flex h-2/3 flex-col items-center justify-center gap-5 text-lg font-bold">
+          <MdOutlineRemoveShoppingCart className="text-9xl text-zinc-900" />
 
-      <div className=" h-48 overflow-y-scroll border-b border-zinc-700">
-        {cart && cart.map((product) => (
-          <CartItem
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            firstImage={product.firstImage}
-            hoverImage={product.hoverImage}
-            price={product.price}
-            details={product.details}
-            orderCount={product.orderCount}
-          />
-        ))}
-      </div>
-      <div className="flex h-16 items-center justify-between border-b border-zinc-700 p-2 text-xl font-semibold">
-        <div>Subtotal:</div>
-        <div className="text-indigo-600">$239.00</div>
-      </div>
-      <div className=" flex flex-col items-stretch justify-evenly p-2">
-        <p>
-          Add <span className="text-indigo-400 "> $1,265,00 </span> to cart and
-          get <span className="font-bold">free shipping!</span>
-        </p>
-        <div className="mx-1 my-3 h-2 bg-zinc-700">
-          <div className="h-full w-3/12 bg-indigo-500"></div>
+          <p>No Products in the Cart.</p>
+          <div>
+            <Link onClick={() => setIsOpenCart(false)} to="/shop">
+              <Button>return to shop</Button>
+            </Link>
+          </div>
         </div>
-        <Button style={{ backgroundColor: 'black' }}> view cart</Button>
+      ) : (
+        <div>
+          <div className=" h-48 overflow-y-scroll border-b border-zinc-700">
+            {cart &&
+              cart.map((product) => (
+                <CartItem
+                  key={product.id}
+                  id={product.id}
+                  name={product.name}
+                  firstImage={product.firstImage}
+                  hoverImage={product.hoverImage}
+                  price={product.price}
+                  details={product.details}
+                  orderCount={product.orderCount}
+                />
+              ))}
+          </div>
+          <div className="flex h-16 items-center justify-between border-b border-zinc-700 p-2 text-xl font-semibold">
+            <div>Subtotal:</div>
+            <div className="text-indigo-600">${totalPrice}</div>
+          </div>
+          <div className=" flex flex-col items-stretch justify-evenly p-2">
+            {totalPrice > 10000 ? (
+              <p>
+                Your order qualifies for
+                <span className="font-bold"> free shipping! </span>
+              </p>
+            ) : (
+              <p>
+                Add
+                <span className="text-indigo-400 ">${10000 - totalPrice}</span>
+                to cart and get
+                <span className="font-bold">free shipping!</span>
+              </p>
+            )}
+            <div className="mx-1 my-3 h-2 bg-zinc-700">
+              <div
+                style={{
+                  width: `${totalPrice < 10000 ? (totalPrice / 10000) * 100 : 100}%`,
+                }}
+                className="h-full  bg-indigo-500"
+              ></div>
+            </div>
+            <Button style={{ backgroundColor: 'black' }}> view cart</Button>
 
-        <Button> checkout</Button>
-      </div>
+            <Button> checkout</Button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
