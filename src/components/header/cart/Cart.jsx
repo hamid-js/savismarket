@@ -37,7 +37,7 @@ function Cart() {
         </div>
       </div>
       {!cart.length ? (
-        <div className="h-3/3 flex flex-col items-center justify-center gap-5 text-lg font-bold">
+        <div className="h-2/3 flex flex-col items-center justify-center gap-5 text-lg font-bold">
           <MdOutlineRemoveShoppingCart className="text-9xl text-zinc-900" />
 
           <p>No Products in the Cart.</p>
