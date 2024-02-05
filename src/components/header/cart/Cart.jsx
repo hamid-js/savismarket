@@ -49,7 +49,7 @@ function Cart() {
         </div>
       ) : (
         <div>
-          <div className=" h-[45vh] overflow-y-scroll border-b border-zinc-700">
+          <div className=" h-[30vh] overflow-y-scroll border-b border-zinc-700">
             {cart &&
               cart.map((product) => (
                 <CartItem
@@ -68,7 +68,7 @@ function Cart() {
             <div>Subtotal:</div>
             <div className="text-indigo-600">${totalPrice}</div>
           </div>
-          <div className=" flex h-auto flex-col items-center justify-between p-2">
+          <div className=" absolute bottom-0 flex h-auto flex-col justify-center gap-4 pl-7 p-2">
           <div>
             {totalPrice > 10000 ? (
               <p>
@@ -95,7 +95,7 @@ function Cart() {
                 className="h-full  bg-indigo-500"
               ></div>
             </div>
-            <div  className='flex absolute bottom-2 flex-col w-11/12 gap-1'>
+            <div className='flex flex-col'>
             <Button style={{ backgroundColor: 'black' }}> view cart</Button>
 
             <Button> checkout</Button>
