@@ -1,5 +1,4 @@
 import Header from './Header';
-import MobileMenu from './MobileMenu';
 
 // import { useEffect, useState } from 'react';
 
@@ -27,7 +26,7 @@ function AllNavs() {
     <>
      
       <Header />
-       <MobileMenu />
+       
     </>
   );
 }

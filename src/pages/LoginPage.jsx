@@ -1,30 +1,20 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useRef } from 'react';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import LoginForm from '../components/ui/LoginForm';
+import useClickOutside from '../hooks/useClickOutside';
 
 function LoginPage() {
   const navigate = useNavigate();
 
   const loginRef = useRef(null);
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (loginRef.current && !loginRef.current.contains(event.target)) {
-        navigate('/');
-      }
-    };
-    document.addEventListener('click', handleClickOutside);
+  useClickOutside(loginRef, () => navigate('/'));
 
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, [navigate]);
-
-  const handleCloseMenu = (e) => {
-    if (e.target.tagName.toLowerCase() === 'a') {
-      navigate('/');
-    }
-  };
+  // const handleCloseMenu = (e) => {
+  //   if (e.target.tagName.toLowerCase() === 'a') {
+  //     navigate('/');
+  //   }
+  // };
   return (
     <div
       ref={loginRef}
@@ -37,7 +27,7 @@ function LoginPage() {
         >
           x
         </div>
-        <p className="w-1/2 font-bold"> Access your account</p>
+        <p className="w-3/5 text-xl font-bold"> Access your account</p>
       </div>
       <div>
         <LoginForm

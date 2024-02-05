@@ -10,7 +10,7 @@ export default function MobileMenu() {
 
 
   const handleLoginClick = (event) => {
-    event.stopPropagation(); // Stop the event propagation to prevent it from reaching the document click listener
+    event.stopPropagation(); 
     
   };
 

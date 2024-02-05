@@ -4,7 +4,6 @@ import { allCategoriesData } from '../data';
 import { useEffect, useRef, useState } from 'react';
 import Button from '../components/ui/Button';
 import { RiHeartLine, RiListCheck3, RiSearchLine } from 'react-icons/ri';
-console.log('allCategoriesData:', allCategoriesData);
 function ProductPreviewPage() {
   // handle useParams
   const { id } = useParams();

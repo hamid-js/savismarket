@@ -1,12 +1,12 @@
 import { useRoutes } from 'react-router-dom';
 import routeData from './router';
-import AllNavs from './components/menus/AllNavs';
 import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
 function App() {
   const router = useRoutes(routeData);
   return (
     <>
-      <AllNavs />
+      <Header />
       {router}
       <Footer />
     </>
