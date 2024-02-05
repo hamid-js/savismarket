@@ -49,7 +49,7 @@ function Cart() {
         </div>
       ) : (
         <div>
-          <div className=" h-[30vh] overflow-y-scroll border-b border-zinc-700">
+          <div className=" h-[35vh] overflow-y-scroll border-b border-zinc-700">
             {cart &&
               cart.map((product) => (
                 <CartItem
@@ -64,7 +64,7 @@ function Cart() {
                 />
               ))}
           </div>
-          <div className="flex h-[10vh] mb-3 items-center justify-between border-b border-zinc-700 p-2 text-xl font-semibold">
+          <div className="flex h-[7vh] mb-3 items-center justify-between border-b border-zinc-700 p-2 text-xl font-semibold">
             <div>Subtotal:</div>
             <div className="text-indigo-600">${totalPrice}</div>
           </div>
