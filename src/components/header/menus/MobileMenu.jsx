@@ -13,7 +13,8 @@ export default function MobileMenu() {
 
   const iconStyle = 'text-2xl text-center m-auto';
   return (
-    <div className="fixed bottom-0 z-40 h-[10vh] w-full bg-white pt-2  text-sm text-black ">
+    <nav className='flex items-center justify-center'>
+    <div className="fixed  bottom-0 z-40 h-[10vh] w-full bg-white pt-2  text-sm text-black ">
       <ul className="flex  items-center justify-evenly  ">
         <li>
           <NavLink className="duration-1000" to="/shop">
@@ -44,5 +45,6 @@ export default function MobileMenu() {
         </li>
       </ul>
     </div>
+    </nav>
   );
 }
