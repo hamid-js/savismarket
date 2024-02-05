@@ -68,7 +68,8 @@ function Cart() {
             <div>Subtotal:</div>
             <div className="text-indigo-600">${totalPrice}</div>
           </div>
-          <div className=" flex h-auto flex-col items-stretch justify-end p-2">
+          <div className=" flex h-auto flex-col items-center justify-between p-2">
+          <div>
             {totalPrice > 10000 ? (
               <p>
                 Your order qualifies for
@@ -85,6 +86,7 @@ function Cart() {
                 <span className="font-bold">free shipping!</span>
               </p>
             )}
+            </div>
             <div className="mx-1 my-3 h-2 bg-zinc-700">
               <div
                 style={{
@@ -93,9 +95,11 @@ function Cart() {
                 className="h-full  bg-indigo-500"
               ></div>
             </div>
+            <div className='flex flex-col w-11/12 gap-1'>
             <Button style={{ backgroundColor: 'black' }}> view cart</Button>
 
             <Button> checkout</Button>
+            </div>
           </div>
         </div>
       )}
