@@ -64,11 +64,12 @@ function Cart() {
                 />
               ))}
           </div>
-          <div className="flex h-[7vh] mb-3 items-center justify-between border-b border-zinc-700 p-2 text-xl font-semibold">
+          <div className="flex h-[10vh] mb-3 items-center justify-between border-b border-zinc-700 p-2 text-xl font-semibold">
             <div>Subtotal:</div>
             <div className="text-indigo-600">${totalPrice}</div>
           </div>
-          <div className=" absolute bottom-7 flex h-auto flex-col justify-center gap-4 px-5 p-2">
+          <div className='relative'>
+          <div className=" absolute bottom- flex h-auto flex-col justify-center gap-4 px-5 p-2">
           <div>
             {totalPrice > 10000 ? (
               <p>
@@ -100,6 +101,7 @@ function Cart() {
 
             <Button> checkout</Button>
             </div>
+          </div>
           </div>
         </div>
       )}
