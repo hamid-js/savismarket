@@ -18,10 +18,14 @@ export default function Header() {
   const handleMenuClick = (event) => {
     event.stopPropagation(); 
     setIsOpenMenu((prev) => !prev);
+    setIsOpenCart(false);
+
   };
   const handleCartClick = (event) => {
     event.stopPropagation(); 
     setIsOpenCart((prev) => !prev);
+    setIsOpenMenu( false);
+
   };
   return (
     <header>

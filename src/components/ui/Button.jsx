@@ -1,6 +1,6 @@
-export default function Button({ children ,type="" }) {
+export default function Button({ children ,style={} }) {
   return (
-    <button type={type} className=" my-6 bg-indigo-600 px-5 py-3 uppercase">
+    <button style={style} className=" mt-1 bg-indigo-600 px-5 py-3 uppercase">
       {children}
     </button>
   );
