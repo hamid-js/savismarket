@@ -68,7 +68,7 @@ function Cart() {
             <div>Subtotal:</div>
             <div className="text-indigo-600">${totalPrice}</div>
           </div>
-          <div className=" absolute bottom-0 flex h-auto flex-col justify-center gap-4 pl-7 p-2">
+          <div className=" absolute bottom-8 flex h-auto flex-col justify-center gap-4 pl-7 p-2">
           <div>
             {totalPrice > 10000 ? (
               <p>
