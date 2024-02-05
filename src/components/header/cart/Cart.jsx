@@ -68,7 +68,7 @@ function Cart() {
             <div>Subtotal:</div>
             <div className="text-indigo-600">${totalPrice}</div>
           </div>
-          <div className=" flex h-[30vh] flex-col items-stretch justify-between p-2">
+          <div className=" flex h-auto flex-col items-stretch justify-between p-2">
             {totalPrice > 10000 ? (
               <p>
                 Your order qualifies for
