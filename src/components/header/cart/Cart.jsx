@@ -24,7 +24,7 @@ function Cart() {
       style={{
         transform: `${isOpenCart ? 'translateX(0rem)' : 'translateX(24rem)'}`,
       }}
-      className="fixed right-0 top z-50 h-dvh rounded-sm w-[80vw] overflow-y-hidden bg-indigo-950  text-slate-300 duration-300"
+      className="top fixed right-0 z-50 h-dvh w-[80vw] overflow-y-hidden rounded-sm bg-indigo-950  text-slate-300 duration-300"
     >
       <div className="flex justify-between border-b  border-zinc-700 px-3 py-1  text-xl font-semibold ">
         <p className=" py-3  capitalize ">Shopping Cart</p>
@@ -37,7 +37,7 @@ function Cart() {
         </div>
       </div>
       {!cart.length ? (
-        <div className="h-2/3 flex flex-col items-center justify-center gap-5 text-lg font-bold">
+        <div className="flex h-2/3 flex-col items-center justify-center gap-5 text-lg font-bold">
           <MdOutlineRemoveShoppingCart className="text-9xl text-zinc-900" />
 
           <p>No Products in the Cart.</p>
@@ -64,44 +64,44 @@ function Cart() {
                 />
               ))}
           </div>
-          <div className="flex h-[10vh] mb-3 items-center justify-between border-b border-zinc-700 p-2 text-xl font-semibold">
+          <div className="mb-3 flex h-[10vh] items-center justify-between border-b border-zinc-700 p-2 text-xl font-semibold">
             <div>Subtotal:</div>
             <div className="text-indigo-600">${totalPrice}</div>
           </div>
-          <div className='relative'>
-          <div className=" absolute bottom- flex h-auto flex-col justify-center gap-4 px-5 p-2">
-          <div>
-            {totalPrice > 10000 ? (
-              <p>
-                Your order qualifies for
-                <span className="font-bold"> free shipping! </span>
-              </p>
-            ) : (
-              <p>
-                Add
-                <span className="text-indigo-400 ">
-                  {' '}
-                  ${10000 - totalPrice}{' '}
-                </span>
-                to cart and get
-                <span className="font-bold">free shipping!</span>
-              </p>
-            )}
-            </div>
-            <div className="mx-1 my-3 h-2 bg-zinc-700">
-              <div
-                style={{
-                  width: `${totalPrice < 10000 ? (totalPrice / 10000) * 100 : 100}%`,
-                }}
-                className="h-full  bg-indigo-500"
-              ></div>
-            </div>
-            <div className='flex flex-col'>
-            <Button style={{ backgroundColor: 'black' }}> view cart</Button>
+          <div className="relative">
+            <div className=" bottom- absolute flex h-auto flex-col justify-center gap-4 p-2 px-5">
+              <div>
+                {totalPrice > 10000 ? (
+                  <p>
+                    Your order qualifies for
+                    <span className="font-bold"> free shipping! </span>
+                  </p>
+                ) : (
+                  <p>
+                    Add
+                    <span className="text-indigo-400 ">
+                      {' '}
+                      ${10000 - totalPrice}{' '}
+                    </span>
+                    to cart and get
+                    <span className="font-bold"> free shipping! </span>
+                  </p>
+                )}
+              </div>
+              <div className="mx-1 my-3 h-2 bg-zinc-700">
+                <div
+                  style={{
+                    width: `${totalPrice < 10000 ? (totalPrice / 10000) * 100 : 100}%`,
+                  }}
+                  className="h-full  bg-indigo-500"
+                ></div>
+              </div>
+              <div className="flex flex-col">
+                <Button style={{ backgroundColor: 'black' }}> view cart</Button>
 
-            <Button> checkout</Button>
+                <Button> checkout</Button>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       )}
