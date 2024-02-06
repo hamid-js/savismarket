@@ -1,14 +1,7 @@
 import { useContext } from 'react';
 import { PostContext } from '../../contexts/PostContext';
 
-function CartItem({
-  id,
-  name,
-  firstImage,
-  price,
-  details,
-  orderCount,
-}) {
+function CartItem({ id, name, firstImage, price, details, orderCount }) {
   const { setCart, cart } = useContext(PostContext);
 
   function handleIncreaseOrder() {
@@ -24,9 +17,8 @@ function CartItem({
       );
     }
   }
-  function handleDecreaseOrder(event) {
+   function handleDecreaseOrder(event) {
     event.stopPropagation();
-    // Check if the product with the given id exists in the cart
     const productToUpdate = cart.find((item) => item.id === id);
 
     if (productToUpdate) {
