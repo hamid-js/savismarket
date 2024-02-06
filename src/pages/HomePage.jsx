@@ -13,9 +13,8 @@ function HomePage() {
   return (
     <div>
       <Outlet />
-      <main className="pb-10">
+      <main>
         <HiroSilder />
-
         <Services />
         <Auctions />
         <AllCategories />

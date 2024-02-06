@@ -3,21 +3,25 @@ import { useContext, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import MobileMenu from './menus/MobileMenu';
 import HamburgerMenu from './menus/HamburgerMenu';
-import Cart from './cart/Cart';
+import Cart from '../cart/Cart';
 import useClickOutside from '../../hooks/useClickOutside';
 import { PostContext } from '../../PostContext';
 
 export default function Header() {
-  const { cart ,setIsOpenCart } = useContext(PostContext);
+  const { cart, setIsOpenCart } = useContext(PostContext);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const menuRef = useRef(null);
   const cartRef = useRef(null);
   useClickOutside(menuRef, () => setIsOpenMenu(false));
   useClickOutside(cartRef, () => setIsOpenCart(false));
 
-  const totalCount = cart.length && cart.map((item) => {
-   return item.orderCount
-  }).reduce((a,b) => a+ b)
+  const totalCount =
+    cart.length &&
+    cart
+      .map((item) => {
+        return item.orderCount;
+      })
+      .reduce((a, b) => a + b);
 
   const handleMenuClick = (event) => {
     event.stopPropagation();
@@ -30,7 +34,7 @@ export default function Header() {
     setIsOpenMenu(false);
   };
   return (
-    <header className='h-[12vh]'>
+    <header className="h-[12vh]">
       <div className="fixed z-20 flex w-full  items-center   justify-between bg-black  p-3 text-2xl text-white duration-700 ">
         <div onClick={handleMenuClick}>
           <RiMenuFill />
@@ -42,7 +46,7 @@ export default function Header() {
         </NavLink>
         <div onClick={handleCartClick} className="relative p-2">
           <span className="absolute right-0 top-0 w-4 rounded-full bg-indigo-500 text-center text-xs   opacity-85">
-            {totalCount  ? totalCount : ""}
+            {totalCount ? totalCount : ''}
           </span>
           <RiShoppingCartLine className="text-2xl font-bold" />
         </div>

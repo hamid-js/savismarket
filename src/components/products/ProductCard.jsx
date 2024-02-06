@@ -50,7 +50,7 @@ export default function ProductCard({
   const [isHovered, setIsHovered] = useState(false);
 
   const hoverStyle =
-    'hover:scale-125 z-10 hover:bg-indigo-700 hover:text-green-500';
+    'hover:scale-125 hover:animate-spin motion-reduce:animate-none  z-10 hover:bg-indigo-700 hover:text-green-500';
 
   return (
     <div

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { PostContext } from '../../../PostContext';
+import { PostContext } from '../../PostContext';
 
 function CartItem({
   id,
@@ -11,8 +11,6 @@ function CartItem({
   orderCount,
 }) {
   const { setCart, cart } = useContext(PostContext);
- 
-  
 
   function handleIncreaseOrder() {
     // Check if the product with the given id exists in the cart

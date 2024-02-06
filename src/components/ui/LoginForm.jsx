@@ -15,7 +15,7 @@ function LoginForm({
       <label>
         {firstInput} <span className="m-1 text-red-500">*</span>
         <input
-          className=" mb-3 mt-1 block h-10 w-4/5 rounded-full bg-zinc-100 px-3 outline-none"
+          className=" mb-3 mt-1 block h-10 w-4/5 rounded-full bg-zinc-200 px-3 outline-none"
           type="text"
         />
       </label>

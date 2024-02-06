@@ -98,7 +98,9 @@ function ProductPreviewPage() {
           </p>
         </div>
 
-        <div className="absolute left-0  top-[28.2rem] mt-5 flex w-full  items-center justify-evenly gap-44 text-2xl text-white *:rounded-full *:bg-indigo-600 *:p-2">
+       
+        <div className="text-center mt-5 relative text-white">
+        <div className="absolute left-0  top-0 mt-2 flex w-full  items-center justify-center gap-52 text-2xl text-white *:rounded-md *:bg-indigo-600 *:p-2">
           <div className={`${hoverStyle} ml-2`}>
             <RiHeartLine />
           </div>
@@ -106,7 +108,6 @@ function ProductPreviewPage() {
             <RiListCheck3 />
           </div>
         </div>
-        <div className="text-center text-white">
           <Button>
             <Link to="#ee">add to cart</Link>
           </Button>

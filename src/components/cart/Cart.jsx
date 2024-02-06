@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import Button from '../../ui/Button';
+import Button from '../ui/Button';
 import CartItem from './CartItem';
-import { PostContext } from '../../../PostContext';
+import { PostContext } from '../../PostContext';
 import { MdOutlineRemoveShoppingCart } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ function Cart() {
       style={{
         transform: `${isOpenCart ? 'translateX(0%)' : 'translateX(100%)'}`,
       }}
-      className="top fixed right-0 z-50 h-dvh w-[80vw] max-w-96 overflow-y-hidden rounded-sm bg-indigo-950  text-slate-300 duration-300"
+      className="top fixed right-0 z-50 h-dvh w-[75vw] max-w-96 overflow-y-hidden rounded-sm bg-indigo-950  text-slate-300 duration-300"
     >
       <div className="flex justify-between border-b  border-zinc-700 px-3 py-1  text-xl font-semibold ">
         <p className=" py-3  capitalize ">Shopping Cart</p>

@@ -4,7 +4,7 @@ import { allCategoriesData } from '../data';
 
 function ShoppingPage() {
   return (
-    <div className='pt-16'>
+    <div>
     {allCategoriesData.map((category, index) => (
       <div
         key={index}

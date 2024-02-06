@@ -17,7 +17,7 @@ function HamburgerMenu({ isOpen, setIsOpen }) {
       style={{
         transform: `${isOpen ? 'translateX(0rem)' : 'translateX(-24rem)'}`,
       }}
-      className="fixed z-50 h-svh w-72 overflow-y-hidden bg-zinc-900 pb-7 duration-700"
+      className="fixed  z-50 h-svh w-72 overflow-y-hidden bg-zinc-900 pb-7 duration-700"
     >
       <div className="flex  justify-between px-3 py-7 text-lg capitalize text-gray-400 ">
         <input
@@ -29,7 +29,7 @@ function HamburgerMenu({ isOpen, setIsOpen }) {
       </div>
       <ul
         onClick={handleCloseMenu}
-        className="text-lg capitalize *:border-b *:border-zinc-700 *:p-3 last:*:border-none  "
+        className="text-lg uppercase *:border-b *:border-zinc-700 *:p-3 last:*:border-none  "
       >
         <li>
           <NavLink  to="/">Home</NavLink>
