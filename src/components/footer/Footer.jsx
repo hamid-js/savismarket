@@ -50,9 +50,7 @@ export default function Footer() {
         </div>
         <p className='font-bold text-indigo-300 text-[5.2vw] ml-5 mt-5'>Front-End Developer</p>
 </div>
-        <div className="w-full bg-indigo-950 py-3 text-center text-lg capitalize text-indigo-200  ">
-          ❤️ created by hamid mohamadi ❤️
-        </div>
+        
       </div>
     </>
   );
