@@ -22,9 +22,9 @@ function Cart() {
   return (
     <section
       style={{
-        transform: `${isOpenCart ? 'translateX(0rem)' : 'translateX(24rem)'}`,
+        transform: `${isOpenCart ? 'translateX(0%)' : 'translateX(100%)'}`,
       }}
-      className="top fixed right-0 z-50 h-dvh w-[80vw] overflow-y-hidden rounded-sm bg-indigo-950  text-slate-300 duration-300"
+      className="top fixed right-0 z-50 h-dvh w-[80vw] max-w-96 overflow-y-hidden rounded-sm bg-indigo-950  text-slate-300 duration-300"
     >
       <div className="flex justify-between border-b  border-zinc-700 px-3 py-1  text-xl font-semibold ">
         <p className=" py-3  capitalize ">Shopping Cart</p>
