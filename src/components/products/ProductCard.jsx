@@ -7,6 +7,9 @@ import {
 } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { PostContext } from '../../contexts/PostContext';
+
+const hoverStyle =
+  'hover:scale-110 z-10 hover:bg-indigo-700 ';
 export default function ProductCard({
   isInAuctions,
   name,
@@ -15,7 +18,6 @@ export default function ProductCard({
   hoverImage,
   details,
   id,
-  count,
 }) {
   const {
     cart,
@@ -26,6 +28,10 @@ export default function ProductCard({
     setCompare,
     compare,
   } = useContext(PostContext);
+  //item  is in list ?
+  let hasInWishlist = wishlist.find((item) => item.id === id);
+  let hasInCompare = compare.find((item) => item.id === id);
+
 
   function addToCartHandler(event) {
     event.stopPropagation();
@@ -60,9 +66,10 @@ export default function ProductCard({
       price,
       details,
     };
-    const productToUpdate = wishlist.find((item) => item.id === id);
-    if (productToUpdate) {
-      alert('has in wishlist');
+    const itemInWishlist = wishlist.find((item) => item.id === id);
+
+    if (itemInWishlist) {
+     setWishlist(prev=> prev.filter(item=> item.id !== id ))
     } else {
       setWishlist((pre) => [...pre, newProduct]);
     }
@@ -76,9 +83,10 @@ export default function ProductCard({
       price,
       details,
     };
-    const productToUpdate = compare.find((item) => item.id === id);
+
+    const productToUpdate = compare.some((item) => item.id === id);
     if (productToUpdate) {
-      alert('has in wishlist');
+      setCompare(prev=> prev.filter(item=> item.id !== id))
     } else if (compare.length >= 2) {
       alert('maximum 2 item');
     } else {
@@ -89,9 +97,6 @@ export default function ProductCard({
     event.stopPropagation();
   };
   const [isHovered, setIsHovered] = useState(false);
-
-  const hoverStyle =
-    'hover:scale-125 hover:animate-spin motion-reduce:animate-none  z-10 hover:bg-indigo-700 hover:text-green-500';
 
   return (
     <div
@@ -110,9 +115,17 @@ export default function ProductCard({
          text-lg *:mr-2 *:mt-2 *:flex  *:h-9 *:w-9 *:items-center *:justify-center *:rounded-full *:bg-black *:duration-300  "
         >
           <div onClick={addToCompareHandler} className={hoverStyle}>
-            <RiListCheck3 />
+            {hasInCompare ? (
+              <img className="h-5 w-5" src="/images/digital/tik.svg" alt="" />
+            ) : (
+              <RiListCheck3 />
+            )}
           </div>
-          <div onClick={addToWishlistHandler} className={hoverStyle}>
+          <div
+            style={{ backgroundColor: `${hasInWishlist ? '#4f46e5' : ''}` }}
+            onClick={addToWishlistHandler}
+            className={hoverStyle}
+          >
             <RiHeartLine />
           </div>
 

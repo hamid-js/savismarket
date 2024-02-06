@@ -3,7 +3,6 @@ import { PostContext } from '../../contexts/PostContext';
 
 function CartItem({
   id,
-  hoverImage,
   name,
   firstImage,
   price,

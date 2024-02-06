@@ -10,7 +10,7 @@ function LoginForm({
   remember,
 }) {
   return (
-    <form className="m-5  font-semibold text-white ">
+    <form className="p-5  font-semibold text-white c">
       <p className="my-5 mt-12 text-2xl font-bold">{title}</p>
       <label>
         {firstInput} <span className="m-1 text-red-500">*</span>
@@ -49,7 +49,7 @@ function LoginForm({
       <div className="text-white">
         <Button>{btnText}</Button>
       </div>
-      {addText && <p>{addText}</p>}
+      {addText && <p className='mt-5 text-xl'>{addText}</p>}
     </form>
   );
 }

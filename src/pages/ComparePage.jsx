@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import ProductCard from '../components/products/ProductCard';
 import { PostContext } from '../contexts/PostContext';
+import { RiShuffleFill } from 'react-icons/ri';
+import Button from '../components/ui/Button';
 
 function ComparePage() {
   const { compare, setCompare } = useContext(PostContext);
@@ -35,7 +37,11 @@ function ComparePage() {
             </div>
           ))
         ) : (
-          <div>havent</div>
+          <div className='py-5 flex flex-col gap-10 items-center justify-evenly'>
+          <RiShuffleFill className='text-9xl text-zinc-800 scale-150 -rotate-90' />
+         <p className=' font-semibold text-xl text-stone-300 capitalize'>No products in the Compare.</p> 
+         <Button>return to shop</Button>
+        </div>
         )}
       </div>
     </div>
