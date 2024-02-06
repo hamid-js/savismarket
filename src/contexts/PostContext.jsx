@@ -2,16 +2,22 @@ import { createContext, useState } from 'react';
 const PostContext = createContext();
 
 function PostProvider({ children }) {
-  const [cart, setCart] = useState([]);
   const [isOpenCart, setIsOpenCart] = useState(false);
+  const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
+  const [compare, setCompare] = useState([]);
 
   return (
     <PostContext.Provider
       value={{
-        cart,
-        setCart,
         isOpenCart,
         setIsOpenCart,
+        cart,
+        setCart,
+        wishlist,
+        setWishlist,
+        compare,
+        setCompare,
       }}
     >
       {children}

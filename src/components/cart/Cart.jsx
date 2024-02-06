@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import Button from '../ui/Button';
 import CartItem from './CartItem';
-import { PostContext } from '../../PostContext';
+import { PostContext } from '../../contexts/PostContext';
 import { MdOutlineRemoveShoppingCart } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 

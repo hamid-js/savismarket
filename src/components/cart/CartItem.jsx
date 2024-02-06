@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { PostContext } from '../../PostContext';
+import { PostContext } from '../../contexts/PostContext';
 
 function CartItem({
   id,

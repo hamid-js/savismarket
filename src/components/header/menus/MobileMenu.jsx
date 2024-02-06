@@ -1,5 +1,4 @@
 import {
-  RiArticleLine,
   RiHeartLine,
   RiShuffleFill,
   RiStore3Line,
@@ -14,7 +13,7 @@ export default function MobileMenu() {
 
   const iconStyle = 'text-2xl text-center m-auto ';
   return (
-    <div className="fixed bottom-0 z-40 h-14 w-full bg-white pt-2  text-sm text-black ">
+    <div className="fixed  bottom-0 z-40 h-14 w-full bg-white pt-2  text-sm text-black ">
       <ul className="flex  items-center justify-evenly  ">
         <li>
           <NavLink onClick={handleLoginClick} to="/login">
@@ -43,12 +42,7 @@ export default function MobileMenu() {
           </NavLink>
         </li>
 
-        <li>
-          <NavLink to="/blog">
-            <RiArticleLine className={iconStyle} />
-            blog
-          </NavLink>
-        </li>
+       
       </ul>
     </div>
   );

@@ -6,7 +6,7 @@ import {
   RiShoppingCartLine,
 } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-import { PostContext } from '../../PostContext';
+import { PostContext } from '../../contexts/PostContext';
 export default function ProductCard({
   isInAuctions,
   name,
@@ -17,8 +17,15 @@ export default function ProductCard({
   id,
   count,
 }) {
-  const { cart, setCart, setIsOpenCart } = useContext(PostContext);
- 
+  const {
+    cart,
+    setCart,
+    setIsOpenCart,
+    wishlist,
+    setWishlist,
+    setCompare,
+    compare,
+  } = useContext(PostContext);
 
   function addToCartHandler(event) {
     event.stopPropagation();
@@ -44,6 +51,40 @@ export default function ProductCard({
       setCart((pre) => [...pre, newProduct]);
     }
   }
+  function addToWishlistHandler() {
+    const newProduct = {
+      id,
+      name,
+      firstImage,
+      hoverImage,
+      price,
+      details,
+    };
+    const productToUpdate = wishlist.find((item) => item.id === id);
+    if (productToUpdate) {
+      alert('has in wishlist');
+    } else {
+      setWishlist((pre) => [...pre, newProduct]);
+    }
+  }
+  function addToCompareHandler() {
+    const newProduct = {
+      id,
+      name,
+      firstImage,
+      hoverImage,
+      price,
+      details,
+    };
+    const productToUpdate = compare.find((item) => item.id === id);
+    if (productToUpdate) {
+      alert('has in wishlist');
+    } else if (compare.length >= 2) {
+      alert('maximum 2 item');
+    } else {
+      setCompare((pre) => [...pre, newProduct]);
+    }
+  }
   const handleStopPropagation = async (event) => {
     event.stopPropagation();
   };
@@ -54,7 +95,7 @@ export default function ProductCard({
 
   return (
     <div
-      className={` mb-8  w-64  text-white ${isInAuctions ? 'border border-gray-600' : 'border border-gray-600'}`}
+      className={`  w-64  text-white ${isInAuctions ? 'border border-gray-600' : 'border border-gray-600'}`}
     >
       <div
         style={{
@@ -68,10 +109,10 @@ export default function ProductCard({
           className="h-6/6 z-10  flex w-full  flex-col items-end justify-center gap-3
          text-lg *:mr-2 *:mt-2 *:flex  *:h-9 *:w-9 *:items-center *:justify-center *:rounded-full *:bg-black *:duration-300  "
         >
-          <div className={hoverStyle}>
+          <div onClick={addToCompareHandler} className={hoverStyle}>
             <RiListCheck3 />
           </div>
-          <div className={hoverStyle}>
+          <div onClick={addToWishlistHandler} className={hoverStyle}>
             <RiHeartLine />
           </div>
 

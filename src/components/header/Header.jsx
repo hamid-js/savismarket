@@ -5,7 +5,7 @@ import MobileMenu from './menus/MobileMenu';
 import HamburgerMenu from './menus/HamburgerMenu';
 import Cart from '../cart/Cart';
 import useClickOutside from '../../hooks/useClickOutside';
-import { PostContext } from '../../PostContext';
+import { PostContext } from '../../contexts/PostContext';
 
 export default function Header() {
   const { cart, setIsOpenCart } = useContext(PostContext);
@@ -33,8 +33,8 @@ export default function Header() {
     setIsOpenCart((prev) => !prev);
     setIsOpenMenu(false);
   };
-  return (
-    <header className="h-[12vh]">
+  return ( 
+    <header className="h-[12vh] ">
       <div className="fixed z-20 flex w-full  items-center   justify-between bg-black  p-3 text-2xl text-white duration-700 ">
         <div onClick={handleMenuClick}>
           <RiMenuFill />

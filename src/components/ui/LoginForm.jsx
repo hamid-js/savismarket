@@ -10,7 +10,7 @@ function LoginForm({
   remember,
 }) {
   return (
-    <form className="m-5   text-zinc-900 ">
+    <form className="m-5  font-semibold text-white ">
       <p className="my-5 mt-12 text-2xl font-bold">{title}</p>
       <label>
         {firstInput} <span className="m-1 text-red-500">*</span>
