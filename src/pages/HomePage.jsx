@@ -15,13 +15,13 @@ function HomePage() {
       <Outlet />
       <main>
         <HiroSilder />
-        <Services />
         <Auctions />
         <AllCategories />
         <ProductSlider />
         <PricingBox />
         <ArticlesCards />
         <Gallery />
+        <Services />
       </main>
     </div>
   );

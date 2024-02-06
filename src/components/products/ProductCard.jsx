@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { PostContext } from '../../contexts/PostContext';
 
 const hoverStyle =
-  'hover:scale-110 z-10 hover:bg-indigo-700 ';
+  'hover:scale-110 z-10';
 export default function ProductCard({
   isInAuctions,
   name,
