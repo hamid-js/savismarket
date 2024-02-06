@@ -33,13 +33,17 @@ export default HomePage;
 // install react router dom  create all pages that need
 // popup: products preview popup
 //  routes:  complate all pages that need
-//  pages: product detalis,products,blog,login
+//  pages: product detalis,products,blog,login , contact compare,wishlist
 // Learn: learn {use context api} for a store (gpt + jonas + sabs + youtube)
 // cart: adding product to cart logic +
 
+//TODO  wash list item regenrate
+//todo  pages: ,product after clicks page,checkout ,
+//TODO  toast(by third-parti)
 //TODO  time: products auction times logic
 //TODO  filter: filter products
-//TODO  toast(by third-parti)
-//TODO  pages: compare,wishlist,product after clicks page,checkout , contact
-//TODO  generate data for articles
+//TODO  search: search products top bar
+//Todo responsive
+
+
 

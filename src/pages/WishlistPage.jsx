@@ -3,6 +3,7 @@ import ProductCard from '../components/products/ProductCard';
 import { PostContext } from '../contexts/PostContext';
 import { IoMdHeartDislike } from 'react-icons/io';
 import Button from '../components/ui/Button';
+import { Link } from 'react-router-dom';
 
 function WishlistPage() {
   const { wishlist, setWishlist } = useContext(PostContext);
@@ -42,7 +43,7 @@ function WishlistPage() {
             <p className=" text-xl font-semibold capitalize text-stone-300">
               No products in the Wishlist.
             </p>
-            <Button>return to shop</Button>
+            <Link to="/shop"> <Button>return to shop</Button></Link>
           </div>
         )}
       </div>

@@ -3,13 +3,14 @@ import ProductCard from '../components/products/ProductCard';
 import { PostContext } from '../contexts/PostContext';
 import { RiShuffleFill } from 'react-icons/ri';
 import Button from '../components/ui/Button';
+import { Link } from 'react-router-dom';
 
 function ComparePage() {
   const { compare, setCompare } = useContext(PostContext);
   const handleDeleteWish = (id) =>
     setCompare((prev) => prev.filter((item) => item.id !== id));
   return (
-    <div className='bg-[url(/images/bg/bg4.jpg)] bg-cover bg-centeroverflow-x-hidden'>
+    <div className="bg-centeroverflow-x-hidden bg-[url(/images/bg/bg4.jpg)] bg-cover">
       <div className="flex  scale-75 justify-center gap-1  pt-10 ">
         {compare.length !== 0 ? (
           compare.map((product) => (
@@ -37,11 +38,14 @@ function ComparePage() {
             </div>
           ))
         ) : (
-          <div className='py-5 flex flex-col gap-10 items-center justify-evenly'>
-          <RiShuffleFill className='text-9xl text-zinc-800 scale-150 -rotate-90' />
-         <p className=' font-semibold text-xl text-stone-300 capitalize'>No products in the Compare.</p> 
-         <Button>return to shop</Button>
-        </div>
+          <div className="flex flex-col items-center justify-evenly gap-10 py-5">
+            <RiShuffleFill className="-rotate-90 scale-150 text-9xl text-zinc-800" />
+            <p className=" text-xl font-semibold capitalize text-stone-300">
+              No products in the Compare.
+            </p>
+            <Link to="/shop"> <Button>return to shop</Button></Link>
+
+          </div>
         )}
       </div>
     </div>
