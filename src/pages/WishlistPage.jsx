@@ -38,7 +38,7 @@ function WishlistPage() {
             </div>
           ))
         ) : (
-          <div className="flex flex-col items-center justify-evenly gap-10 py-5">
+          <div className="flex flex-col items-center justify-evenly gap-10 py-20">
             <IoMdHeartDislike className="scale-150 text-9xl text-zinc-800" />
             <p className=" text-xl font-semibold capitalize text-stone-300">
               No products in the Wishlist.
