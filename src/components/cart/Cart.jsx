@@ -68,9 +68,9 @@ function Cart() {
             <div>Subtotal:</div>
             <div className="text-indigo-600">${totalPrice}</div>
           </div>
-          <div className="relative">
-            <div className=" bottom- absolute flex h-auto flex-col justify-center gap-4 p-2 px-5">
-              <div>
+          <div >
+            <div className=" flex h-auto flex-col justify-center  gap-10 p-2 px-5">
+              <div className=' text-lg'>
                 {totalPrice > 10000 ? (
                   <p>
                     Your order qualifies for
@@ -88,7 +88,7 @@ function Cart() {
                   </p>
                 )}
               </div>
-              <div className="mx-1 my-3 h-2 bg-zinc-700">
+              <div className=" my-3 h-3 bg-zinc-700">
                 <div
                   style={{
                     width: `${totalPrice < 10000 ? (totalPrice / 10000) * 100 : 100}%`,

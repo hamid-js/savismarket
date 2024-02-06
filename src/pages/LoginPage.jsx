@@ -18,7 +18,7 @@ function LoginPage() {
   return (
     <div
       ref={loginRef}
-      className="fixed right-[5%] top-[13dvh] z-40  mx-auto h-[75dvh] w-11/12 overflow-y-scroll rounded-lg bg-[url(/images/bg/bg3.jpg)] bg-cover pb-7 duration-700"
+      className="fixed right-[5%] top-[10dvh] z-40  mx-auto h-[80dvh] w-11/12 overflow-y-scroll rounded-lg bg-[url(/images/bg/bg3.jpg)] bg-cover pb-7 duration-700"
     >
       <div className="flex h-28 flex-wrap items-center justify-center bg-[url(/images/bg/bg9.jpg)] bg-cover bg-center  text-center text-xl  uppercase text-gray-100 ">
         <div
