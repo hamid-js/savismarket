@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
-import { useContext, useState } from 'react';
+import {  useState } from 'react';
 import {
-  RiHeartLine,
+  RiCheckFill,
+
+  RiHeartFill,
   RiListCheck3,
   RiSearchLine,
   RiShoppingCartLine,
@@ -64,19 +66,21 @@ export default function ProductCard({
           className="h-6/6 z-10  flex w-full  flex-col items-end justify-center gap-3
          text-lg *:mr-2 *:mt-2 *:flex  *:h-9 *:w-9 *:items-center *:justify-center *:rounded-full *:bg-black *:duration-300  "
         >
-          <div onClick={addToCompareHandler} className={hoverStyle}>
+          <div style={{ backgroundColor: `${isInCompare ? '#4f46e5' : ''}`,color: `${isInCompare ? '#5eead4' : ''}` }} onClick={addToCompareHandler} className={hoverStyle}>
             {isInCompare ? (
-              <img className="h-5 w-5" src="/images/digital/tik.svg" alt="" />
+              <RiCheckFill className='font-bold text-4xl'  />
+
             ) : (
               <RiListCheck3 />
             )}
           </div>
           <div
-            style={{ backgroundColor: `${isInWishlist ? '#4f46e5' : ''}` }}
+            style={{ backgroundColor: `${isInWishlist ? '#4f46e5' : ''}`,color: `${isInWishlist ? '#e11d48' : ''}` }}
             onClick={addToWishlistHandler}
             className={hoverStyle}
           >
-            <RiHeartLine />
+        <RiHeartFill />
+
           </div>
 
           <div onClick={handleStopPropagation} className={hoverStyle}>

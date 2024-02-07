@@ -7,7 +7,8 @@ function useLists(newProduct) {
     const isInWishlist = wishlist.some((item) => item.id === newProduct.id);
     const isInCompare = compare.some((item) => item.id === newProduct.id);
 
-  function addToWishlistHandler() {
+  function addToWishlistHandler(event) {
+    event.stopPropagation()
     if (isInWishlist) {
       setWishlist((prev) => prev.filter((item) => item.id !== newProduct.id));
     } else {
@@ -15,7 +16,8 @@ function useLists(newProduct) {
     }
   }
 
-  function addToCompareHandler() {
+  function addToCompareHandler(event) {
+    event.stopPropagation()
     if (isInCompare) {
       setCompare((prev) => prev.filter((item) => item.id !== newProduct.id));
     } else if (compare.length >= 2) {

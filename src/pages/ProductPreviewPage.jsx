@@ -1,12 +1,11 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { allCategoriesData } from '../data';
 import { useRef, useState } from 'react';
-import { RiHeartLine, RiListCheck3, RiShoppingCartLine } from 'react-icons/ri';
+import { RiCheckFill, RiHeartFill,  RiListCheck3, RiShoppingCartLine } from 'react-icons/ri';
 import useClickOutside from '../hooks/useClickOutside';
 import useCart from '../hooks/useCart';
+import useLists from '../hooks/uselists';
 
-const hoverStyle =
-  'hover:scale-125 z-10 hover:bg-indigo-700 hover:text-green-500';
 function ProductPreviewPage() {
   // handle useParams
   const { id } = useParams();
@@ -29,6 +28,13 @@ function ProductPreviewPage() {
     increaseOrderHandler,
     itemInCart,
   } = useCart(product);
+
+  const {
+    addToWishlistHandler,
+    addToCompareHandler,
+    isInCompare,
+    isInWishlist,
+  } = useLists(product);
 
 
   // slider
@@ -101,12 +107,23 @@ function ProductPreviewPage() {
 
         <div className="  -z-10 mt-5 text-center text-white">
           <div className="  mt-1  flex w-full  items-center justify-around gap-52 text-2xl text-white *:rounded-md *:bg-indigo-800 *:p-2">
-            <div className={`${hoverStyle} ml-2`}>
-              <RiHeartLine />
-            </div>
-            <div className={`${hoverStyle} mr-2`}>
+          <div style={{ backgroundColor: `${isInCompare ? '#4f46e5' : ''}`,color: `${isInCompare ? '#5eead4' : ''}` }} onClick={addToCompareHandler}>
+            {isInCompare ? (
+              <RiCheckFill className='font-bold text-2xl'  />
+
+            ) : (
               <RiListCheck3 />
-            </div>
+            )}
+          </div>
+          <div
+            style={{ backgroundColor: `${isInWishlist ? '#4f46e5' : ''}`,color: `${isInWishlist ? '#e11d48' : ''}` }}
+            onClick={addToWishlistHandler}
+          
+          >
+        <RiHeartFill />
+
+          </div>
+          
           </div>
           {itemInCart ? (
             <div className="flex items-center justify-center">
