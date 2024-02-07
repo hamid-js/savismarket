@@ -13,12 +13,14 @@ export default function Auctions() {
                 <ProductCard
                 id={product.id}
                   key={product.id}
-                  isInAuctions
                   name={product.name}
                   price={product.price}
                   firstImage={product.firstImage}
                   hoverImage={product.hoverImage}
                   details={product.details}
+                  isInAuctions
+                  expiryTime={product.expiryTime}
+                  
                 />
               ))}
      

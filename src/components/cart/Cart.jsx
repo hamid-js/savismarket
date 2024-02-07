@@ -5,8 +5,7 @@ import { PostContext } from '../../contexts/PostContext';
 import { MdOutlineRemoveShoppingCart } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
-// import { PostContext } from '../../../PostContext';
-// import { useContext } from 'react';
+
 
 function Cart() {
   const { cart } = useContext(PostContext);

@@ -33,7 +33,7 @@ function useCart(newProduct) {
   const decreaseOrderHandler = (event) => {
     event.stopPropagation();
 
-    if (itemInCart)
+    if (itemInCart.orderCount > 1){
       setCart((prev) =>
         prev
           .map((item) =>
@@ -43,15 +43,27 @@ function useCart(newProduct) {
 
               : item,
           )
-          .filter((item) => item.orderCount > 0),
+          
       );
       toast('Your Product decreased',{icon:"✅➖"})
+    }else{
+      handleDeleteProduct(event)
+    }
   };
+
+  function handleDeleteProduct(event) {
+    event.stopPropagation();
+    setCart((prev) => prev.filter((item) => item.id !== newProduct.id));
+    toast('Product Successfully Removed',{icon:"✖️"})
+
+  }
+
 
   return {
     addToCartHandler,
     decreaseOrderHandler,
     increaseOrderHandler,
+    handleDeleteProduct,
     itemInCart,
   };
 }

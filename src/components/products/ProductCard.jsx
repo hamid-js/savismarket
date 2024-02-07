@@ -11,6 +11,7 @@ import {
 import { Link } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
 import useLists from '../../hooks/uselists';
+import Timer from '../ui/Timer';
 
 const hoverStyle = 'hover:scale-110 z-10';
 export default function ProductCard({
@@ -21,6 +22,7 @@ export default function ProductCard({
   hoverImage,
   details,
   id,
+  expiryTime
 }) {
   const newProduct = {
     id,
@@ -30,7 +32,9 @@ export default function ProductCard({
     price,
     details,
     orderCount: 1,
+    
   };
+  const dataTime = new Date(expiryTime); 
   const {
     addToWishlistHandler,
     addToCompareHandler,
@@ -126,20 +130,9 @@ export default function ProductCard({
         {isInAuctions === true ? (
           <div className="flex flex-col  items-center justify-between gap-y-2 pb-2 text-center capitalize">
             <p>Time left</p>
-            <div className="flex w-full items-center justify-evenly border-b border-gray-700 pb-1">
-              <div>
-                175 <div className="text-[10px]  text-gray-400">days</div>
-              </div>
-              <div>
-                13<div className="text-[10px]  text-gray-400">hours</div>
-              </div>
-              <div>
-                44<div className="text-[10px]  text-gray-400">minutes</div>
-              </div>
-              <div>
-                55<div className="text-[10px]  text-gray-400">seconds</div>
-              </div>
-            </div>
+            
+            <Timer expiryTime={dataTime} />
+            
 
             <p className="cursor-pointer font-semibold duration-700 hover:scale-125">
               {name}

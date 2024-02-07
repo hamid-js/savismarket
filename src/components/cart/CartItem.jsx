@@ -1,49 +1,36 @@
-import { useContext } from 'react';
-import { PostContext } from '../../contexts/PostContext';
+import useCart from '../../hooks/useCart';
 
-function CartItem({ id, name, firstImage, price, details, orderCount }) {
-  const { setCart, cart } = useContext(PostContext);
+function CartItem({
+  id,
+  name,
+  firstImage,
+  price,
+  details,
+  orderCount,
+  hoverImage,
+}) {
 
-  function handleIncreaseOrder() {
-    // Check if the product with the given id exists in the cart
-    const productToUpdate = cart.find((item) => item.id === id);
+  const newProduct = {
+    id,
+    name,
+    firstImage,
+    hoverImage,
+    price,
+    details,
+    orderCount: 1,
+  };
 
-    if (productToUpdate) {
-      // Update the order count directly for the found product
-      setCart((prev) =>
-        prev.map((item) =>
-          item.id === id ? { ...item, orderCount: item.orderCount + 1 } : item,
-        ),
-      );
-    }
-  }
-   function handleDecreaseOrder(event) {
-    event.stopPropagation();
-    const productToUpdate = cart.find((item) => item.id === id);
+  const {
+    
+    decreaseOrderHandler,
+    increaseOrderHandler,
+    handleDeleteProduct
+  } = useCart(newProduct);
 
-    if (productToUpdate) {
-      // If the order count is greater than 1, decrement it; otherwise, remove the product from the cart
-      setCart(
-        (prev) =>
-          prev
-            .map((item) =>
-              item.id === id
-                ? {
-                    ...item,
-                    orderCount: Math.max(item.orderCount - 1, 0), // Ensure orderCount doesn't go below zero
-                  }
-                : item,
-            )
-            .filter((item) => item.orderCount > 0), // Remove products with orderCount zero
-      );
-    }
-  }
-  function handleDeleteProduct(event) {
-    event.stopPropagation();
-    // Remove the product with the specified id from the cart
-    setCart((prev) => prev.filter((item) => item.id !== id));
-  }
+  
 
+    
+ 
   return (
     <div className="flex items-start justify-between p-2">
       <div className="p-1 ">
@@ -53,7 +40,7 @@ function CartItem({ id, name, firstImage, price, details, orderCount }) {
         <div>{name}</div>
         <div className="flex w-20 items-center justify-center  *:h-7 *:border-2 *:border-r *:border-zinc-600 *:px-2">
           <button
-            onClick={handleDecreaseOrder}
+            onClick={decreaseOrderHandler}
             className="duration-300 hover:scale-105 hover:text-indigo-500"
           >
             -
@@ -61,7 +48,7 @@ function CartItem({ id, name, firstImage, price, details, orderCount }) {
           <span>{orderCount}</span>
           <button
             className="duration-300 hover:scale-105 hover:text-indigo-500"
-            onClick={handleIncreaseOrder}
+            onClick={increaseOrderHandler}
           >
             +
           </button>
