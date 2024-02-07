@@ -37,12 +37,16 @@ export default HomePage;
 // Learn: learn {use context api} for a store (gpt + jonas + sabs + youtube)
 // cart: adding product to cart logic +
 
-//TODO  wash list item regenrate
-//todo  pages: ,product after clicks page,checkout ,
-//TODO  toast(by third-parti)
-//TODO  time: products auction times logic
+//todo toast(by third-parti)
+//todo time: products auction times logic
+//todo  product Preview <complate></complate>  ,
+//todo  productPage,checkout ,
+//todo  wash list item regenerate
+//todo product horizontal  regenerate
 //TODO  filter: filter products
 //TODO  search: search products top bar
+
+
 //Todo responsive
 
 

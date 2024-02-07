@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useState } from 'react';
 import {
   RiHeartLine,
@@ -6,7 +7,8 @@ import {
   RiShoppingCartLine,
 } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-import { PostContext } from '../../contexts/PostContext';
+import useCart from '../../hooks/useCart';
+import useLists from '../../hooks/uselists';
 
 const hoverStyle = 'hover:scale-110 z-10';
 export default function ProductCard({
@@ -18,95 +20,29 @@ export default function ProductCard({
   details,
   id,
 }) {
-  const {
-    cart,
-    setCart,
-    setIsOpenCart,
-    wishlist,
-    setWishlist,
-    setCompare,
-    compare,
-  } = useContext(PostContext);
-  //item  is in list ?
-  const isInWishlist = wishlist.find((item) => item.id === id);
-  const isInCompare = compare.find((item) => item.id === id);
-  const isInCart = cart.find((item) => item.id === id);
-
-  function addToCartHandler(event) {
-    event.stopPropagation();
-    setIsOpenCart(true);
-    const newProduct = {
-      id,
-      name,
-      firstImage,
-      hoverImage,
-      price,
-      details,
-      orderCount: 1,
-    };
-    const productToUpdate = cart.find((item) => item.id === id);
-
-    if (productToUpdate) {
-      setCart((prev) =>
-        prev.map((item) =>
-          item.id === id ? { ...item, orderCount: item.orderCount + 1 } : item,
-        ),
-      );
-    } else {
-      setCart((pre) => [...pre, newProduct]);
-    }
-  }
-
-  const increaseOrderHandler = () => {
-    const isInCart = cart.some((item) => item.id === id);
-
-    if (isInCart)
-      setCart((prev) =>
-        prev
-          .map((item) =>
-            item.id === id
-              ? { ...item, orderCount: Math.max(item.orderCount - 1, 0) }
-              : item,
-          )
-          .filter((item) => item.orderCount > 0),
-      );
+  const newProduct = {
+    id,
+    name,
+    firstImage,
+    hoverImage,
+    price,
+    details,
+    orderCount: 1,
   };
-  function addToWishlistHandler() {
-    const newProduct = {
-      id,
-      name,
-      firstImage,
-      hoverImage,
-      price,
-      details,
-    };
-    const itemInWishlist = wishlist.find((item) => item.id === id);
+  const {
+    addToWishlistHandler,
+    addToCompareHandler,
+    isInCompare,
+    isInWishlist,
+  } = useLists(newProduct);
 
-    if (itemInWishlist) {
-      setWishlist((prev) => prev.filter((item) => item.id !== id));
-    } else {
-      setWishlist((pre) => [...pre, newProduct]);
-    }
-  }
-  function addToCompareHandler() {
-    const newProduct = {
-      id,
-      name,
-      firstImage,
-      hoverImage,
-      price,
-      details,
-    };
+  const {
+    addToCartHandler,
+    decreaseOrderHandler,
+    increaseOrderHandler,
+    itemInCart,
+  } = useCart(newProduct);
 
-    const productToUpdate = compare.some((item) => item.id === id);
-    if (productToUpdate) {
-      setCompare((prev) => prev.filter((item) => item.id !== id));
-    } else if (compare.length >= 2) {
-      alert('maximum 2 item');
-    } else {
-      setCompare((pre) => [...pre, newProduct]);
-    }
-  }
   const handleStopPropagation = async (event) => {
     event.stopPropagation();
   };
@@ -151,31 +87,36 @@ export default function ProductCard({
         </div>
       </div>
       <div className="mb-3">
-        {isInCart ? (
-          <div className="flex gap-2 bg-gray-400 ">
-            <div
-              onClick={addToCartHandler}
-              className="m-1 flex h-10 w-full items-center justify-center bg-indigo-600  hover:text-green-500"
-            >
-              +
-            </div>
-            <div
-              onClick={increaseOrderHandler}
-              className="m-1 flex h-10 w-full  items-center justify-center  bg-indigo-600  hover:text-green-500"
-            >
-              -
+        {itemInCart ? (
+          <div className="flex items-center justify-center">
+            <div className="flex w-full items-center justify-center gap-1 bg-indigo-600  ">
+              <div
+                onClick={decreaseOrderHandler}
+                className=" flex  w-full items-center justify-center  border-r border-indigo-400  pb-2 text-5xl hover:text-green-500"
+              >
+                -
+              </div>
+              <div className="p-3 text-xl ">{itemInCart.orderCount}</div>
+              <div
+                onClick={increaseOrderHandler}
+                className=" flex w-full items-center justify-center border-l border-indigo-400 pb-2 text-5xl   hover:text-green-500"
+              >
+                +
+              </div>
             </div>
           </div>
         ) : (
-          <div
-            onClick={addToCartHandler}
-            className="flex h-10 w-full items-center  justify-center gap-3 bg-indigo-600 pb-2  pt-2 hover:text-green-500"
-          >
-            <span>Add To Cart</span>
-            <span>
-              +{' '}
-              <RiShoppingCartLine className="inline -scale-x-100 py-1 text-3xl " />
-            </span>
+          <div className="flex items-center justify-center">
+            <div
+              onClick={addToCartHandler}
+              className="flex h-14 w-full items-center  justify-center gap-3 bg-indigo-600 pb-2  pt-2 hover:text-green-500"
+            >
+              <span>Add To Cart</span>
+              <span>
+                +{' '}
+                <RiShoppingCartLine className="inline -scale-x-100 py-1 text-3xl " />
+              </span>
+            </div>
           </div>
         )}
         {isInAuctions === true ? (

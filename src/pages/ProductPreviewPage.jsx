@@ -1,9 +1,12 @@
-/* eslint-disable no-unused-vars */
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { allCategoriesData } from '../data';
-import { useEffect, useRef, useState } from 'react';
-import Button from '../components/ui/Button';
-import { RiHeartLine, RiListCheck3, RiSearchLine } from 'react-icons/ri';
+import { useRef, useState } from 'react';
+import { RiHeartLine, RiListCheck3, RiShoppingCartLine } from 'react-icons/ri';
+import useClickOutside from '../hooks/useClickOutside';
+import useCart from '../hooks/useCart';
+
+const hoverStyle =
+  'hover:scale-125 z-10 hover:bg-indigo-700 hover:text-green-500';
 function ProductPreviewPage() {
   // handle useParams
   const { id } = useParams();
@@ -12,38 +15,36 @@ function ProductPreviewPage() {
     product = Category.products.find((item) => item.id === parseInt(id));
     return product !== undefined;
   });
-  // handle useParams
+
+
+ // handle clickoutside with custom hook
+  const navigate = useNavigate();
+  const productRef = useRef(null);
+  useClickOutside(productRef, () => navigate(-1));
+
+  // using custom hooks
+  const {
+    addToCartHandler,
+    decreaseOrderHandler,
+    increaseOrderHandler,
+    itemInCart,
+  } = useCart(product);
+
+
   // slider
   const sliderImages = [product.firstImage, product.hoverImage];
   const [sliderIndex, setSliderIndex] = useState(1);
-  // slider
+ 
 
-  // handle clickoutside
-  const navigate = useNavigate();
-  const productRef = useRef(null);
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (productRef.current && !productRef.current.contains(event.target)) {
-        navigate('/');
-      }
-    };
-    document.addEventListener('click', handleClickOutside);
+ 
 
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, [navigate]);
-  // handle clickoutside
-
-  const hoverStyle =
-    'hover:scale-125 z-10 hover:bg-indigo-700 hover:text-green-500';
   // handle incorrect  useParams path
   if (!product) return <div className="p-40"> product not find</div>;
 
   return (
     <div
       ref={productRef}
-      className="fixed border-2 border-indigo-600 right-[5%] top-[13dvh] z-40  mx-auto h-[75dvh] w-11/12 overflow-y-scroll rounded-lg bg-zinc-300 pb-7 duration-700"
+      className="fixed right-[5%] top-[13dvh] z-40 mx-auto h-[75dvh]  w-11/12 overflow-y-scroll rounded-lg border-2 border-indigo-600 bg-zinc-300 pb-7 duration-700"
     >
       <div className="flex h-12 flex-wrap items-center justify-center bg-slate-400  text-center text-xl  uppercase text-gray-700 ">
         <div
@@ -67,50 +68,78 @@ function ProductPreviewPage() {
         >
           &#8250;
         </button>
-        <div className='bg-white  w-2/3 m-auto'>
-        <img
-          className="m-auto mt-3 h-44 w-auto  "
-          src={sliderImages[sliderIndex]}
-          alt={product.name}
-        />
+        <div className="m-auto  w-2/3 bg-white">
+          <img
+            className="m-auto mt-3 h-44 w-auto  "
+            src={sliderImages[sliderIndex]}
+            alt={product.name}
+          />
         </div>
-        <div className=" mx-auto flex w-5/6 flex-col items-start justify-center gap-3 pt-5 text-lg capitalize *:flex *:w-full *:justify-between ">
+        <div className=" mx-auto flex w-5/6 flex-col items-start justify-center gap-3 pt-5 text-lg font-medium capitalize *:flex *:w-full *:justify-between ">
           <p>
             <span> category :</span>
-            <span className="text-red-600">{product.category}</span>
+            <span className="text-indigo-600">{product.category}</span>
           </p>
           <p>
             <span> details :</span>
-            <span className="text-red-600">{product.details}</span>
+            <span className="text-indigo-600">{product.details}</span>
           </p>
 
           <p>
             <span> id :</span>
-            <span className="text-red-600">{product.id}</span>
+            <span className="text-indigo-600">{product.id}</span>
           </p>
           <p>
             <span> count :</span>
-            <span className="text-red-600">{product.count}</span>
+            <span className="text-indigo-600">{product.count}</span>
           </p>
           <p>
             <span> price :</span>
-            <span className="text-red-600">${product.price}</span>
+            <span className="text-indigo-600">${product.price}</span>
           </p>
         </div>
 
-       
-        <div className="text-center mt-5 relative text-white">
-        <div className="absolute left-0  top-0 mt-2 flex w-full  items-center justify-center gap-52 text-2xl text-white *:rounded-md *:bg-indigo-600 *:p-2">
-          <div className={`${hoverStyle} ml-2`}>
-            <RiHeartLine />
+        <div className="  -z-10 mt-5 text-center text-white">
+          <div className="  mt-1  flex w-full  items-center justify-around gap-52 text-2xl text-white *:rounded-md *:bg-indigo-800 *:p-2">
+            <div className={`${hoverStyle} ml-2`}>
+              <RiHeartLine />
+            </div>
+            <div className={`${hoverStyle} mr-2`}>
+              <RiListCheck3 />
+            </div>
           </div>
-          <div className={`${hoverStyle} mr-2`}>
-            <RiListCheck3 />
-          </div>
-        </div>
-          <Button>
-            <Link to="#ee">add to cart</Link>
-          </Button>
+          {itemInCart ? (
+            <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center w-1/2 gap-1 bg-indigo-600  ">
+                <div
+                  onClick={decreaseOrderHandler}
+                  className=" flex  text-5xl pb-2 w-full  items-center justify-center hover:scale-125  hover:text-green-500"
+                >
+                  -
+                </div>
+                <div className='text-xl ' >{itemInCart.orderCount}</div>
+                <div
+                  onClick={increaseOrderHandler}
+                  className=" flex text-4xl pb-2 w-full items-center justify-center hover:scale-125  hover:text-green-500"
+                >
+                  +
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center justify-center">
+              <div
+                onClick={addToCartHandler}
+                className="flex h-14 w-1/2 items-center  justify-center gap-3 bg-indigo-600 pb-2  pt-2 hover:text-green-500"
+              >
+                <span>Add To Cart</span>
+                <span>
+                  +{' '}
+                  <RiShoppingCartLine className="inline -scale-x-100 py-1 text-3xl " />
+                </span>
+              </div>
+            </div>
+          )}
         </div>
         <div className="text m-auto w-5/6 pr-4 text-sm">
           <h3 className="py-2 text-lg font-bold">Description :</h3>
