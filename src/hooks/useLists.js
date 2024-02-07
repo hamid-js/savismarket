@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { PostContext } from '../contexts/PostContext';
+import toast from 'react-hot-toast';
 
 function useLists(newProduct) {
   const { wishlist, setWishlist, setCompare, compare } =
@@ -11,8 +12,11 @@ function useLists(newProduct) {
     event.stopPropagation()
     if (isInWishlist) {
       setWishlist((prev) => prev.filter((item) => item.id !== newProduct.id));
+      toast('Removed from favorites',{icon:"💔"})
+      
     } else {
       setWishlist((pre) => [...pre, newProduct]);
+      toast('Added to favorites',{icon:"❤️"})
     }
   }
 
@@ -20,10 +24,12 @@ function useLists(newProduct) {
     event.stopPropagation()
     if (isInCompare) {
       setCompare((prev) => prev.filter((item) => item.id !== newProduct.id));
+      toast("Removed from Comparison" , {icon:"🗑️"})
     } else if (compare.length >= 2) {
-      alert('maximum 2 item');
+      toast.error("Maximum 2 products")
     } else {
       setCompare((pre) => [...pre, newProduct]);
+      toast.success("Added to Comparison")
     }
   }
 
