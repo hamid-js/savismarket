@@ -50,7 +50,7 @@ function ProductPreviewPage() {
   return (
     <div
       ref={productRef}
-      className="fixed right-[5%] top-[13dvh] z-40 mx-auto h-[75dvh]  w-11/12 overflow-y-scroll rounded-lg border-2 border-indigo-600 bg-zinc-300 pb-7 duration-700"
+      className="fixed right-[5%] top-[13dvh] z-40 mx-auto h-[75dvh]  w-11/12 overflow-y-scroll rounded-lg border-2 border-indigo-600 bg-slate-300 pb-7 duration-700"
     >
       <div className="flex h-12 flex-wrap items-center justify-center bg-slate-400  text-center text-xl  uppercase text-gray-700 ">
         <div
@@ -81,7 +81,7 @@ function ProductPreviewPage() {
             alt={product.name}
           />
         </div>
-        <div className=" mx-auto flex w-5/6 flex-col items-start justify-center gap-3 pt-5 text-lg font-medium capitalize *:flex *:w-full *:justify-between ">
+        <div className=" mx-auto flex w-5/6 flex-col items-start justify-center gap-5 py-7 text-xl font-bold capitalize *:flex *:w-full *:justify-between ">
           <p>
             <span> category :</span>
             <span className="text-indigo-600">{product.category}</span>
@@ -158,9 +158,9 @@ function ProductPreviewPage() {
             </div>
           )}
         </div>
-        <div className="text m-auto w-5/6 pr-4 text-sm">
-          <h3 className="py-2 text-lg font-bold">Description :</h3>
-          <p>
+        <div className="text px-8 m-auto w-6/6 pr-4 text-sm">
+          <h3 className=" text-lg py-4 font-bold">Description :</h3>
+          <p className='text-lg'>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus
             animi voluptates magnam excepturi? Soluta necessitatibus harum id
             sint officia pariatur labore corrupti! Temporibus corporis
