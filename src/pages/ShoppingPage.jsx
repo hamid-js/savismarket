@@ -17,7 +17,7 @@ function ShoppingPage() {
             color={category.categoryInfo.color}
             btnColor=""
           />
-          <div className="flex w-full flex-wrap justify-around bg-[url(/images/bg/bg6.jpg)] bg-cover bg-center   ">
+          <div className="flex w-full gap-1 flex-wrap justify-around bg-[url(/images/bg/bg6.jpg)] bg-cover bg-center   ">
             {category.products.map((product) => (
               <div key={product.id} className="mb-4">
                 <ProductCard

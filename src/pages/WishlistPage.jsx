@@ -10,7 +10,7 @@ function WishlistPage() {
   const handleDeleteWish = (id) =>
     setWishlist((prev) => prev.filter((item) => item.id !== id));
   return (
-    <div className="bg-[url(/images/bg/bg5.jpg)] bg-cover bg-center ">
+    <div className="bg-[url(/images/bg/bg5.jpg)] pt-16 bg-cover bg-center ">
       <div className="flex w-full flex-wrap justify-around   gap-4 py-10 ">
         {wishlist.length !== 0 ? (
           wishlist.map((product) => (
