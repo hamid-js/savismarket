@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import { RiCheckFill, RiHeartFill,  RiListCheck3, RiShoppingCartLine } from 'react-icons/ri';
 import useClickOutside from '../hooks/useClickOutside';
 import useCart from '../hooks/useCart';
-import useLists from '../../hooks/useLists';
+import useLists from '../hooks/useLists'
 
 function ProductPreviewPage() {
   // handle useParams
