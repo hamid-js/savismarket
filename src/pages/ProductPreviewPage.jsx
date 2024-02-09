@@ -1,10 +1,10 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { allCategoriesData } from '../data';
 import { useRef, useState } from 'react';
-import { RiShoppingCartLine } from 'react-icons/ri';
+import { RiCheckFill, RiHeartFill,  RiListCheck3, RiShoppingCartLine } from 'react-icons/ri';
 import useClickOutside from '../hooks/useClickOutside';
 import useCart from '../hooks/useCart';
-// import useLists from '../hooks/uselists';
+import useLists from '../hooks/uselists';
 
 function ProductPreviewPage() {
   // handle useParams
@@ -29,12 +29,12 @@ function ProductPreviewPage() {
     itemInCart,
   } = useCart(product);
 
-  // const {
-  //   addToWishlistHandler,
-  //   addToCompareHandler,
-  //   isInCompare,
-  //   isInWishlist,
-  // } = useLists(product);
+  const {
+    addToWishlistHandler,
+    addToCompareHandler,
+    isInCompare,
+    isInWishlist,
+  } = useLists(product);
 
 
   // slider
@@ -106,7 +106,7 @@ function ProductPreviewPage() {
         </div>
 
         <div className="  -z-10 mt-5 text-center text-white">
-          {/* <div className="  mt-1  flex w-full  items-center justify-around gap-52 text-2xl text-white *:rounded-md *:bg-indigo-800 *:p-2">
+          <div className="  mt-1  flex w-full  items-center justify-around gap-52 text-2xl text-white *:rounded-md *:bg-indigo-800 *:p-2">
           <div style={{ backgroundColor: `${isInCompare ? '#4f46e5' : ''}`,color: `${isInCompare ? '#5eead4' : ''}` }} onClick={addToCompareHandler}>
             {isInCompare ? (
               <RiCheckFill className='font-bold text-2xl'  />
@@ -124,7 +124,7 @@ function ProductPreviewPage() {
 
           </div>
           
-          </div> */}
+          </div>
           {itemInCart ? (
             <div className="flex items-center justify-center">
               <div className="flex items-center justify-center w-1/2 gap-1 bg-indigo-600  ">
