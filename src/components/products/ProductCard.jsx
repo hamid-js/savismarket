@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
-import {  useState } from 'react';
+import { useState } from 'react';
 import {
   RiCheckFill,
-
   RiHeartFill,
   RiListCheck3,
   RiSearchLine,
@@ -10,7 +9,7 @@ import {
 } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import useCart from '../../hooks/useCart';
-import useLists from '../../hooks/uselists';
+import useLists from '../../hooks/useLists';
 import Timer from '../ui/Timer';
 
 const hoverStyle = 'hover:scale-110 z-10';
@@ -22,7 +21,7 @@ export default function ProductCard({
   hoverImage,
   details,
   id,
-  expiryTime
+  expiryTime,
 }) {
   const newProduct = {
     id,
@@ -32,9 +31,8 @@ export default function ProductCard({
     price,
     details,
     orderCount: 1,
-    
   };
-  const dataTime = new Date(expiryTime); 
+  const dataTime = new Date(expiryTime);
   const {
     addToWishlistHandler,
     addToCompareHandler,
@@ -70,21 +68,29 @@ export default function ProductCard({
           className="h-6/6 z-10  flex w-full  flex-col items-end justify-center gap-3
          text-lg *:mr-2 *:mt-2 *:flex  *:h-9 *:w-9 *:items-center *:justify-center *:rounded-full *:bg-black *:duration-300  "
         >
-          <div style={{ backgroundColor: `${isInCompare ? '#4f46e5' : ''}`,color: `${isInCompare ? '#5eead4' : ''}` }} onClick={addToCompareHandler} className={hoverStyle}>
+          <div
+            style={{
+              backgroundColor: `${isInCompare ? '#4f46e5' : ''}`,
+              color: `${isInCompare ? '#5eead4' : ''}`,
+            }}
+            onClick={addToCompareHandler}
+            className={hoverStyle}
+          >
             {isInCompare ? (
-              <RiCheckFill className='font-bold text-4xl'  />
-
+              <RiCheckFill className="text-4xl font-bold" />
             ) : (
               <RiListCheck3 />
             )}
           </div>
           <div
-            style={{ backgroundColor: `${isInWishlist ? '#4f46e5' : ''}`,color: `${isInWishlist ? '#e11d48' : ''}` }}
+            style={{
+              backgroundColor: `${isInWishlist ? '#4f46e5' : ''}`,
+              color: `${isInWishlist ? '#e11d48' : ''}`,
+            }}
             onClick={addToWishlistHandler}
             className={hoverStyle}
           >
-        <RiHeartFill />
-
+            <RiHeartFill />
           </div>
 
           <div onClick={handleStopPropagation} className={hoverStyle}>
@@ -130,9 +136,8 @@ export default function ProductCard({
         {isInAuctions === true ? (
           <div className="flex flex-col  items-center justify-between gap-y-2 pb-2 text-center capitalize">
             <p>Time left</p>
-            
+
             <Timer expiryTime={dataTime} />
-            
 
             <p className="cursor-pointer font-semibold duration-700 hover:scale-125">
               {name}
