@@ -23,7 +23,7 @@ function Cart() {
       }}
       className="top fixed right-0 z-50 h-dvh w-[75vw] max-w-96 overflow-y-hidden rounded-sm bg-slate-800  text-slate-300 duration-300"
     >
-      <div className="flex justify-between border-b  border-zinc-700 px-3 py-1  text-xl font-semibold ">
+      <div className="flex justify-between border-bborder-zinc-700 px-3 py-1 text-[4.5vw] font-semibold sm:text-2xl ">
         <p className=" py-3  capitalize ">Shopping Cart</p>
         <div
           onClick={() => setIsOpenCart(false)}
@@ -34,7 +34,7 @@ function Cart() {
         </div>
       </div>
       {!cart.length ? (
-        <div className="flex h-2/3 flex-col items-center justify-center gap-5 text-lg font-bold">
+        <div className="flex h-2/3 flex-col items-center justify-center gap-5 text-[4vw] sm:text-xl font-bold">
           <MdOutlineRemoveShoppingCart className="text-9xl text-zinc-900" />
 
           <p>No Products in the Cart.</p>
@@ -61,13 +61,14 @@ function Cart() {
                 />
               ))}
           </div>
-          <div className="mb-3 flex h-[10vh] items-center justify-between border-b border-zinc-700 p-2 text-xl font-semibold">
+          <div className='absolute bottom-0 w-full'>
+          <div className="mb-3 flex h-[15vh] items-center justify-between border-b border-zinc-700 p-2 text-xl font-semibold">
             <div>Subtotal:</div>
             <div className="text-indigo-600">${totalPrice}</div>
           </div>
-          <div>
-            <div className=" flex h-auto flex-col justify-center  gap-10 p-2 px-5">
-              <div className=" text-lg">
+       
+            <div className=" flex h-auto flex-col justify-center  gap-2  px-[3vw]">
+              <div className=" text-[4.5vw] sm:text-xl">
                 {totalPrice > 10000 ? (
                   <p>
                     Your order qualifies for
@@ -85,6 +86,7 @@ function Cart() {
                   </p>
                 )}
               </div>
+              <div>
               <div className=" my-3 h-3 bg-zinc-700">
                 <div
                   style={{
@@ -93,12 +95,15 @@ function Cart() {
                   className="h-full  bg-indigo-500"
                 ></div>
               </div>
-              <div className="flex flex-col">
+             <div> {totalPrice < 10000 ? (totalPrice / 10000) * 100 : 100}%</div>
+             </div>
+              <div className="flex flex-col ">
                 <Button style={{ backgroundColor: 'black' }}> view cart</Button>
 
-                <Link to={'/checkout'}> <Button>
-                   checkout
-                </Button></Link>
+                <Link to={'/checkout'}>
+                
+                  <Button>checkout</Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -40,7 +40,7 @@ export default function Header() {
           <RiMenuFill />
         </div>
         <NavLink to="/">
-          <h1 className="rounded-full text-lg  border-t border-indigo-600 px-4 py-1  font-bold capitalize tracking-[.05rem] shadow-md shadow-indigo-500  duration-700  hover:scale-105 ">
+          <h1 className="rounded-full text-[4.5vw] sm:text-xl  border-t border-indigo-600 px-2  font-bold capitalize tracking-[.05rem] shadow-md shadow-indigo-500  duration-700  hover:scale-105 ">
          SavisMarket🛒 
           </h1>
         </NavLink>

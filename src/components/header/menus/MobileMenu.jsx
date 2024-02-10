@@ -14,7 +14,7 @@ export default function MobileMenu() {
 
   const iconStyle = 'text-2xl text-center m-auto ';
   return (
-    <div className="fixed  bottom-0 z-40 h-14 w-full bg-white pt-2  text-sm text-black ">
+    <div className="fixed  bottom-0 z-40 h-[10%] w-full bg-white pt-2 pb-[12vw] sm:pb-20  text-[4.5vw] text-black ">
       <ul className="flex  items-center justify-evenly  ">
         <li>
           <NavLink onClick={handleLoginClick} to="/login">
