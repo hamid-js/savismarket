@@ -19,7 +19,7 @@ export default function MobileMenu() {
         <li>
           <NavLink onClick={handleLoginClick} to="/login">
             <RiUserLine className={iconStyle} />
-            my account
+           Account
           </NavLink>
         </li>
         <li>
