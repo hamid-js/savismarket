@@ -12,11 +12,11 @@ function useLists(newProduct) {
     event.stopPropagation()
     if (isInWishlist) {
       setWishlist((prev) => prev.filter((item) => item.id !== newProduct.id));
-      toast('Removed from favorites',{icon:"💔"})
+      toast.success(' 💔Removed from favorites')
       
     } else {
       setWishlist((pre) => [...pre, newProduct]);
-      toast('Added to favorites',{icon:"❤️"})
+      toast.success('❤️Added to favorites')
     }
   }
 
@@ -24,12 +24,12 @@ function useLists(newProduct) {
     event.stopPropagation()
     if (isInCompare) {
       setCompare((prev) => prev.filter((item) => item.id !== newProduct.id));
-      toast("Removed from Comparison" , {icon:"🗑️"})
+      toast.success("🗑️ Removed from Comparison" )
     } else if (compare.length >= 2) {
       toast.error("Maximum 2 products")
     } else {
       setCompare((pre) => [...pre, newProduct]);
-      toast.success("Added to Comparison")
+      toast.success("✔️Added to Comparison")
     }
   }
 
