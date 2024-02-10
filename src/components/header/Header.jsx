@@ -34,7 +34,7 @@ export default function Header() {
     setIsOpenMenu(false);
   };
   return ( 
-    <header className=" ">
+    <header>
       <div className="fixed z-20 flex w-full  items-center   justify-between bg-black  p-3 text-2xl text-white duration-700 ">
         <div onClick={handleMenuClick}>
           <RiMenuFill />

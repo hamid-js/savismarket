@@ -24,6 +24,7 @@ function ShoppingPage() {
   return (
     <div className="bg-gradient-to-t from-zinc-950 via-zinc-800  via-50% to-zinc-950 px-3 pt-14 ">
       <div className="mt-10  flex h-20 items-center rounded-sm justify-around bg-slate-700">
+      
         <div className=" flex justify-between  rounded-full   text-[4.8vw]  sm:text-2xl *:px-3  *:py-2  ">
           <div className="rounded-l-full bg-white text-indigo-600">
             <RiLayoutLeftLine />

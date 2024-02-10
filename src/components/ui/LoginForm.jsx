@@ -46,7 +46,7 @@ function LoginForm({
         </label>
       )}
 
-      <div className="text-white">
+      <div className="text-white w-1/3 my-5">
         <Button>{btnText}</Button>
       </div>
       {addText && <p className='mt-5 text-xl'>{addText}</p>}
