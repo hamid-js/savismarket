@@ -7,7 +7,7 @@ function LoginForm({
   secondInput,
   thirdInput,
   addText,
-  remember,
+  checkbox,
 }) {
   return (
     <form className="p-5  font-semibold text-white c">
@@ -39,19 +39,22 @@ function LoginForm({
           />
         </label>
       )}
-      {remember && (
+      {checkbox && (
         <label>
-          Remember me
+          {checkbox}
           <input className="m-2  h-4 w-4" type="checkbox" name="remember me" />
         </label>
       )}
 
-      <div className="text-white w-1/3 my-5">
+      <div className="text-white w-2/3 max-w-32 my-5">
         <Button>{btnText}</Button>
       </div>
       {addText && <p className='mt-5 text-xl'>{addText}</p>}
     </form>
   );
-}
+} 
+
+
 
 export default LoginForm;
+

@@ -100,7 +100,7 @@ function Cart() {
               <div className="flex flex-col ">
                 <Button style={{ backgroundColor: 'black' }}> view cart</Button>
 
-                <Link to={'/checkout'}>
+                <Link onClick={() => setIsOpenCart(false)} to={'/checkout'}>
                 
                   <Button>checkout</Button>
                 </Link>

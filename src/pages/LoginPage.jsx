@@ -31,12 +31,12 @@ function LoginPage() {
       </div>
       <div>
         <LoginForm
-          firstInput="Username or email address"
+          firstInput=" Email Address"
           secondInput="Password"
           btnText="log in"
           title="Login"
           addText="Lost your password?"
-          remember
+          checkbox=" Remember me"
         />
         <LoginForm
           title="Register"

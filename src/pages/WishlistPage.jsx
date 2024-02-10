@@ -19,7 +19,7 @@ function WishlistPage() {
         {wishlist.length !== 0 ? (
           wishlist.map((product) => (
             <div className=" bg-slate-700" key={product.id}>
-              <div className="flex items-center justify-between bg-zinc-300 p-1 text-black">
+              <div className="flex items-center justify-between bg-zinc-300  text-black">
                 <div
                   onClick={() => handleDeleteWish(product.id)}
                   className="flex items-center justify-center gap-1"
@@ -27,9 +27,7 @@ function WishlistPage() {
                   <span className="text-3xl ">&times;</span>
                   <span className="pt-1">Remove</span>
                 </div>
-                <div>
-                  <input type="checkbox" />
-                </div>
+                
               </div>
               <ProductCard
                 id={product.id}

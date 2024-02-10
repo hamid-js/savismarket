@@ -22,26 +22,24 @@ function ShoppingPage() {
   }
 
   return (
-    <div className="bg-gradient-to-t from-zinc-950 via-zinc-800  via-50% to-zinc-950 px-3 pt-14 ">
-      <div className="mt-10  flex h-20 items-center rounded-sm justify-around bg-slate-700">
-      
-        <div className=" flex justify-between  rounded-full   text-[4.8vw]  sm:text-2xl *:px-3  *:py-2  ">
-          <div className="rounded-l-full bg-white text-indigo-600">
+    <div className="bg-gradient-to-t from-zinc-950 via-zinc-800  via-50% to-zinc-950 px-1 pt-14 ">
+      <div className="mt-10  flex h-14 items-center justify-between rounded-md bg-slate-700 px-2">
+        <div className=" flex justify-between    text-[4.8vw]  *:px-2 *:py-1  sm:text-2xl   ">
+          <div className="rounded-l-lg bg-white text-indigo-600">
             <RiLayoutLeftLine />
           </div>
-          <div className="rounded-r-full bg-indigo-600 ">
-          <RiLayoutGridLine />
-            
+          <div className="rounded-r-lg bg-indigo-600 ">
+            <RiLayoutGridLine />
           </div>
         </div>
-        <div className="text-[3.2vw] sm:text-2xl capitalize  text-stone-200">
+        <div className="text-[4vw] capitalize text-stone-200  sm:text-2xl">
           showing <span className="font-bold">{resultCount}</span> 0f 27 results
         </div>
-        <div className='w-1/4'>
+        <div className="w-[17vw] sm:w-24  ">
           <select
             value={filterBy}
             onChange={handleFilter}
-            className="  w-3/4 h-[7vw] sm:h-10 sm:w-1/2 rounded-md border bg-stone-100 border-black  text-center text-black outline-none *:text-[2.5vw] *:sm:text-xl "
+            className="  h-7 w-full rounded-lg  border border-black bg-stone-100 text-center text-black  outline-none *:text-[4vw] sm:h-10 *:sm:text-xl "
           >
             <option value="all">All</option>
             <option value="phones">Phone</option>

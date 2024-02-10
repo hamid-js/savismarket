@@ -2,7 +2,7 @@ import  Button  from '../ui/Button';
 
 export default function ProductArticle() {
   return (
-    <div className="  flex pl-10 w-72 mb-5 border border-zinc-700 flex-col  items-center justify-center ">
+    <div className="  flex pl-10 max-w-72 w-[90vw] mb-5 border border-zinc-700 flex-col  items-center justify-center ">
       <div className=" w-full">
         <img src="/images/digital/case2.png" alt="" />
       </div>
@@ -52,7 +52,7 @@ export default function ProductArticle() {
             <span>Windows 12!</span>
           </li>
         </ul>
-       <div className='w-2/3 py-4'><Button>Read me</Button></div> 
+       <div className='w-3/4 py-4'><Button>Read me</Button></div> 
       </div>
     </div>
   );

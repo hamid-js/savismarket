@@ -15,11 +15,11 @@ function ComparePage() {
 
   return (
     <div className="bg-centeroverflow-x-hidden bg-[url(/images/bg/bg4.jpg)] bg-cover">
-      <div className="flex  scale-75 justify-center gap-1  pt-10 ">
+      <div className="flex  scale-50 justify-center gap-1  pt-10 ">
         {compare.length !== 0 ? (
           compare.map((product) => (
-            <div key={product.id}>
-              <div className="flex items-center justify-between bg-zinc-400 p-1 text-black">
+            <div  key={product.id}>
+              <div className="flex  items-center justify-between bg-zinc-400 p-1 text-black">
                 <div
                   onClick={() => handleDeleteCompareItem(product.id)}
                   className="flex items-center justify-center gap-1"
@@ -44,7 +44,7 @@ function ComparePage() {
         ) : (
           <div className="flex flex-col items-center justify-evenly gap-10 py-20">
             <RiShuffleFill className="-rotate-90 scale-150 text-9xl text-zinc-800" />
-            <p className=" text-xl font-semibold capitalize text-stone-300">
+            <p className=" text-[7vw] font-bold capitalize text-stone-300">
               No products in the Compare.
             </p>
             <Link to="/shop">

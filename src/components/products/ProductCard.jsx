@@ -57,13 +57,13 @@ export default function ProductCard({
 
   return (
     <div 
-      className={`mb-7 max-w-64 w-[80vw]   text-white ${isInAuctions ? 'border border-gray-600' : 'border border-gray-600'}`}
+      className={`max-w-64 w-[80vw]   text-white ${isInAuctions ? 'border border-gray-600 mb-7 ' : 'border border-gray-600'}`}
     >
       <div
         style={{
           backgroundImage: `url(${isHovered ? hoverImage : firstImage})`,
         }}
-        className={`relative h-52 cursor-pointer bg-white   bg-[length:200px_200px] bg-center bg-no-repeat duration-1000 `}
+        className={`relative h-44 cursor-pointer bg-white   bg-[length:200px_200px] bg-center bg-no-repeat duration-1000 `}
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
       >
@@ -150,7 +150,7 @@ export default function ProductCard({
             </p>
           </div>
         ) : (
-          <div className="flex flex-col items-center gap-1 pb-2  ">
+          <div className="flex flex-col items-center gap-1  ">
             <p className="z-10 mt-1 text-lg  font-semibold duration-500 hover:scale-125 ">
               {name}
             </p>
