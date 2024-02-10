@@ -95,7 +95,7 @@ function Cart() {
                   className="h-full  bg-indigo-500"
                 ></div>
               </div>
-             <div> {totalPrice < 10000 ? (totalPrice / 10000) * 100 : 100}%</div>
+             <div> {totalPrice < 10000 ? Math.floor((totalPrice / 10000) * 100 ) + " %": "✅"}</div>
              </div>
               <div className="flex flex-col ">
                 <Button style={{ backgroundColor: 'black' }}> view cart</Button>
