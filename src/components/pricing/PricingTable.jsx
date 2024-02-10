@@ -27,7 +27,8 @@ export default function PricingTable({ url, price, text1, text2, text3, text4 })
             <li className="w-full border-t  py-3">{text4}</li>
           </ul>
           <div className=" border-t py-3">
-            <Button>buy now</Button>
+         
+            <div className='m-auto w-2/3 py-4'><Button>buy now</Button></div> 
           </div>
         </div>
       </div>

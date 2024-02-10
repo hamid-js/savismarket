@@ -34,7 +34,8 @@ export default function HiroSilder() {
           </div>
 
           <div className='text-center'>
-            <Button>Watch Video</Button>
+          <div className='m-auto w-1/3 py-4'><Button>Watch Video</Button></div> 
+         
           </div>
         </div>
       </div>

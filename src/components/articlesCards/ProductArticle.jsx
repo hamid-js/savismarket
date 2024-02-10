@@ -52,7 +52,7 @@ export default function ProductArticle() {
             <span>Windows 12!</span>
           </li>
         </ul>
-        <Button>Read me</Button>
+       <div className='w-2/3 py-4'><Button>Read me</Button></div> 
       </div>
     </div>
   );
