@@ -24,22 +24,23 @@ function ShoppingPage() {
   return (
     <div className="bg-gradient-to-t from-zinc-950 via-zinc-800  via-50% to-zinc-950 px-3 pt-14 ">
       <div className="mt-10  flex h-20 items-center rounded-sm justify-around bg-slate-700">
-        <div className=" flex justify-between  rounded-full   text-2xl  *:px-4  *:py-2  ">
+        <div className=" flex justify-between  rounded-full   text-[4.8vw]  sm:text-2xl *:px-3  *:py-2  ">
           <div className="rounded-l-full bg-white text-indigo-600">
-            <RiLayoutGridLine />
-          </div>
-          <div className="rounded-r-full bg-indigo-600 ">
             <RiLayoutLeftLine />
           </div>
+          <div className="rounded-r-full bg-indigo-600 ">
+          <RiLayoutGridLine />
+            
+          </div>
         </div>
-        <div className="text-lg capitalize  text-stone-200">
+        <div className="text-[3.2vw] sm:text-2xl capitalize  text-stone-200">
           showing <span className="font-bold">{resultCount}</span> 0f 27 results
         </div>
-        <div>
+        <div className='w-1/4'>
           <select
             value={filterBy}
             onChange={handleFilter}
-            className=" h-8 w-28 rounded-md border bg-stone-100 border-black  text-center text-black outline-none *:checked:bg-black"
+            className="  w-3/4 h-[7vw] sm:h-10 sm:w-1/2 rounded-md border bg-stone-100 border-black  text-center text-black outline-none *:text-[2.5vw] *:sm:text-xl "
           >
             <option value="all">All</option>
             <option value="phones">Phone</option>
@@ -73,6 +74,7 @@ function ShoppingPage() {
                   firstImage={product.firstImage}
                   hoverImage={product.hoverImage}
                   details={product.details}
+                  fullSizeItems={false}
                 />
               </div>
             ))}

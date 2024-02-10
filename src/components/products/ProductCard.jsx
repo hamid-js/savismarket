@@ -32,6 +32,9 @@ export default function ProductCard({
     details,
     orderCount: 1,
   };
+  const fullWidthStyle = {
+    width: "100%",
+  }
   const dataTime = new Date(expiryTime);
   const {
     addToWishlistHandler,
@@ -53,8 +56,8 @@ export default function ProductCard({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div
-      className={`mb-7  w-64  text-white ${isInAuctions ? 'border border-gray-600' : 'border border-gray-600'}`}
+    <div 
+      className={`mb-7  w-64   text-white ${isInAuctions ? 'border border-gray-600' : 'border border-gray-600'}`}
     >
       <div
         style={{
@@ -123,7 +126,7 @@ export default function ProductCard({
           <div className="flex items-center justify-center">
             <div
               onClick={addToCartHandler}
-              className="flex h-14 w-full items-center  justify-center gap-3 bg-indigo-600 pb-2  pt-2 hover:text-green-500"
+              className="flex h-14 w-full items-center cursor-pointer justify-center gap-3 bg-indigo-600 pb-2  pt-2 duration-300 *:duration-200 *:hover:animate-pulse hover:text-teal-400 font-bold *:hover:scale-125 *:hover:p-2   "
             >
               <span>Add To Cart</span>
               <span>
