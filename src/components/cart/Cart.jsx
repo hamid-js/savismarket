@@ -62,7 +62,7 @@ function Cart() {
               ))}
           </div>
           <div className='absolute bottom-0 w-full'>
-          <div className="mb-3 flex h-[8dvh] items-center justify-between border-b border-zinc-700 p-3 text-xl font-semibold">
+          <div className="mb-3 flex h-12 items-center justify-between border-b border-zinc-700 p-3 text-xl font-semibold">
             <div>Subtotal:</div>
             <div className="text-indigo-600">${totalPrice}</div>
           </div>
