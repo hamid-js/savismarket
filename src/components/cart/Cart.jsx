@@ -46,7 +46,7 @@ function Cart() {
         </div>
       ) : (
         <div>
-          <div className=" h-[45dvh] overflow-y-scroll border-b border-zinc-700">
+          <div className=" h-[47vh] overflow-y-scroll border-b border-zinc-700">
             {cart &&
               cart.map((product) => (
                 <CartItem
