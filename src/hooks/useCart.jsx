@@ -12,7 +12,7 @@ function useCart(newProduct) {
 
     if (!itemInCart) {
       setCart((pre) => [...pre, newProduct]);
-      toast.success('Successfully Added To Cart');
+      toast.success('Product Added To Cart');
     } else {
       return;
     }
@@ -27,7 +27,7 @@ function useCart(newProduct) {
             : item,
         ),
       );
-      toast.success('➕ Your Product decreased')
+      toast.success('➕Product decreased')
     }
   };
   const decreaseOrderHandler = (event) => {
@@ -45,7 +45,7 @@ function useCart(newProduct) {
           )
           
       );
-      toast.success('➖ Your Product decreased')
+      toast.success('➖ Product decreased')
     }else{
       handleDeleteProduct(event)
     }
@@ -54,7 +54,7 @@ function useCart(newProduct) {
   function handleDeleteProduct(event) {
     event.stopPropagation();
     setCart((prev) => prev.filter((item) => item.id !== newProduct.id));
-    toast.success('✖️ Product Successfully Removed')
+    toast.success('✖️ Product Removed')
 
   }
 

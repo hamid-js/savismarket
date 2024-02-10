@@ -12,7 +12,7 @@ function useLists(newProduct) {
     event.stopPropagation()
     if (isInWishlist) {
       setWishlist((prev) => prev.filter((item) => item.id !== newProduct.id));
-      toast.success(' 💔Removed from favorites')
+      toast.success('💔favorite Removed ')
       
     } else {
       setWishlist((pre) => [...pre, newProduct]);
@@ -24,12 +24,12 @@ function useLists(newProduct) {
     event.stopPropagation()
     if (isInCompare) {
       setCompare((prev) => prev.filter((item) => item.id !== newProduct.id));
-      toast.success("🗑️ Removed from Comparison" )
+      toast.success("🗑️Product Removed" )
     } else if (compare.length >= 2) {
       toast.error("Maximum 2 products")
     } else {
       setCompare((pre) => [...pre, newProduct]);
-      toast.success("✔️Added to Comparison")
+      toast.success("Added to Comparison")
     }
   }
 

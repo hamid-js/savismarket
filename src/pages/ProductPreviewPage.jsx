@@ -81,7 +81,7 @@ function ProductPreviewPage() {
             alt={product.name}
           />
         </div>
-        <div className=" mx-auto flex w-5/6 flex-col items-start justify-center gap-5 py-7 text-xl font-bold capitalize *:flex *:w-full *:justify-between ">
+        <div className=" mx-auto flex w-5/6 flex-col items-start justify-center gap-5 py-7 text-[4.3vw] font-bold capitalize *:flex *:w-full *:justify-between ">
           <p>
             <span> category :</span>
             <span className="text-indigo-600">{product.category}</span>
@@ -106,7 +106,7 @@ function ProductPreviewPage() {
         </div>
 
         <div className="  -z-10 mt-5 text-center text-white">
-          <div className="  mt-1  flex w-full  items-center justify-around gap-52 text-2xl text-white *:rounded-md *:bg-indigo-800 *:p-2">
+          <div className="  my-4  flex w-full  items-center justify-center gap-20 text-2xl text-white *:rounded-md *:bg-indigo-800 *:p-2">
           <div style={{ backgroundColor: `${isInCompare ? '#4f46e5' : ''}`,color: `${isInCompare ? '#5eead4' : ''}` }} onClick={addToCompareHandler}>
             {isInCompare ? (
               <RiCheckFill className='font-bold text-2xl'  />
@@ -147,7 +147,7 @@ function ProductPreviewPage() {
             <div className="flex items-center justify-center">
               <div
                 onClick={addToCartHandler}
-                className="flex h-14 w-1/2 items-center  justify-center gap-3 bg-indigo-600 pb-2  pt-2 hover:text-green-500"
+                className="flex h-14 w-2/3 max-w-40 items-center  justify-center gap-3 bg-indigo-600 pb-2  rounded-md pt-2 hover:text-green-500"
               >
                 <span>Add To Cart</span>
                 <span>
