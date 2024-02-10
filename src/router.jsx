@@ -1,4 +1,5 @@
 import BlogPage from './pages/BlogPage';
+import CheckoutPage from './pages/CheckOutPage';
 import ComparePage from './pages/ComparePage';
 import ContactPage from './pages/ContactPage';
 import HomePage from './pages/HomePage';
@@ -20,6 +21,7 @@ const routeData = [
   { path: '/compare', element: <ComparePage /> },
   { path: '/blog', element: <BlogPage /> },
   { path: '/contact', element: <ContactPage /> },
+  { path: '/checkout', element: <CheckoutPage/> },
   { path: '*', element: <PageNotFound /> },
 ];
 

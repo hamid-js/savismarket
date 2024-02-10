@@ -5,8 +5,6 @@ import { PostContext } from '../../contexts/PostContext';
 import { MdOutlineRemoveShoppingCart } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
-
-
 function Cart() {
   const { cart } = useContext(PostContext);
   const { isOpenCart, setIsOpenCart } = useContext(PostContext);
@@ -67,9 +65,9 @@ function Cart() {
             <div>Subtotal:</div>
             <div className="text-indigo-600">${totalPrice}</div>
           </div>
-          <div >
+          <div>
             <div className=" flex h-auto flex-col justify-center  gap-10 p-2 px-5">
-              <div className=' text-lg'>
+              <div className=" text-lg">
                 {totalPrice > 10000 ? (
                   <p>
                     Your order qualifies for
@@ -98,7 +96,9 @@ function Cart() {
               <div className="flex flex-col">
                 <Button style={{ backgroundColor: 'black' }}> view cart</Button>
 
-                <Button> checkout</Button>
+                <Link to={'/checkout'}> <Button>
+                   checkout
+                </Button></Link>
               </div>
             </div>
           </div>
