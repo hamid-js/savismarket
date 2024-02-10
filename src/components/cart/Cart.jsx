@@ -23,7 +23,7 @@ function Cart() {
       }}
       className="top fixed right-0 z-50 h-dvh w-[75vw] max-w-96 overflow-y-hidden rounded-sm bg-slate-800  text-slate-300 duration-300"
     >
-      <div className="flex justify-between border-bborder-zinc-700 px-3 py-1 text-[4.5vw] font-semibold sm:text-2xl ">
+      <div className="flex justify-between shadow-sm mb-1 shadow-slate-400 border-bborder-zinc-700 px-3 py-1 text-[4.5vw] font-semibold sm:text-2xl ">
         <p className=" py-3  capitalize ">Shopping Cart</p>
         <div
           onClick={() => setIsOpenCart(false)}
