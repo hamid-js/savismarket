@@ -17,7 +17,6 @@ const auctions = {
       isInCompare: false,
       isInAuctions: false,
       expiryTime : '2025-05-10T12:10:09',
-
       count: 9,
       firstImage: '/images/computer/case2.png',
       hoverImage: '/images/computer/case1.png',
@@ -70,7 +69,6 @@ const auctions = {
     },
     {
       id: 21,
-      categoryName: 'accessories',
       name: 'headphone',
       price: 569,
       orderCount:1 ,
@@ -166,7 +164,7 @@ const laptops = {
   categoryInfo: {
     title: 'Laptops',
     imageUrl: '/images/laptop/laptop1.png',
-    color: 'orange',
+    color: 'teal',
   },
   products: [
     {

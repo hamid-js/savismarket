@@ -4,13 +4,17 @@ import { PostContext } from '../contexts/PostContext';
 import { IoMdHeartDislike } from 'react-icons/io';
 import Button from '../components/ui/Button';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 function WishlistPage() {
   const { wishlist, setWishlist } = useContext(PostContext);
-  const handleDeleteWish = (id) =>
-    setWishlist((prev) => prev.filter((item) => item.id !== id));
+  const handleDeleteWish = (id) => {
+    toast.success('✖️  Removed From Wishlist');
+    return setWishlist((prev) => prev.filter((item) => item.id !== id));
+  };
+
   return (
-    <div className="bg-[url(/images/bg/bg5.jpg)] pt-16 bg-cover bg-center ">
+    <div className="bg-[url(/images/bg/bg5.jpg)] bg-cover bg-center pt-16 ">
       <div className="flex w-full flex-wrap justify-around   gap-4 py-10 ">
         {wishlist.length !== 0 ? (
           wishlist.map((product) => (
@@ -43,7 +47,10 @@ function WishlistPage() {
             <p className=" text-xl font-semibold capitalize text-stone-300">
               No products in the Wishlist.
             </p>
-            <Link to="/shop"> <Button>return to shop</Button></Link>
+            <Link to="/shop">
+              {' '}
+              <Button>return to shop</Button>
+            </Link>
           </div>
         )}
       </div>

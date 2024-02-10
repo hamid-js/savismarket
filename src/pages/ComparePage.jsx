@@ -4,11 +4,15 @@ import { PostContext } from '../contexts/PostContext';
 import { RiShuffleFill } from 'react-icons/ri';
 import Button from '../components/ui/Button';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 function ComparePage() {
   const { compare, setCompare } = useContext(PostContext);
-  const handleDeleteWish = (id) =>
-    setCompare((prev) => prev.filter((item) => item.id !== id));
+  const handleDeleteCompareItem = (id) => {
+    toast.success('✖️ Removed From Comparison');
+   return setCompare((prev) => prev.filter((item) => item.id !== id));
+  };
+
   return (
     <div className="bg-centeroverflow-x-hidden bg-[url(/images/bg/bg4.jpg)] bg-cover">
       <div className="flex  scale-75 justify-center gap-1  pt-10 ">
@@ -17,7 +21,7 @@ function ComparePage() {
             <div key={product.id}>
               <div className="flex items-center justify-between bg-zinc-400 p-1 text-black">
                 <div
-                  onClick={() => handleDeleteWish(product.id)}
+                  onClick={() => handleDeleteCompareItem(product.id)}
                   className="flex items-center justify-center gap-1"
                 >
                   <span className="text-3xl ">&times;</span>
@@ -43,8 +47,10 @@ function ComparePage() {
             <p className=" text-xl font-semibold capitalize text-stone-300">
               No products in the Compare.
             </p>
-            <Link to="/shop"> <Button>return to shop</Button></Link>
-
+            <Link to="/shop">
+              {' '}
+              <Button>return to shop</Button>
+            </Link>
           </div>
         )}
       </div>

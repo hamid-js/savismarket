@@ -27,7 +27,7 @@ function useCart(newProduct) {
             : item,
         ),
       );
-      toast('Your Product decreased',{icon:"✅➕"})
+      toast.success('➕ Your Product decreased')
     }
   };
   const decreaseOrderHandler = (event) => {
@@ -45,7 +45,7 @@ function useCart(newProduct) {
           )
           
       );
-      toast('Your Product decreased',{icon:"✅➖"})
+      toast.success('➖ Your Product decreased')
     }else{
       handleDeleteProduct(event)
     }
@@ -54,7 +54,7 @@ function useCart(newProduct) {
   function handleDeleteProduct(event) {
     event.stopPropagation();
     setCart((prev) => prev.filter((item) => item.id !== newProduct.id));
-    toast('Product Successfully Removed',{icon:"✖️"})
+    toast.success('✖️ Product Successfully Removed')
 
   }
 
