@@ -46,7 +46,7 @@ function Cart() {
         </div>
       ) : (
         <div>
-          <div className=" h-[47vh] overflow-y-scroll border-b border-zinc-700">
+          <div className=" h-[50vh] overflow-y-scroll border-b border-zinc-700">
             {cart &&
               cart.map((product) => (
                 <CartItem
@@ -62,13 +62,13 @@ function Cart() {
               ))}
           </div>
           <div className='absolute bottom-0 w-full'>
-          <div className="mb-3 flex h-12 items-center justify-between border-b border-zinc-700 p-3 text-xl font-semibold">
+          <div className="mb-3 flex max-h-12 pb-5 items-center justify-between border-b border-zinc-700 p-8 text-xl font-semibold">
             <div>Subtotal:</div>
             <div className="text-indigo-600">${totalPrice}</div>
           </div>
        
-            <div className=" flex h-auto flex-col justify-center  gap-2  px-[3vw]">
-              <div className=" text-[4.5vw] sm:text-xl">
+            <div className=" flex h-auto flex-col justify-center  gap-1  px-[1vw]">
+              <div className=" text-[3.4vw] sm:text-xl">
                 {totalPrice > 10000 ? (
                   <p>
                     Your order qualifies for
