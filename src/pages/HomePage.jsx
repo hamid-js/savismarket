@@ -10,11 +10,14 @@ import AllCategories from '../components/products/AllCategories';
 import { Outlet } from 'react-router-dom';
 
 function HomePage() {
+  
+  
+
   return (
     <div>
       <Outlet />
       <main>
-        <HiroSilder />
+        <HiroSilder  />
         <Auctions />
         <AllCategories />
         <ProductSlider />
