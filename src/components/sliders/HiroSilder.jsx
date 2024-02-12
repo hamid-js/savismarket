@@ -29,9 +29,9 @@ export default function HiroSilder() {
           </button>
           <button
             onClick={() => setSliderIndex((next) => (next < 2 ? next + 1 : 0))}
-            className="sm:top-50 absolute right-[1%] top-[25vw] cursor-pointer border-none bg-none py-2 text-8xl duration-1000 hover:scale-110 hover:animate-pulse  "
+            className="sm:top-50 absolute right-[1%] top-[25vw] cursor-pointer border-none bg-none py-2 text-8xl duration-1000  hover:scale-110 hover:animate-pulse  "
           >
-            &#8250;
+            &#8250; 
           </button>
         </div>
         <ul className=" absolute -translate-x-[50%]  left-[50%] top-[21rem] flex gap-3  *:h-3 *:w-3 *:rounded-full *:bg-white ">
