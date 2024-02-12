@@ -34,7 +34,7 @@ export default function HiroSilder() {
             &#8250;
           </button>
         </div>
-        <ul className=" absolute  left-[49%] top-[21rem] flex gap-3  *:h-3 *:w-3 *:rounded-full *:bg-white ">
+        <ul className=" absolute -translate-x-[50%]  left-[50%] top-[21rem] flex gap-3  *:h-3 *:w-3 *:rounded-full *:bg-white ">
           {sliderImages.map((url, index) => (
             <li
               onClick={() => setSliderIndex(index)}
