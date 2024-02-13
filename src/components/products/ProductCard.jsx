@@ -63,26 +63,26 @@ export default function ProductCard({
   if (small)
     return (
       <div className="rounded-sm  duration-700 my-1  w-full bg-indigo-900">
-        <div className="flex h-24  w-full items-center justify-between ">
+        <div className="flex h-[26vw] sm:h-36  w-full items-center justify-between ">
           <div className="p-2 ">
             <img
-              className="h-16  w-16 bg-white "
+              className="h-[16vw] w-[16vw] sm:h-20 sm-w-20 bg-white "
               src={firstImage}
               alt={details}
             />
           </div>
-          <div className="text flex flex-col items-start justify-center ">
-            <div className="text-lg font-semibold capitalize">{name}</div>
-            <div className="flex items-center justify-center text-sm ">
+          <div className="text flex flex-col items-start justify-center gap-1 ">
+            <div className="sm:text-lg text-[4vw] font-semibold capitalize">{name}</div>
+            <div className="flex items-center justify-center text-[3vw] sm:text-sm ">
               {details}
             </div>
-            <div className=" pl-3  text-red-700 ">${price}</div>
+            <div className=" pl-3 text-[4vw] sm:text-xl font-bold text-red-700 ">${price}</div>
           </div>
 
           <section className="flex items-center justify-center gap-x-3  self-stretch">
             <div
               onClick={handleDeleteProduct}
-              className="flex flex-col items-center justify-around   self-stretch text-lg *:rounded-sm    *:bg-indigo-700 *:p-2 *:px-2"
+              className="flex flex-col items-center justify-around self-stretch  text-[5vw]  sm:text-lg *:rounded-sm    *:bg-indigo-700 *:p-2 *:px-2"
             >
               <div
                 style={{
@@ -110,14 +110,14 @@ export default function ProductCard({
               </div>
             </div>
             {itemInCart ? (
-              <div className="flex  h-full w-10 flex-col items-center   justify-center bg-indigo-600 *:flex *:items-center *:justify-center  ">
+              <div className="flex  h-full sm:w-12 w-[9vw] flex-col items-center   justify-center bg-indigo-600 *:flex *:my-auto *:items-center *:justify-center text-center  ">
                 <div
                   onClick={decreaseOrderHandler}
-                  className=" flex w-full items-center justify-center border-b  border-indigo-400 text-xl  hover:text-green-500"
+                  className=" flex w-full items-center justify-center border-b  border-indigo-400 text-xl text-[4vw] sm:text-xl  hover:text-green-500"
                 >
                   -
                 </div>
-                <div className="w-full p-1 text-center text-sm">
+                <div className="w-full p-1 text-center text-[3.5vw] sm:text-sm">
                   {itemInCart.orderCount}
                 </div>
                 <div
@@ -130,10 +130,10 @@ export default function ProductCard({
             ) : (
               <div
                 onClick={addToCartHandler}
-                className="flex flex-col  items-center justify-center self-stretch bg-indigo-400 px-1 text-lg"
+                className="flex flex-col sm:w-12 w-[9vw]  items-center justify-center self-stretch bg-indigo-400 px-1 text-[3.5vw]"
               >
                 Add
-                <RiShoppingCartLine className=" text-2xl" />
+                <RiShoppingCartLine className=" text-[5vw]" />
               </div>
             )}
           </section>
