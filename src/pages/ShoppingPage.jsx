@@ -25,7 +25,7 @@ function ShoppingPage() {
   return (
     <div className="bg-gradient-to-t from-zinc-950 via-zinc-800  via-50% to-zinc-950  px-1 pt-14 ">
       <div className="mt-10  flex h-14 items-center justify-between rounded-md bg-slate-700 px-2">
-        <div className=" flex justify-between    text-[4.8vw]  *:px-2 *:py-1  sm:text-2xl   ">
+        <div className=" flex justify-between    text-[4.8vw]  *:px-3 *:py-2  sm:text-2xl   ">
           <div
             style={{
               backgroundColor: `${small ? '#4f46e5' : '#fff'}`,
@@ -46,13 +46,13 @@ function ShoppingPage() {
           </div>
         </div>
         <div className="text-[4vw] capitalize text-stone-200  sm:text-2xl">
-          showing <span className="font-bold">{resultCount}</span> 0f 27 results
+          showing <span className="font-bold">{resultCount}</span> results
         </div>
-        <div className="w-[17vw] sm:w-24  ">
+        <div className="w-[22vw] sm:w-28  ">
           <select
             value={filterBy}
             onChange={handleFilter}
-            className="  h-7 w-full rounded-lg  border border-black bg-stone-100 text-center text-black  outline-none *:text-[4vw] sm:h-10 *:sm:text-xl "
+            className="  h-7 w-full rounded-lg  border border-black bg-stone-100 text-center text-black  outline-none *:text-[4vw] sm:h-8 *:sm:text-xl "
           >
             <option value="all">All</option>
             <option value="phones">Phone</option>
