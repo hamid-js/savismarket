@@ -23,7 +23,7 @@ export default function CategoryBox({
         </div>
         <Link
           style={{ backgroundColor: `${btnColor}` }}
-          className="ml-2 text-[3vw] sm:text-lg duration-300 hover:scale-125 rounded-full   border-2 px-4 py-1"
+          className="ml-2 text-[3vw] sm:text-lg duration-300 hover:scale-105  hover:text-green-300 hover:border-green-300 rounded-full   border-2 px-4 py-1"
           to="/shop"
         >
           view all items

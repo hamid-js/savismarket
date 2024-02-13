@@ -6,6 +6,7 @@ import { allCategoriesData } from '../data';
 import { useState } from 'react';
 
 function ShoppingPage() {
+  const [small, setSmall] = useState(false);
   const [filterBy, setFilterBy] = useState('all');
   let filterdItems;
   if (filterBy === 'all') filterdItems = allCategoriesData;
@@ -22,13 +23,25 @@ function ShoppingPage() {
   }
 
   return (
-    <div className="bg-gradient-to-t from-zinc-950 via-zinc-800  via-50% to-zinc-950 px-1 pt-14 ">
+    <div className="bg-gradient-to-t from-zinc-950 via-zinc-800  via-50% to-zinc-950  px-1 pt-14 ">
       <div className="mt-10  flex h-14 items-center justify-between rounded-md bg-slate-700 px-2">
         <div className=" flex justify-between    text-[4.8vw]  *:px-2 *:py-1  sm:text-2xl   ">
-          <div className="rounded-l-lg bg-white text-indigo-600">
+          <div
+            style={{
+              backgroundColor: `${small ? '#4f46e5' : '#fff'}`,
+              color: `${!small ? '#4f46e5' : '#fff'}`,
+            }}
+            onClick={() => setSmall(true)}
+            className="rounded-l-lg duration-300 "
+          >
             <RiLayoutLeftLine />
           </div>
-          <div className="rounded-r-lg bg-indigo-600 ">
+          <div
+            style={{ backgroundColor: `${!small ? '#4f46e5' : '#fff'}`,
+            color: `${small ? '#4f46e5' : '#fff'}` }}
+            onClick={() => setSmall(false)}
+            className="rounded-r-lg duration-300 "
+          >
             <RiLayoutGridLine />
           </div>
         </div>
@@ -53,7 +66,7 @@ function ShoppingPage() {
       {filterdItems.map((category, index) => (
         <div
           key={index}
-          className=" bg-gradient-to-t from-zinc-950  via-zinc-800 via-50% to-zinc-950 px-3 "
+          className=" bg-gradient-to-t from-zinc-950  via-zinc-800 via-50% to-zinc-950 px-1 "
         >
           <CategoryBox
             title={category.categoryName}
@@ -64,8 +77,13 @@ function ShoppingPage() {
           />
           <div className="flex w-full flex-wrap justify-around gap-1 bg-[url(/images/bg/bg6.jpg)] bg-cover bg-center   ">
             {category.products.map((product) => (
-              <div key={product.id} className="mb-4">
+              <div
+                style={{ width: `${small ? '100%' : ''}` }}
+                key={product.id}
+                className="mb-4 "
+              >
                 <ProductCard
+                  small={small}
                   id={product.id}
                   isInAuctions={product.isInAuctions}
                   name={product.name}

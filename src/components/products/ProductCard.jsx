@@ -22,6 +22,9 @@ export default function ProductCard({
   details,
   id,
   expiryTime,
+  orderCount,
+
+  small ,
 }) {
   const newProduct = {
     id,
@@ -33,8 +36,8 @@ export default function ProductCard({
     orderCount: 1,
   };
   const fullWidthStyle = {
-    width: "100%",
-  }
+    width: '100%',
+  };
   const dataTime = new Date(expiryTime);
   const {
     addToWishlistHandler,
@@ -47,6 +50,8 @@ export default function ProductCard({
     addToCartHandler,
     decreaseOrderHandler,
     increaseOrderHandler,
+    handleDeleteProduct,
+
     itemInCart,
   } = useCart(newProduct);
 
@@ -55,15 +60,96 @@ export default function ProductCard({
   };
   const [isHovered, setIsHovered] = useState(false);
 
+  if (small)
+    return (
+      <div className="duration-700 my-1  w-full bg-indigo-900">
+        <div className="flex h-24  w-full items-center justify-between ">
+          <div className="p-1 ">
+            <img
+              className="h-16 w-16 bg-white "
+              src={firstImage}
+              alt={details}
+            />
+          </div>
+          <div className="text flex flex-col items-start justify-center ">
+            <div className="text-lg font-semibold capitalize">{name}</div>
+            <div className="flex items-center justify-center text-sm ">
+              {details}
+            </div>
+            <div className=" pl-3  text-red-700 ">${price}</div>
+          </div>
+
+          <section className="flex items-center justify-center gap-x-3  self-stretch">
+            <div
+              onClick={handleDeleteProduct}
+              className="flex flex-col items-center justify-around   self-stretch text-lg *:rounded-sm    *:bg-indigo-700 *:p-2 *:px-2"
+            >
+              <div
+                style={{
+                  backgroundColor: `${isInCompare ? '#4f46e5' : ''}`,
+                  color: `${isInCompare ? '#5eead4' : ''}`,
+                }}
+                onClick={addToCompareHandler}
+                className={hoverStyle}
+              >
+                {isInCompare ? (
+                  <RiCheckFill className="text-xl font-bold" />
+                ) : (
+                  <RiListCheck3 />
+                )}
+              </div>
+              <div
+                style={{
+                  backgroundColor: `${isInWishlist ? '#4f46e5' : ''}`,
+                  color: `${isInWishlist ? '#e11d48' : ''}`,
+                }}
+                onClick={addToWishlistHandler}
+                className={hoverStyle}
+              >
+                <RiHeartFill />
+              </div>
+            </div>
+            {itemInCart ? (
+              <div className="flex  h-full w-10 flex-col items-center   justify-center bg-indigo-600 *:flex *:items-center *:justify-center  ">
+                <div
+                  onClick={decreaseOrderHandler}
+                  className=" flex w-full items-center justify-center border-b  border-indigo-400 text-xl  hover:text-green-500"
+                >
+                  -
+                </div>
+                <div className="w-full p-1 text-center text-sm">
+                  {itemInCart.orderCount}
+                </div>
+                <div
+                  onClick={increaseOrderHandler}
+                  className="flex  w-full items-center justify-center border-t border-indigo-400 text-xl  hover:text-green-500"
+                >
+                  +
+                </div>
+              </div>
+            ) : (
+              <div
+                onClick={addToCartHandler}
+                className="flex flex-col  items-center justify-center self-stretch bg-indigo-400 px-1 text-lg"
+              >
+                Add
+                <RiShoppingCartLine className=" text-2xl" />
+              </div>
+            )}
+          </section>
+        </div>
+      </div>
+    );
+
   return (
-    <div 
-      className={`max-w-64 w-[80vw]   text-white ${isInAuctions ? 'border border-gray-600 mb-7 ' : 'border border-gray-600'}`}
+    <div
+      className={`w-[80vw] max-w-64   text-white ${isInAuctions ? 'mb-7 border border-gray-600 ' : 'border border-gray-600'}`}
     >
       <div
         style={{
           backgroundImage: `url(${isHovered ? hoverImage : firstImage})`,
         }}
-        className={`relative h-44 cursor-pointer bg-white   bg-[length:200px_200px] bg-center bg-no-repeat duration-1000 `}
+        className={`relative h-52  cursor-pointer bg-white   bg-[length:200px_200px] bg-center bg-no-repeat duration-1000 `}
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
       >
@@ -126,7 +212,7 @@ export default function ProductCard({
           <div className="flex items-center justify-center">
             <div
               onClick={addToCartHandler}
-              className="flex h-14 w-full items-center cursor-pointer justify-center gap-3 bg-indigo-600 pb-2  pt-2 duration-300 *:duration-200 *:hover:animate-pulse hover:text-teal-400 font-bold *:hover:scale-125 *:hover:p-2   "
+              className="flex h-14 w-full cursor-pointer items-center justify-center gap-3 bg-indigo-600 pb-2  pt-2 font-bold duration-300 *:duration-200 hover:text-teal-400 *:hover:scale-125 *:hover:animate-pulse *:hover:p-2   "
             >
               <span>Add To Cart</span>
               <span>
