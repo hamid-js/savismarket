@@ -62,11 +62,11 @@ export default function ProductCard({
 
   if (small)
     return (
-      <div className="duration-700 my-1  w-full bg-indigo-900">
+      <div className="rounded-sm  duration-700 my-1  w-full bg-indigo-900">
         <div className="flex h-24  w-full items-center justify-between ">
-          <div className="p-1 ">
+          <div className="p-2 ">
             <img
-              className="h-16 w-16 bg-white "
+              className="h-16  w-16 bg-white "
               src={firstImage}
               alt={details}
             />
