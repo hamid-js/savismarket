@@ -25,8 +25,8 @@ function useLists(newProduct) {
     if (isInCompare) {
       setCompare((prev) => prev.filter((item) => item.id !== newProduct.id));
       toast.success("🗑️Product Removed" )
-    } else if (compare.length >= 2) {
-      toast.error("Maximum 2 products")
+    } else if (compare.length >= 4) {
+      toast.error("Maximum 4 products")
     } else {
       setCompare((pre) => [...pre, newProduct]);
       toast.success("Added to Comparison")
