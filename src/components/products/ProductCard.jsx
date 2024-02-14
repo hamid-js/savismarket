@@ -62,7 +62,7 @@ export default function ProductCard({
 
   if (small)
     return (
-      <div className="rounded-sm  duration-700 my-1  w-full bg-indigo-900">
+      <div className="rounded-sm  self-start duration-700 my-1  w-full bg-indigo-900">
         <div className="flex h-[26vw] sm:h-36  w-full items-center justify-between ">
           <div className="p-2 ">
             <img
