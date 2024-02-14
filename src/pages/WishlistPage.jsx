@@ -27,7 +27,7 @@
 //                   <span className="text-3xl ">&times;</span>
 //                   <span className="pt-1">Remove</span>
 //                 </div>
-                
+
 //               </div>
 //               <ProductCard
 //                 id={product.id}
@@ -69,7 +69,10 @@ function WishlistPage() {
 
   return (
     <div className="bg-[url(/images/bg/bg5.jpg)] bg-cover bg-center  py-24 ">
-      <div className="flex h-96  shadow-md shadow-indigo-400 overflow-y-scroll w-full flex-wrap justify-around   gap-y-4 border-t-2 border-indigo-400 p-2 ">
+      <div className="text-center text-xl font-semibold capitalize">
+        Your Favorites list❤️
+      </div>
+      <div className="flex h-96  w-full flex-wrap justify-around gap-y-4 overflow-y-scroll border-t-2   border-indigo-400 p-2 shadow-md shadow-indigo-400 ">
         {wishlist.length !== 0 ? (
           wishlist.map((product) => (
             <ProductCard
