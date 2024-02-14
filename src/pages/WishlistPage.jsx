@@ -69,7 +69,7 @@ function WishlistPage() {
 
   return (
     <div className="bg-[url(/images/bg/bg5.jpg)] bg-cover bg-center  py-24 ">
-      <div className="flex h-80  shadow-md shadow-indigo-400 overflow-y-scroll w-full flex-wrap justify-around   gap-y-4 border-t-2 border-indigo-400 p-2 ">
+      <div className="flex h-96  shadow-md shadow-indigo-400 overflow-y-scroll w-full flex-wrap justify-around   gap-y-4 border-t-2 border-indigo-400 p-2 ">
         {wishlist.length !== 0 ? (
           wishlist.map((product) => (
             <ProductCard
