@@ -82,7 +82,7 @@ export default function ProductCard({
           <section className="flex items-center justify-center gap-x-3  self-stretch">
             <div
               onClick={handleDeleteProduct}
-              className="flex flex-col items-center justify-around self-stretch  text-[5vw]  sm:text-lg *:rounded-sm    *:bg-indigo-700 *:p-2 *:px-2"
+              className="flex flex-col items-center justify-around self-stretch  text-[5vw] sm:text-lg *:rounded-sm *:bg-indigo-700 *:p-2 *:px-2"
             >
               <div
                 style={{
@@ -143,7 +143,7 @@ export default function ProductCard({
 
   return (
     <div
-      className={`w-[80vw] max-w-64   text-white ${isInAuctions ? 'mb-7 border border-gray-600 ' : 'border border-gray-600'}`}
+      className={`w-[80vw] max-w-80   text-white ${isInAuctions ? 'mb-7 border border-gray-600 ' : 'border border-gray-600'}`}
     >
       <div
         style={{
