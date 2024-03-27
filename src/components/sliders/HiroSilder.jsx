@@ -1,4 +1,4 @@
-import {  useState } from 'react';
+import { useState } from 'react';
 
 export default function HiroSilder() {
   const sliderImages = [
@@ -9,7 +9,6 @@ export default function HiroSilder() {
   const [sliderIndex, setSliderIndex] = useState(0);
   console.log('HiroSilder ~ sliderIndex:', sliderIndex);
 
- 
   return (
     <section
       id="slider"
@@ -18,23 +17,23 @@ export default function HiroSilder() {
       <div className="relative">
         <div
           style={{ backgroundImage: `url(${sliderImages[sliderIndex]})` }}
-          className="duration-[2000ms]  h-[23rem]  w-full items-center justify-center gap-0 bg-slate-700 bg-[length:520px_380px] bg-center bg-no-repeat "
+          className="h-[23rem]  w-full  items-center justify-center gap-0 bg-slate-700 bg-[length:640px_380px] bg-center bg-no-repeat duration-[2000ms] sm:h-[28rem] sm:bg-[length:768px_500px] md:h-[32rem] md:bg-[length:1024px_550px] lg:bg-[length:1280px_550px] xl:bg-[length:1536px_550px] "
         ></div>
         <div className="z-500 text-white">
           <button
             onClick={() => setSliderIndex((pre) => (pre > 0 ? pre - 1 : 2))}
-            className="sm:top-50 absolute left-[1%] top-[25vw] cursor-pointer border-none bg-none  py-2 text-8xl duration-1000 hover:scale-110 hover:animate-pulse "
+            className="absolute left-[1%] top-[25vw] cursor-pointer border-none bg-none py-2  text-8xl duration-1000 hover:scale-110 hover:animate-pulse sm:top-40 md:top-48 md:text-9xl 2xl:left-[3%] 2xl:text-[9rem] "
           >
             &#8249;
           </button>
           <button
             onClick={() => setSliderIndex((next) => (next < 2 ? next + 1 : 0))}
-            className="sm:top-50 absolute right-[1%] top-[25vw] cursor-pointer border-none bg-none py-2 text-8xl duration-1000  hover:scale-110 hover:animate-pulse  "
+            className="absolute right-[1%] top-[25vw] cursor-pointer border-none bg-none py-2 text-8xl duration-1000 hover:scale-110  hover:animate-pulse sm:top-40  md:top-48 md:text-9xl 2xl:right-[3%] 2xl:text-[9rem]"
           >
-            &#8250; 
+            &#8250;
           </button>
         </div>
-        <ul className=" absolute -translate-x-[50%]  left-[50%] top-[21rem] flex gap-3  *:h-3 *:w-3 *:rounded-full *:bg-white ">
+        <ul className=" absolute left-[50%] top-[21rem] flex -translate-x-[50%] gap-3 duration-1000 *:h-3 *:w-3  *:rounded-full *:bg-white sm:top-[25rem] sm:gap-4  md:top-[29rem] md:gap-5 ">
           {sliderImages.map((url, index) => (
             <li
               onClick={() => setSliderIndex(index)}

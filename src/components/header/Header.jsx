@@ -33,22 +33,22 @@ export default function Header() {
     setIsOpenCart((prev) => !prev);
     setIsOpenMenu(false);
   };
-  return ( 
+  return (
     <header>
-      <div className="fixed z-20 flex w-full  items-center   justify-between bg-black  p-3 text-2xl text-white duration-700 ">
+      <div className="fixed z-20 flex w-full  items-center   justify-between bg-black  p-3 text-2xl  text-white duration-700 sm:p-5 ">
         <div onClick={handleMenuClick}>
-          <RiMenuFill />
+          <RiMenuFill className='sm:text-4xl ml-3' />
         </div>
         <NavLink to="/">
-          <h1 className="rounded-full text-[4.5vw] sm:text-xl  border-t border-indigo-600 px-2  font-bold capitalize tracking-[.05rem] shadow-md shadow-indigo-500  duration-700  hover:scale-105 ">
-         SavisMarket🛒 
+          <h1 className="rounded-full border-t border-indigo-600  px-2 text-[4.5vw] font-bold  capitalize tracking-[.05rem] shadow-md shadow-indigo-500 duration-700  hover:scale-105  sm:text-xl sm:p-2 ">
+            SavisMarket🛒
           </h1>
         </NavLink>
         <div onClick={handleCartClick} className="relative p-2">
           <span className="absolute right-0 top-0 w-4 rounded-full bg-indigo-500 text-center text-xs   opacity-85">
             {totalCount ? totalCount : ''}
           </span>
-          <RiShoppingCartLine className="text-2xl font-bold" />
+          <RiShoppingCartLine className="text-2xl font-bold sm:text-4xl mr-3"  />
         </div>
       </div>
       <div ref={menuRef}>

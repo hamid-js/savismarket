@@ -1,6 +1,7 @@
 import {
   RiArticleLine,
   RiHeartLine,
+  RiHome4Line,
   RiShuffleFill,
   RiStore3Line,
   RiUserLine,
@@ -14,7 +15,7 @@ export default function MobileMenu() {
 
   const iconStyle = 'text-2xl text-center m-auto ';
   return (
-    <div className="fixed  bottom-0 z-40 h-[8%] w-full bg-white pt-2 pb-[12vw] sm:pb-16  text-[4.2vw] sm:text-xl text-black ">
+    <div className="fixed md:hidden  bottom-0 z-40 h-[8%] w-full bg-white pt-2 pb-[12vw] sm:pb-16  text-[4.2vw] sm:text-xl text-black ">
       <ul className="flex  items-center justify-evenly  ">
         <li>
           <NavLink onClick={handleLoginClick} to="/login">
@@ -29,6 +30,12 @@ export default function MobileMenu() {
           </NavLink>
         </li>
       
+        <li className='mx-5'>
+          <NavLink className="duration-1000 " to="/">
+            <RiHome4Line  className={`${iconStyle} text-2xl   ` } />
+            Home
+          </NavLink>
+        </li>
         <li>
           <NavLink className="duration-1000 " to="/shop">
             <RiStore3Line className={`${iconStyle} text-2xl  ` } />
