@@ -1,5 +1,5 @@
 import {
-  RiArticleLine,
+ 
   RiHeartLine,
   RiHome4Line,
   RiShuffleFill,
@@ -49,12 +49,7 @@ export default function MobileMenu() {
             compare
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/blog">
-            <RiArticleLine   className={iconStyle} />
-            blog
-          </NavLink>
-        </li>
+      
 
        
       </ul>
