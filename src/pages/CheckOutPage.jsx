@@ -13,7 +13,7 @@ function CheckoutPage() {
         return a + b;
       });
   return (
-    <div className=' bg-gradient-to-t from-slate-800 pt-40 via-slate-700  via-50% to-slate-900 px-3 '>
+    <div className=' py-10 bg-gradient-to-t from-slate-800 pt-40 via-slate-700  via-50% to-slate-900 px-3 '>
       <div className='border-dashed border px-4 py-7 mx-2 '>
       <div className=" text-lg mb-5">
                 {totalPrice > 10000 ? (
@@ -65,7 +65,7 @@ function CheckoutPage() {
       </div>
 
       <div>
-        <div className=' text-center font-semibold text-stone-100 uppercase text-2xl'>your order</div>
+        <div className=' text-center py-3 font-semibold text-stone-100 uppercase text-2xl'>your order</div>
         <div className='bg-zinc-700 '>
         <div className="p-5  border-b border-zinc-700">
             {cart &&
@@ -87,9 +87,7 @@ function CheckoutPage() {
             <div className="text-indigo-600">${totalPrice}</div>
           </div>
         </div>
-        <div className='py-40'>
-
-        </div>
+        
 
       </div>
     </div>
