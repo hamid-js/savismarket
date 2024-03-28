@@ -82,7 +82,7 @@ function ShoppingPage() {
           </div>
           <div className="flex w-full flex-wrap justify-around gap-1 bg-[url(/images/bg/bg6.jpg)] bg-cover bg-center   ">
             {category.products.map((product) => (
-              <div key={product.id} className='w-full mb-4  flex justify-around flex-wrap  sm:w-4/5 md:w-4/6 lg:w-2/5'>
+              <div key={product.id} className='w-full mb-4  flex justify-around items-center flex-wrap  sm:w-4/5 md:w-4/6 lg:w-2/5'>
               
                 <ProductCard
                   small={small}

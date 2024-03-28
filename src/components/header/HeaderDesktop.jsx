@@ -1,4 +1,4 @@
-import { RiHeartLine, RiSearchLine, RiShuffleFill } from 'react-icons/ri';
+import { RiHeartLine, RiShuffleFill } from 'react-icons/ri';
 import { NavLink } from 'react-router-dom';
 import Logo from './Logo';
 import CartIcon from '../cart/CartIcon';
@@ -10,7 +10,7 @@ function HeaderDesktop() {
   }
   return (
     <div>
-      <div className="fixed z-20  hidden  w-full   items-center justify-between   bg-zinc-950  px-10 py-5 text-2xl text-white duration-700 lg:flex">
+      <div className="fixed z-20 shadow-sm shadow-indigo-500 hidden  w-full   items-center justify-between   bg-zinc-950  px-10 py-5 text-2xl text-white duration-700 lg:flex">
         <Logo />
         <MenuDesktop />
 
@@ -31,7 +31,7 @@ function HeaderDesktop() {
 
           <div>
             <NavLink to='/search'>
-              <RiSearchLine />
+              {/* <RiSearchLine /> */}
             </NavLink>
           </div>
 
