@@ -1,6 +1,6 @@
 import {  NavLink } from 'react-router-dom';
 
-function HamburgerMenu({ isOpen, setIsOpen }) {
+function MenuHamburger({ isOpen, setIsOpen }) {
   const handleCloseMenu = (e) => {
     if (e.target.tagName.toLowerCase() === 'a') {
       setIsOpen(false);
@@ -61,4 +61,4 @@ function HamburgerMenu({ isOpen, setIsOpen }) {
   );
 }
 
-export default HamburgerMenu;
+export default MenuHamburger;

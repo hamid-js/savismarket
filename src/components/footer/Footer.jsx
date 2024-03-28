@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <>
-      <div className=" pb-14 md:pb-0 w-full  bg-black py-1">
+      <div className=" pb-24 lg:pb-0 w-full  bg-black py-1">
         <div className="py-5">
           <h3 className="mb-3 ml-5 text-[5.9vw] font-bold text-indigo-300 md:text-[3.5vw] lg:text-[3vw] md:ml-12">
             Hamid Mohamadi

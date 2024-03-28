@@ -3,6 +3,7 @@ const PostContext = createContext();
 
 function PostProvider({ children }) {
   const [isOpenCart, setIsOpenCart] = useState(false);
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [compare, setCompare] = useState([]);
@@ -12,6 +13,8 @@ function PostProvider({ children }) {
       value={{
         isOpenCart,
         setIsOpenCart,
+        isOpenMenu,
+        setIsOpenMenu,
         cart,
         setCart,
         wishlist,
