@@ -50,7 +50,7 @@ function ProductPreviewPage() {
   return (
     <div
       ref={productRef}
-      className="fixed right-[5%] top-[13dvh] z-40 mx-auto h-[75dvh]  w-11/12 overflow-y-scroll rounded-lg border-2 border-indigo-600 bg-slate-300 pb-7 duration-700"
+      className="fixed right-[5%] top-[13dvh] z-40 mx-auto h-[80dvh]  w-11/12 overflow-y-scroll rounded-lg border-2 border-indigo-600 bg-slate-300 pb-7 duration-700"
     >
       <div className="flex h-12 flex-wrap items-center justify-center bg-slate-400  text-center text-xl  uppercase text-gray-700 ">
         <div
