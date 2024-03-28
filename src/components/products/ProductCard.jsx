@@ -224,7 +224,7 @@ export default function ProductCard({
         )}
         {isInAuctions === true ? (
           <div className="flex flex-col  items-center justify-between gap-y-2 pb-2 text-center capitalize">
-            <p className='mt-2'>Time left</p>
+            <p className='mt-2'>Time left :</p>
 
             <Timer expiryTime={dataTime} />
 

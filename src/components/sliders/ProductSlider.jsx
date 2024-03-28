@@ -12,7 +12,7 @@ const [sliderIndex, setSliderIndex] = useState(1)
         3d product view
       </h3>
       <div className=" w-full">
-        <img  className="m-auto h-52 w-52 sm:h-80 sm:w-80" src={sliderImages[sliderIndex]} alt="" />
+        <img  className="m-auto h-52 w-52 sm:h-[40vw] sm:w-[40vw] lg:h-[35vw] lg:w-[35vw]" src={sliderImages[sliderIndex]} alt="" />
       </div>
       <div className="w-1/2 max-w-36  bg-black text-center text-5xl font-extralight">
         <button onClick={() =>setSliderIndex((pre) => pre > 0 ? pre - 1 : 2 )} className="mb-2 pr-4"> &#8249;</button>

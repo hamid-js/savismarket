@@ -17,18 +17,18 @@ export default function HiroSilder() {
       <div className="relative">
         <div
           style={{ backgroundImage: `url(${sliderImages[sliderIndex]})` }}
-          className="h-[23rem]  w-full  items-center justify-center gap-0 bg-slate-700 bg-[length:640px_380px] bg-center bg-no-repeat duration-[2000ms] sm:h-[28rem] sm:bg-[length:768px_500px] md:h-[32rem] md:bg-[length:1024px_550px] lg:bg-[length:1280px_550px] xl:bg-[length:1536px_550px] "
+          className="h-[23rem]  w-full  items-center justify-center gap-0 bg-slate-950 bg-[length:640px_380px] bg-center bg-no-repeat duration-[2000ms] sm:h-[28rem] sm:bg-[length:768px_500px] md:h-[32rem] md:bg-[length:1024px_550px] lg:bg-[length:1280px_550px] xl:bg-[length:1050px_480px] xl:mt-5  "
         ></div>
         <div className="z-500 text-white">
           <button
             onClick={() => setSliderIndex((pre) => (pre > 0 ? pre - 1 : 2))}
-            className="absolute left-[1%] top-[25vw] cursor-pointer border-none bg-none py-2  text-8xl duration-1000 hover:scale-110 hover:animate-pulse sm:top-40 md:top-48 md:text-9xl 2xl:left-[3%] 2xl:text-[9rem] "
+            className="absolute left-[1%] top-[25vw] cursor-pointer border-none bg-none py-2  text-8xl duration-1000 hover:scale-110 hover:animate-pulse sm:top-40 md:top-48 md:text-9xl xl:left-[5%] 2xl:text-[9rem] xl:top-40 "
           >
             &#8249;
           </button>
           <button
             onClick={() => setSliderIndex((next) => (next < 2 ? next + 1 : 0))}
-            className="absolute right-[1%] top-[25vw] cursor-pointer border-none bg-none py-2 text-8xl duration-1000 hover:scale-110  hover:animate-pulse sm:top-40  md:top-48 md:text-9xl 2xl:right-[3%] 2xl:text-[9rem]"
+            className="absolute right-[1%] top-[25vw] cursor-pointer border-none bg-none py-2 text-8xl duration-1000 hover:scale-110  hover:animate-pulse sm:top-40  md:top-48 md:text-9xl xl:right-[5%] xl:top-40 2xl:text-[9rem]"
           >
             &#8250;
           </button>
