@@ -5,9 +5,9 @@ export default function Titles({
 }) {
   return (
     <div className=" flex flex-col items-center  justify-center gap-4  py-6 text-center  capitalize text-gray-300 ">
-      <p className="text-2xl ">{title1}</p>
-      <h3 className="text-3xl font-bold uppercase text-white">{title2}</h3>
-      <p className="text-sm max-w-60 ">{title3}</p>
+      <p className="text-2xl lg:text-3xl ">{title1}</p>
+      <h3 className="text-3xl lg:text-4xl font-bold uppercase text-white">{title2}</h3>
+      <p className="text-sm  lg:text-lg lg:max-w-72  max-w-60 ">{title3}</p>
     </div>
   );
 }

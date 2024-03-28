@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { RiLayoutGridLine, RiLayoutLeftLine } from 'react-icons/ri';
 import CategoryBox from '../components/products/CategoryBox';
 import ProductCard from '../components/products/ProductCard';
@@ -25,7 +24,7 @@ function ShoppingPage() {
   }
 
   return (
-    <div className="bg-gradient-to-t  from-zinc-950 via-zinc-800  via-50% to-zinc-950  px-1 pt-14 ">
+    <div className="bg-[url(/images/bg/bg6.jpg)] bg-contain px-1 pt-14 ">
       <div className="mt-10 flex h-14 items-center justify-between rounded-md  bg-slate-700 px-2 lg:mx-auto lg:mt-20 lg:h-20 lg:w-3/5 lg:px-10">
         <div className=" flex justify-between text-[4.8vw] *:px-3 *:py-2  sm:text-2xl   ">
           <div
@@ -72,7 +71,7 @@ function ShoppingPage() {
           key={index}
           className=" mt-5 bg-gradient-to-t from-zinc-950 via-zinc-800 via-50% to-zinc-950 px-1  "
         >
-          <div className="py-5">
+          <div className="py-5 bg-cover bg-[url(/images/bg/bg6.jpg)]">
             <CategoryBox
               title={category.categoryName}
               count={category.products.length}
