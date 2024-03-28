@@ -102,7 +102,7 @@ function Cart() {
                     : '✅'}
                 </div>
               </div>
-              <div className="flex flex-col ">
+              <div className="flex flex-col mb-[3vh] ">
                
                 <Link onClick={() => setIsOpenCart(false)} to={'/checkout'}>
                   <Button>checkout</Button>
