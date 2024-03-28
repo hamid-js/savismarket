@@ -24,7 +24,7 @@ function ShoppingPage() {
   }
 
   return (
-    <div className="bg-[url(/images/bg/bg6.jpg)] bg-contain px-1 pt-14 ">
+    <div className="md:pb-40 bg-[url(/images/bg/bg6.jpg)] bg-contain px-1 pt-14 ">
       <div className="mt-10 flex h-14 items-center justify-between rounded-md  bg-slate-700 px-2 lg:mx-auto lg:mt-20 lg:h-20 lg:w-3/5 lg:px-10">
         <div className=" flex justify-between text-[4.8vw] *:px-3 *:py-2  sm:text-2xl   ">
           <div
@@ -82,11 +82,8 @@ function ShoppingPage() {
           </div>
           <div className="flex w-full flex-wrap justify-around gap-1 bg-[url(/images/bg/bg6.jpg)] bg-cover bg-center   ">
             {category.products.map((product) => (
-              <div
-                style={{ width: `${small ? '100%' : ''}` }}
-                key={product.id}
-                className="mb-4 "
-              >
+              <div key={product.id} className='w-full mb-4  flex justify-around flex-wrap  sm:w-4/5 md:w-4/6 lg:w-2/5'>
+              
                 <ProductCard
                   small={small}
                   id={product.id}

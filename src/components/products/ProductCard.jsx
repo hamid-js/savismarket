@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import {
   RiCheckFill,
@@ -22,9 +21,7 @@ export default function ProductCard({
   details,
   id,
   expiryTime,
-  orderCount,
-
-  small ,
+  small,
 }) {
   const newProduct = {
     id,
@@ -35,9 +32,7 @@ export default function ProductCard({
     details,
     orderCount: 1,
   };
-  const fullWidthStyle = {
-    width: '100%',
-  };
+
   const dataTime = new Date(expiryTime);
   const {
     addToWishlistHandler,
@@ -62,27 +57,31 @@ export default function ProductCard({
 
   if (small)
     return (
-      <div className="rounded-sm  self-start duration-700 my-1  w-full bg-indigo-900">
-        <div className="flex h-[26vw] sm:h-36  w-full items-center justify-between ">
+      <div className="mx-auto  my-1 w-full self-start  rounded-sm bg-indigo-900 duration-700 ">
+        <div className="flex h-[26vw]  w-full  items-center justify-between sm:h-36  ">
           <div className="p-2 ">
             <img
-              className="h-[16vw] w-[16vw] sm:h-20 sm-w-20 bg-white "
+              className="sm-w-20 h-[16vw] w-[16vw] bg-white sm:h-24 sm:w-24"
               src={firstImage}
               alt={details}
             />
           </div>
           <div className="text flex flex-col items-start justify-center gap-1 ">
-            <div className="sm:text-lg text-[4vw] font-semibold capitalize">{name}</div>
+            <div className="text-[4vw] font-semibold capitalize sm:text-lg">
+              {name}
+            </div>
             <div className="flex items-center justify-center text-[3vw] sm:text-sm ">
               {details}
             </div>
-            <div className=" pl-3 text-[4vw] sm:text-xl font-bold text-red-700 ">${price}</div>
+            <div className=" pl-3 text-[4vw] font-bold text-red-700 sm:text-xl ">
+              ${price}
+            </div>
           </div>
 
           <section className="flex items-center justify-center gap-x-3  self-stretch">
             <div
               onClick={handleDeleteProduct}
-              className="flex flex-col items-center justify-around self-stretch  text-[5vw] sm:text-lg *:rounded-sm *:bg-indigo-700 *:p-2 *:px-2"
+              className="flex flex-col items-center justify-around self-stretch  text-[5vw] *:rounded-sm *:bg-indigo-700 *:p-2 *:px-2 sm:text-lg"
             >
               <div
                 style={{
@@ -110,10 +109,10 @@ export default function ProductCard({
               </div>
             </div>
             {itemInCart ? (
-              <div className="flex  h-full sm:w-12 w-[9vw] flex-col items-center   justify-center bg-indigo-600 *:flex *:my-auto *:items-center *:justify-center text-center  ">
+              <div className="flex  h-full w-[9vw] flex-col items-center justify-center   bg-indigo-600 text-center *:my-auto *:flex *:items-center *:justify-center sm:w-12  ">
                 <div
                   onClick={decreaseOrderHandler}
-                  className=" flex w-full items-center justify-center border-b  border-indigo-400 text-xl text-[4vw] sm:text-xl  hover:text-green-500"
+                  className=" flex w-full items-center justify-center border-b  border-indigo-400 text-[4vw] text-xl hover:text-green-500  sm:text-xl"
                 >
                   -
                 </div>
@@ -130,10 +129,10 @@ export default function ProductCard({
             ) : (
               <div
                 onClick={addToCartHandler}
-                className="flex flex-col sm:w-12 w-[9vw]  items-center justify-center self-stretch bg-indigo-400 px-1 text-[3.5vw]"
+                className="flex w-[9vw] flex-col items-center  justify-center self-stretch bg-indigo-400 px-1 text-[3.5vw] sm:w-12 md:text-[2.8vw] lg:md:text-2xl"
               >
                 Add
-                <RiShoppingCartLine className=" text-[5vw]" />
+                <RiShoppingCartLine className=" text-[5vw] md:text-[3.8vw] lg:text-4xl" />
               </div>
             )}
           </section>
@@ -224,7 +223,7 @@ export default function ProductCard({
         )}
         {isInAuctions === true ? (
           <div className="flex flex-col  items-center justify-between gap-y-2 pb-2 text-center capitalize">
-            <p className='mt-2'>Time left :</p>
+            <p className="mt-2">Time left :</p>
 
             <Timer expiryTime={dataTime} />
 

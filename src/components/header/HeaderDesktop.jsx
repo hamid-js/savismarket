@@ -5,6 +5,9 @@ import CartIcon from '../cart/CartIcon';
 import MenuDesktop from './MenuDesktop';
 
 function HeaderDesktop() {
+  function stopHandler (e) {
+    e.stopPropagation()
+  }
   return (
     <div>
       <div className="fixed z-20  hidden  w-full   items-center justify-between   bg-zinc-950  px-10 py-5 text-2xl text-white duration-700 lg:flex">
@@ -21,19 +24,19 @@ function HeaderDesktop() {
           </div>
 
           <div>
-            <NavLink to={'/compare'}>
+            <NavLink to='/compare'>
               <RiShuffleFill />
             </NavLink>
           </div>
 
           <div>
-            <NavLink to={'/search'}>
+            <NavLink to='/search'>
               <RiSearchLine />
             </NavLink>
           </div>
 
-          <div className="text-sm font-bold uppercase">
-            <NavLink to={'/login'}>login/register</NavLink>
+          <div onClick={stopHandler} className="text-sm font-bold uppercase">
+            <NavLink to='/login'>login/register</NavLink>
           </div>
         </section>
       </div>
