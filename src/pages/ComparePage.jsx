@@ -85,7 +85,7 @@ function ComparePage() {
                         />
                       </div>
                       <div
-                        className="flex h-full w-2/6 items-center justify-center border-l-2 border-slate-800 bg-slate-600 text-red-700 "
+                        className="flex cursor-pointer h-full w-2/6 items-center justify-center border-l-2 border-slate-800 bg-slate-600 text-red-700 "
                         onClick={() => handleDeleteCompareItem(item.id)}
                       >
                         <span className="text-3xl ">&times;</span>

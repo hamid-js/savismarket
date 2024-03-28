@@ -62,7 +62,7 @@ function CartItem({
       </div>
       <span
         onClick={handleDeleteProduct}
-        className="w-1/5 self-start text-right text-2xl"
+        className="w-1/5 self-start cursor-pointer hover:text-red-500 duration-300 text-right text-2xl"
       >
         &times;
       </span>

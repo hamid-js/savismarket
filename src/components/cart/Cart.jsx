@@ -27,10 +27,12 @@ function Cart() {
         <p className=" py-3  capitalize ">Shopping Cart</p>
         <div
           onClick={() => setIsOpenCart(false)}
-          className="flex w-16 items-center justify-between text-3xl font-light "
+          className="flex w-16 items-center cursor-pointer hover:text-red-500 justify-between text-3xl font-light duration-300 "
         >
           <span className="mb-1">&times; </span>
-          <span className="text-lg font-semibold ">close</span>
+          <span className="text-lg font-semibold capitalize tracking-wider   ">
+            close
+          </span>
         </div>
       </div>
       {!cart.length ? (
@@ -62,7 +64,7 @@ function Cart() {
               ))}
           </div>
           <div className="absolute bottom-0 w-full">
-            <div className=" flex max-h-21 items-center justify-between border-b border-zinc-700 px-3 pb-[3%] text-xl font-semibold">
+            <div className=" max-h-21 flex items-center justify-between border-b border-zinc-700 px-3 pb-[3%] text-xl font-semibold">
               <div>Subtotal:</div>
               <div className="text-indigo-600">${totalPrice}</div>
             </div>
@@ -103,7 +105,6 @@ function Cart() {
                 </div>
               </div>
               <div className="flex flex-col  md:my-0 ">
-               
                 <Link onClick={() => setIsOpenCart(false)} to={'/checkout'}>
                   <Button>checkout</Button>
                 </Link>
