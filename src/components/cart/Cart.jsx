@@ -21,7 +21,7 @@ function Cart() {
       style={{
         transform: `${isOpenCart ? 'translateX(0%)' : 'translateX(100%)'}`,
       }}
-      className="top fixed right-0 z-50 h-dvh w-[75vw] max-w-96 overflow-y-hidden rounded-sm bg-slate-800  text-slate-300 duration-300"
+      className="top fixed right-0 z-50 h-dvh w-[75vw] max-w-96 overflow-y-hidden rounded-sm bg-slate-900  text-slate-300 duration-300"
     >
       <div className="border-bborder-zinc-700 mb-1 flex justify-between px-3 py-1 text-[4.5vw] font-semibold shadow-sm shadow-slate-400 sm:text-2xl ">
         <p className=" py-3  capitalize ">Shopping Cart</p>
@@ -46,7 +46,7 @@ function Cart() {
         </div>
       ) : (
         <div>
-          <div className=" h-[52vh] overflow-y-scroll border-b border-zinc-700 bg-slate-900">
+          <div className=" h-[44vh] overflow-y-scroll border-b border-zinc-700 bg-slate-900">
             {cart &&
               cart.map((product) => (
                 <CartItem
@@ -62,7 +62,7 @@ function Cart() {
               ))}
           </div>
           <div className="absolute bottom-0 w-full">
-            <div className="mb-3 flex max-h-12 items-center justify-between border-b border-zinc-700 px-3 pb-5 text-xl font-semibold">
+            <div className=" flex max-h-21 items-center justify-between border-b border-zinc-700 px-3 pb-[3%] text-xl font-semibold">
               <div>Subtotal:</div>
               <div className="text-indigo-600">${totalPrice}</div>
             </div>
@@ -102,7 +102,7 @@ function Cart() {
                     : '✅'}
                 </div>
               </div>
-              <div className="flex flex-col my-[2vh] ">
+              <div className="flex flex-col  md:my-0 ">
                
                 <Link onClick={() => setIsOpenCart(false)} to={'/checkout'}>
                   <Button>checkout</Button>
