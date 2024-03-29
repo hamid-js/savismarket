@@ -13,6 +13,7 @@ function useCart(newProduct) {
     if (!itemInCart) {
       setCart((pre) => [...pre, newProduct]);
       toast.success('Product Added To Cart');
+
     } else {
       return;
     }
@@ -25,6 +26,7 @@ function useCart(newProduct) {
           item.id === newProduct.id
             ? { ...item, orderCount: item.orderCount + 1 }
             : item,
+            
         ),
       );
       toast.success('➕Product decreased')

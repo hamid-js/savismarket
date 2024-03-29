@@ -5,35 +5,39 @@ import toast from 'react-hot-toast';
 function useLists(newProduct) {
   const { wishlist, setWishlist, setCompare, compare } =
     useContext(PostContext);
-    const isInWishlist = wishlist.some((item) => item.id === newProduct.id);
-    const isInCompare = compare.some((item) => item.id === newProduct.id);
+  const isInWishlist = wishlist.some((item) => item.id === newProduct.id);
+  const isInCompare = compare.some((item) => item.id === newProduct.id);
 
   function addToWishlistHandler(event) {
-    event.stopPropagation()
+    event.stopPropagation();
     if (isInWishlist) {
       setWishlist((prev) => prev.filter((item) => item.id !== newProduct.id));
-      toast.success('💔favorite Removed ')
-      
+      toast.success('💔favorite Removed ');
     } else {
       setWishlist((pre) => [...pre, newProduct]);
-      toast.success('❤️Added to favorites')
+      toast.success('❤️Added to favorites');
     }
   }
 
   function addToCompareHandler(event) {
-    event.stopPropagation()
+    event.stopPropagation();
     if (isInCompare) {
       setCompare((prev) => prev.filter((item) => item.id !== newProduct.id));
-      toast.success("🗑️Product Removed" )
+      toast.success('🗑️Product Removed');
     } else if (compare.length >= 4) {
-      toast.error("Maximum 4 products")
+      toast.error('Maximum 4 products');
     } else {
       setCompare((pre) => [...pre, newProduct]);
-      toast.success("Added to Comparison")
+      toast.success('Added to Comparison');
     }
   }
 
-  return{addToWishlistHandler ,addToCompareHandler , isInCompare , isInWishlist }
+  return {
+    addToWishlistHandler,
+    addToCompareHandler,
+    isInCompare,
+    isInWishlist,
+  };
 }
 
 export default useLists;
