@@ -10,11 +10,7 @@ function LoginPage() {
   const loginRef = useRef(null);
   useClickOutside(loginRef, () => navigate('/'));
 
-  // const handleCloseMenu = (e) => {
-  //   if (e.target.tagName.toLowerCase() === 'a') {
-  //     navigate('/');
-  //   }
-  // };
+  
   return (
     <div
       ref={loginRef}
