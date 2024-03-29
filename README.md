@@ -1,5 +1,11 @@
+# Savis Market Shop
 
-  <img class="wideImage" src="./public/images/readme/readme.png" alt="savisImage">
+## Online Demo
 
+👉👉[Live Preview](https://hamiddev.ir/)👈👈
 
+## Preview photo
 
+![home-page-capture](./public/images/readme/readme.png)
+
+## About Project
