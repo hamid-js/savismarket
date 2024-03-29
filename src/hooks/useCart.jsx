@@ -13,7 +13,6 @@ function useCart(newProduct) {
     if (!itemInCart) {
       setCart((pre) => [...pre, newProduct]);
       toast.success('Product Added To Cart');
-
     } else {
       return;
     }
@@ -26,40 +25,33 @@ function useCart(newProduct) {
           item.id === newProduct.id
             ? { ...item, orderCount: item.orderCount + 1 }
             : item,
-            
         ),
       );
-      toast.success('➕Product decreased')
+      toast.success('➕Product decreased');
     }
   };
   const decreaseOrderHandler = (event) => {
     event.stopPropagation();
 
-    if (itemInCart.orderCount > 1){
+    if (itemInCart.orderCount > 1) {
       setCart((prev) =>
-        prev
-          .map((item) =>
-            item.id === newProduct.id
-              ?  { ...item, orderCount: Math.max(item.orderCount - 1, 0) }
-            
-
-              : item,
-          )
-          
+        prev.map((item) =>
+          item.id === newProduct.id
+            ? { ...item, orderCount: Math.max(item.orderCount - 1, 0) }
+            : item,
+        ),
       );
-      toast.success('➖ Product decreased')
-    }else{
-      handleDeleteProduct(event)
+      toast.success('➖ Product decreased');
+    } else {
+      handleDeleteProduct(event);
     }
   };
 
   function handleDeleteProduct(event) {
     event.stopPropagation();
     setCart((prev) => prev.filter((item) => item.id !== newProduct.id));
-    toast.success('✖️ Product Removed')
-
+    toast.success('✖️ Product Removed');
   }
-
 
   return {
     addToCartHandler,
