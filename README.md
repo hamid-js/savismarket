@@ -1,7 +1,9 @@
 <div class="container">
-  <video class="vertical" src="./public/savis.mp4"></video>
+  <video class="vertical" controls>
+    <source src="./public/savis.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </div>
-
 <style>
   .container {
     width: 80%;
